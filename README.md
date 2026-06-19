@@ -16,7 +16,7 @@ https://github.com/user-attachments/assets/40773b88-2b92-4d36-9808-a4ece51a1073
 
 
 ## 🌐 Live Demo
-You can check out the live project here: 👉 [https://portofolio-mu-lac.vercel.app/]
+You can check out the live project here: 👉 https://portofolio-mu-lac.vercel.app/
 
 ## 📦 Local Setup
 If you want to run this project locally, follow these steps:
