@@ -11,7 +11,18 @@ Welcome to my personal portfolio! An interactive web application built with **Re
 ## Video 
 
 
-https://github.com/user-attachments/assets/40773b88-2b92-4d36-9808-a4ece51a1073
+
+https://github.com/user-attachments/assets/d776e743-7568-40cc-b7cf-e0e4818b6105
+
+
+
+
+
+
+
+
+
+
 
 
 
