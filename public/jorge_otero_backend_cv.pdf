@@ -1,0 +1,74 @@
+
+
+Jorge Otero
+Python Backend Developer · Flask · REST APIs · Automation
+Buenos Aires, Argentina · jorgotero4@gmail.com · linkedin.com/in/jorgeotero1998 · github.com/Jorgeotero1998
+Seeking Junior to Mid-level backend or Python roles · Available immediately · Open to remote
+ABOUT
+Python developer with 6+ years building automation tools, REST APIs, and full-stack web applications. Comfortable across
+the backend stack — API design, database modeling, third-party integrations, and Docker deployments. I have a strong
+interest in automation, security tooling, and AI API integrations. Currently completing Full Stack training at 4Geeks
+Academy.
+EXPERIENCE
+Independent Python Developer
+Remote · Nov 2019 – Present (6 years)
+• Built Python automation tools for data extraction, file processing, and workflow optimization.
+• Developed and consumed REST APIs; integrated third-party services including Cloudinary, VirusTotal, Telegram Bot
+API, and Groq.
+• Built web scraping pipelines with Selenium and Playwright for recurring data collection tasks.
+• Deployed applications with Docker and Docker Compose on Render and Vercel.
+• Worked with Flask backends, PostgreSQL and SQLite databases, SQLAlchemy ORM, and JWT authentication.
+Full Stack Developer — Team Project
+4Geeks Academy · Jan 2026 – Present
+• Collaborated in a 3-person team to build LaVerde, a full-stack e-commerce platform currently live in production.
+• Owned the backend: SQLAlchemy models, Flask REST API, JWT auth, Cloudinary integration, Flask-Migrate.
+• Configured GitHub Actions CI/CD pipeline and devcontainer for consistent environments.
+• Deployed backend and static frontend on Render — accessible at laverde-frontend.onrender.com.
+PROJECTS
+AI Task Orchestrator — LLM Goal Decomposition Platform
+Python · Flask · Groq API (Llama 3.3) · React · Vite · SQLite · SQLAlchemy · Docker Compose
+github.com/Jorgeotero1998/ai-task-orchestrator
+• Full-stack app that decomposes a high-level goal into actionable subtasks using Groq's LLM inference engine.
+• Flask backend with SQLAlchemy persistence, React + Vite frontend, fully containerized with Docker Compose.
+• Includes PDF report export, task history dashboard, and secure admin authentication.
+SentinelSoc — File Integrity Monitor (Windows)
+Python · watchdog · pywin32 · JSON logging
+github.com/Jorgeotero1998/SentinelSoc
+• Real-time file system monitoring agent using watchdog and pywin32 for Windows registry-based path resolution.
+• Burst-rate detection logic identifies mass write events (ransomware patterns) and writes structured JSON audit logs.
+Security-SOAR — Automated Incident Response
+Python · VirusTotal API · Telegram Bot API · psutil · Docker
+github.com/Jorgeotero1998/Security-SOAR
+• Ingests JSON telemetry, queries VirusTotal for file reputation, and suspends flagged processes via psutil.
+• Sends real-time SOC alerts via Telegram Bot. Containerized with Docker for portable deployment.
+LaVerde Tienda — Full Stack E-Commerce (Team · 4 contributors · Live)
+React · Flask · PostgreSQL · SQLAlchemy · JWT · Cloudinary · GitHub Actions · Render
+laverde-frontend.onrender.com · github.com/Jorgeotero1998/LaVerde-Tienda
+• Production e-commerce app with product catalog, cart, orders, favorites, and admin panel.
+• JWT-authenticated REST API, image uploads via Cloudinary, database migrations with Flask-Migrate.
+MemorySentinel — Polyglot File Encryption Engine
+C++17 · Python · Bash
+
+github.com/Jorgeotero1998/MemorySentinel
+• C++17 core handles XOR file encryption with manual memory management; Python orchestrates file discovery; Bash
+manages env setup and cleanup.
+SKILLS
+LanguagesPython · JavaScript · C++ · Bash
+BackendFlask · REST APIs · SQLAlchemy · JWT · Werkzeug
+FrontendReact · Vite · HTML/CSS · Bootstrap
+DatabasesPostgreSQL · SQLite
+DevOpsDocker · Docker Compose · GitHub Actions · Render · Vercel · Linux
+AI / APIsGroq API (Llama 3.3) · VirusTotal API · Telegram Bot API · Cloudinary API
+AutomationSelenium · Playwright · Python scripting · Workflow automation
+SecurityFile Integrity Monitoring · JSON audit logging · API-based threat intel · psutil
+EDUCATION
+Full Stack Development — 4Geeks Academy
+Jan 2026 – Present (expected graduation late 2026)
+CERTIFICATIONS
+• AWS Certified Security Specialty — Amazon Web Services
+• Azure AZ-500 Security Engineer — Microsoft
+• Google Cloud Cybersecurity — Google
+• Automate Cybersecurity with Python — Google (Oct 2025)
+• Penetration Testing, Threat Hunting & Cryptography — IBM (Oct 2025)
+• Cloud-Native Development with OpenShift & Kubernetes — Red Hat
+• Crash Course on Python — Google

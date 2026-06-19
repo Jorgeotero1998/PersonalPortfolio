@@ -70,21 +70,6 @@ export const PROJECTS = [
   },
 ];
 
-export const TECH_BALLS = [
-  { name: "React",       color: "#61dafb", symbol: "⚛" },
-  { name: "Python",      color: "#f7c948", symbol: "🐍" },
-  { name: "Flask",       color: "#fb923c", symbol: "🔥" },
-  { name: "TypeScript",  color: "#3178c6", symbol: "TS" },
-  { name: "PostgreSQL",  color: "#336791", symbol: "🐘" },
-  { name: "Docker",      color: "#2496ed", symbol: "🐳" },
-  { name: "GitHub",      color: "#f472b6", symbol: "🐙" },
-  { name: "Tailwind",    color: "#06b6d4", symbol: "🌊" },
-  { name: "JWT",         color: "#fb923c", symbol: "🔑" },
-  { name: "Linux",       color: "#fcc624", symbol: "🐧" },
-  { name: "Selenium",    color: "#43b02a", symbol: "🤖" },
-  { name: "Groq API",    color: "#f472b6", symbol: "AI" },
-];
-
 export const SKILLS = {
   Frontend:    { color: "#fb923c", items: ["React", "TypeScript", "JavaScript", "Vite", "HTML/CSS", "Bootstrap", "Tailwind CSS"] },
   Backend:     { color: "#f472b6", items: ["Python", "Flask", "REST APIs", "SQLAlchemy", "JWT", "Werkzeug"] },

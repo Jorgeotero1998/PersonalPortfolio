@@ -1,0 +1,73 @@
+
+
+Jorge Otero
+Full Stack Developer · React + Flask · Python
+Buenos Aires, Argentina · jorgotero4@gmail.com · linkedin.com/in/jorgeotero1998 · github.com/Jorgeotero1998
+Seeking Junior to Mid-level full-stack roles · Available immediately · Open to remote
+ABOUT
+Full-stack developer with 6+ years of experience building web applications from backend to frontend. I work with
+Python/Flask on the server side and React on the client side, and I'm comfortable with the full deployment pipeline:
+databases, REST APIs, Docker, CI/CD, and cloud hosting. I recently shipped a production e-commerce platform in a
+3-person team, which is live and publicly accessible. Currently completing Full Stack training at 4Geeks Academy.
+EXPERIENCE
+Independent Full Stack Developer
+Remote · Nov 2019 – Present (6 years)
+• Built full-stack web applications using Python/Flask backends and React frontends.
+• Designed and consumed REST APIs; integrated third-party services: Cloudinary, Groq, VirusTotal, Telegram Bot API.
+• Created web scraping and automation pipelines with Selenium and Playwright.
+• Deployed applications using Docker, Docker Compose, Render, and Vercel.
+• Managed relational databases (PostgreSQL, SQLite) with SQLAlchemy ORM; handled JWT authentication flows.
+Full Stack Developer — Team Project
+4Geeks Academy · Jan 2026 – Present
+• Built LaVerde with a 3-person team — a production e-commerce app live at laverde-frontend.onrender.com.
+• Led backend development: Flask REST API, SQLAlchemy models, JWT auth, Cloudinary image uploads,
+Flask-Migrate.
+• Set up GitHub Actions CI/CD and devcontainer configuration; coordinated Git workflow across 4 contributors.
+• Handled full deployment on Render (backend web service + static frontend).
+PROJECTS
+LaVerde Tienda — Full Stack E-Commerce (Team · 4 contributors · LIVE)
+React · Flask · PostgreSQL · SQLAlchemy · JWT · Cloudinary · GitHub Actions · Render
+laverde-frontend.onrender.com · github.com/Jorgeotero1998/LaVerde-Tienda
+• Production e-commerce platform: product catalog, shopping cart, order flow, favorites, and admin panel.
+• Secure REST API with JWT; image management via Cloudinary; DB migrations with Flask-Migrate.
+• CI/CD with GitHub Actions; both backend and frontend deployed and running on Render.
+AI Task Orchestrator — LLM Productivity Platform
+Python · Flask · Groq API (Llama 3.3) · React · Vite · SQLite · Docker Compose
+github.com/Jorgeotero1998/ai-task-orchestrator
+• Full-stack app: users input a complex goal, the app uses Groq's LLM to break it into actionable steps.
+• Flask + SQLAlchemy backend, React + Vite frontend, Docker Compose for one-command local setup.
+• Task history persistence, PDF report export, and secure admin login.
+FlowByte — SaaS Automation Platform (WIP)
+React · TypeScript · Supabase · PostgreSQL · Cloudflare Workers · Tailwind CSS
+github.com/Jorgeotero1998
+• Personal SaaS project: authentication, real-time data, workflow execution engine, and AI integrations.
+• Built to production-quality standards — auth system, activity logging, dashboard, and modular architecture.
+SentinelSoc — File Integrity Monitor
+Python · watchdog · pywin32 · JSON logging
+github.com/Jorgeotero1998/SentinelSoc
+• Windows file monitoring agent with burst-rate detection for mass write events (ransomware patterns).
+• Structured JSON audit logs compatible with SIEM ingestion.
+Security-SOAR — Automated Incident Response
+
+Python · VirusTotal API · Telegram Bot API · psutil · Docker
+github.com/Jorgeotero1998/Security-SOAR
+• Reads file telemetry, enriches with VirusTotal threat intel, suspends malicious processes, and alerts via Telegram.
+SKILLS
+LanguagesPython · JavaScript · TypeScript · C++ · Bash
+FrontendReact · Vite · TypeScript · HTML/CSS · Bootstrap · Tailwind CSS
+BackendFlask · REST APIs · SQLAlchemy · JWT · Werkzeug
+DatabasesPostgreSQL · SQLite
+DevOpsDocker · Docker Compose · GitHub Actions · Render · Vercel · Supabase · Cloudflare Workers · Linux
+AI / APIsGroq API · Cloudinary · VirusTotal API · Telegram Bot API
+AutomationSelenium · Playwright · Python scripting
+EDUCATION
+Full Stack Development — 4Geeks Academy
+Jan 2026 – Present (expected graduation late 2026)
+CERTIFICATIONS
+• AWS Certified Security Specialty — Amazon Web Services
+• Azure AZ-500 Security Engineer — Microsoft
+• Google Cloud Cybersecurity — Google
+• Automate Cybersecurity with Python — Google (Oct 2025)
+• Penetration Testing, Threat Hunting & Cryptography — IBM (Oct 2025)
+• Cloud-Native Development with OpenShift & Kubernetes — Red Hat
+• Crash Course on Python — Google

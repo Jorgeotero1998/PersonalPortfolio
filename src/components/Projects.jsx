@@ -1,6 +1,184 @@
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { PROJECTS } from "../constants";
+import { storageGet, storageSet } from "../utils/storage";
+
+function readFileAsDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+function Attachments({ project }) {
+  const storageKey = `proj-attach:${project.name}`;
+  const [files, setFiles] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+  const inputRef = useRef(null);
+
+  // Load persisted attachments on mount.
+  useEffect(() => {
+    let active = true;
+    storageGet(storageKey).then((saved) => {
+      if (active) {
+        if (Array.isArray(saved)) setFiles(saved);
+        setLoaded(true);
+      }
+    });
+    return () => {
+      active = false;
+    };
+  }, [storageKey]);
+
+  // Persist whenever files change (after initial load).
+  useEffect(() => {
+    if (loaded) storageSet(storageKey, files);
+  }, [files, loaded, storageKey]);
+
+  const handleSelect = async (e) => {
+    const selected = Array.from(e.target.files || []);
+    const next = [];
+    for (const file of selected) {
+      try {
+        const dataUrl = await readFileAsDataUrl(file);
+        next.push({
+          id: `${Date.now()}-${file.name}-${Math.random().toString(36).slice(2, 7)}`,
+          name: file.name,
+          type: file.type,
+          dataUrl,
+        });
+      } catch (err) {
+        console.log("[v0] file read error:", err?.message);
+      }
+    }
+    if (next.length) setFiles((prev) => [...prev, ...next]);
+    e.target.value = "";
+  };
+
+  const removeFile = (id) => setFiles((prev) => prev.filter((f) => f.id !== id));
+
+  return (
+    <div style={{ marginTop: "0.25rem" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.6rem" }}>
+        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(226,232,240,0.4)" }}>
+          Attachments
+        </span>
+        <button
+          type="button"
+          onClick={() => inputRef.current?.click()}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.35rem",
+            background: `${project.color}15`,
+            border: `1px solid ${project.color}40`,
+            color: project.color,
+            borderRadius: "7px",
+            padding: "0.3rem 0.7rem",
+            fontSize: "0.72rem",
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontWeight: 600,
+            cursor: "pointer",
+          }}
+        >
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+          Add file
+        </button>
+        <input
+          ref={inputRef}
+          type="file"
+          accept="image/*,application/pdf"
+          multiple
+          onChange={handleSelect}
+          style={{ display: "none" }}
+        />
+      </div>
+
+      {files.length > 0 && (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+          <AnimatePresence>
+            {files.map((f) => {
+              const isImage = f.type?.startsWith("image/");
+              return (
+                <motion.div
+                  key={f.id}
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.85 }}
+                  style={{ position: "relative" }}
+                >
+                  <a
+                    href={f.dataUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    title={f.name}
+                    style={{ textDecoration: "none", display: "block" }}
+                  >
+                    {isImage ? (
+                      <img
+                        src={f.dataUrl || "/placeholder.svg"}
+                        alt={f.name}
+                        style={{ width: "64px", height: "64px", objectFit: "cover", borderRadius: "8px", border: `1px solid ${project.color}30`, display: "block" }}
+                      />
+                    ) : (
+                      <div
+                        style={{
+                          width: "64px",
+                          height: "64px",
+                          borderRadius: "8px",
+                          border: `1px solid ${project.color}30`,
+                          background: "rgba(255,255,255,0.04)",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: "3px",
+                          padding: "4px",
+                        }}
+                      >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={project.color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></svg>
+                        <span style={{ fontSize: "0.55rem", fontFamily: "'JetBrains Mono', monospace", color: "rgba(226,232,240,0.55)" }}>PDF</span>
+                      </div>
+                    )}
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => removeFile(f.id)}
+                    title="Remove"
+                    aria-label={`Remove ${f.name}`}
+                    style={{
+                      position: "absolute",
+                      top: "-6px",
+                      right: "-6px",
+                      width: "18px",
+                      height: "18px",
+                      borderRadius: "50%",
+                      background: "#06010f",
+                      border: "1px solid rgba(244,114,182,0.6)",
+                      color: "#f472b6",
+                      cursor: "pointer",
+                      fontSize: "0.7rem",
+                      lineHeight: 1,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      padding: 0,
+                    }}
+                  >
+                    ×
+                  </button>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </div>
+      )}
+    </div>
+  );
+}
 
 function ProjectCard({ project, index }) {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
@@ -29,6 +207,9 @@ function ProjectCard({ project, index }) {
         {project.tags.map((tag) => (
           <span key={tag} style={{ background: `${project.color}12`, border: `1px solid ${project.color}30`, color: project.color, borderRadius: "6px", padding: "2px 10px", fontSize: "0.75rem", fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}>{tag}</span>
         ))}
+      </div>
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "1rem" }}>
+        <Attachments project={project} />
       </div>
     </motion.div>
   );

@@ -30,6 +30,7 @@ function useTypewriter(words, speed = 80, pause = 2200) {
 export default function Hero() {
   const role = useTypewriter(ROLES);
   const imgRef = useRef(null);
+  const [cvOpen, setCvOpen] = useState(false);
 
   useEffect(() => {
     const handleMouse = (e) => {
@@ -70,7 +71,7 @@ export default function Hero() {
             </span>
           </motion.div>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} style={{ color: "rgba(226,232,240,0.55)", lineHeight: 1.85, fontSize: "1rem", maxWidth: "500px", marginBottom: "2.5rem", fontFamily: "'Inter', sans-serif" }}>
-            Full Stack Developer with 6+ years building web apps end-to-end. Started automating workflows with Python, now shipping production React + Flask applications. Based in{" "}
+            Full Stack Developer with 3 years building web apps end-to-end. Started automating workflows with Python, now shipping production React + Flask applications. Based in{" "}
             <span style={{ background: "linear-gradient(90deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 600 }}>Buenos Aires</span>{" "}· Open to remote.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
@@ -80,9 +81,46 @@ export default function Hero() {
             <motion.a href="https://linkedin.com/in/jorgeotero1998" target="_blank" rel="noreferrer" whileHover={{ scale: 1.04, borderColor: "#fb923c", color: "#fb923c" }} whileTap={{ scale: 0.97 }} style={{ padding: "0.85rem 2rem", background: "transparent", color: "rgba(226,232,240,0.8)", fontWeight: 600, borderRadius: "8px", textDecoration: "none", fontFamily: "'Space Grotesk', sans-serif", fontSize: "0.9rem", border: "1px solid rgba(226,232,240,0.2)", display: "inline-block", transition: "all 0.2s" }}>
               LinkedIn →
             </motion.a>
+
+            <div style={{ position: "relative" }}>
+              <motion.button
+                onClick={() => setCvOpen((o) => !o)}
+                onBlur={() => setTimeout(() => setCvOpen(false), 150)}
+                whileHover={{ scale: 1.04, borderColor: "#f472b6", color: "#f472b6" }}
+                whileTap={{ scale: 0.97 }}
+                style={{ padding: "0.85rem 2rem", background: "transparent", color: "rgba(226,232,240,0.8)", fontWeight: 600, borderRadius: "8px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "0.9rem", border: "1px solid rgba(226,232,240,0.2)", display: "inline-flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", transition: "all 0.2s" }}
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
+                Download CV
+              </motion.button>
+              {cvOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  style={{ position: "absolute", top: "calc(100% + 0.5rem)", left: 0, minWidth: "100%", background: "rgba(6,1,15,0.97)", border: "1px solid rgba(251,146,60,0.3)", borderRadius: "10px", padding: "0.4rem", backdropFilter: "blur(14px)", boxShadow: "0 20px 50px rgba(0,0,0,0.5)", zIndex: 10, display: "flex", flexDirection: "column", gap: "0.2rem" }}
+                >
+                  {[
+                    { label: "Full Stack CV", file: "/jorge_otero_fullstack_cv.pdf" },
+                    { label: "Backend CV", file: "/jorge_otero_backend_cv.pdf" },
+                  ].map((cv) => (
+                    <a
+                      key={cv.file}
+                      href={cv.file}
+                      download
+                      onMouseDown={(e) => e.preventDefault()}
+                      style={{ padding: "0.6rem 0.9rem", borderRadius: "7px", color: "rgba(226,232,240,0.85)", textDecoration: "none", fontFamily: "'Inter', sans-serif", fontSize: "0.85rem", whiteSpace: "nowrap", transition: "background 0.15s" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(251,146,60,0.15)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                    >
+                      {cv.label}
+                    </a>
+                  ))}
+                </motion.div>
+              )}
+            </div>
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} style={{ display: "flex", gap: "2rem", marginTop: "3rem", flexWrap: "wrap" }}>
-            {[{ n: "6+", label: "Years coding" }, { n: "6", label: "Projects shipped" }, { n: "44", label: "Tests written" }].map(({ n, label }) => (
+            {[{ n: "3", label: "Years coding" }, { n: "6", label: "Projects shipped" }, { n: "44", label: "Tests written" }].map(({ n, label }) => (
               <div key={label}>
                 <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1.8rem", fontWeight: 700, background: "linear-gradient(135deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", lineHeight: 1 }}>{n}</p>
                 <p style={{ color: "rgba(226,232,240,0.4)", fontSize: "0.8rem", marginTop: "4px", fontFamily: "'Inter', sans-serif" }}>{label}</p>
