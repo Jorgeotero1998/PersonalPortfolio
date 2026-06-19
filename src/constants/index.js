@@ -1,7 +1,6 @@
 export const ROLES = [
   "Full Stack Developer",
   "Python Developer",
-  "React Developer",
   "Backend Engineer",
   "Open Source Contributor",
   "Builder of things",
@@ -17,6 +16,15 @@ export const PROJECTS = [
     repo: "https://github.com/Jorgeotero1998/LaVerde-Tienda",
     color: "#fb923c",
     gradient: "linear-gradient(135deg, rgba(251,146,60,0.12), rgba(249,115,22,0.04))",
+    shots: [
+      "/projects/laverde/1.png",
+      "/projects/laverde/2.png",
+      "/projects/laverde/3.png",
+      "/projects/laverde/4.png",
+      "/projects/laverde/5.png",
+      "/projects/laverde/6.png",
+      "/projects/laverde/7.png",
+    ],
   },
   {
     name: "AI Task Orchestrator",
