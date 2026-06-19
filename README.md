@@ -8,6 +8,13 @@ Welcome to my personal portfolio! An interactive web application built with **Re
 * **Tailwind CSS** / CSS (Styling)
 * **Three.js / React Three Fiber** (For the 3D spheres)
 
+## Video 
+
+
+https://github.com/user-attachments/assets/40773b88-2b92-4d36-9808-a4ece51a1073
+
+
+
 ## 🌐 Live Demo
 You can check out the live project here: 👉 [https://portofolio-mu-lac.vercel.app/]
 
