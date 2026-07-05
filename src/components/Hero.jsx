@@ -105,7 +105,7 @@ export default function Hero() {
             </motion.a>
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} style={{ display: "flex", gap: "2rem", marginTop: "3rem", flexWrap: "wrap" }}>
-            {[{ n: "3+", label: "Years experience" }, { n: "5+", label: "Live demos" }, { n: "67", label: "Tests written" }].map(({ n, label }) => (
+            {[{ n: "3+", label: "Years experience" }, { n: "4", label: "Live demos" }, { n: "67", label: "Tests written" }].map(({ n, label }) => (
               <div key={label}>
                 <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1.8rem", fontWeight: 700, background: "linear-gradient(135deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", lineHeight: 1 }}>{n}</p>
                 <p style={{ color: "rgba(226,232,240,0.4)", fontSize: "0.8rem", marginTop: "4px", fontFamily: "'Inter', sans-serif" }}>{label}</p>
