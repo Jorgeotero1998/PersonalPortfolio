@@ -9,10 +9,10 @@ export const SITE = {
 };
 
 export const ROLES = [
-  "Python · FastAPI · Flask",
-  "React · TypeScript",
+  "Builder of things",
+  "Full Stack Developer",
+  "Python · FastAPI · React",
   "PostgreSQL · Docker · CI/CD",
-  "Production deployments",
 ];
 
 export const FEATURED_PROJECTS = [

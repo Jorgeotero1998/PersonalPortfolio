@@ -57,23 +57,23 @@ export default function Hero() {
       <div style={{ maxWidth: "1200px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "4rem", flexWrap: "wrap", position: "relative", zIndex: 1 }}>
         {/* Left text */}
         <div style={{ flex: "1 1 480px" }}>
-          <motion.p initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} style={{ fontFamily: "'JetBrains Mono', monospace", color: "#fb923c", fontSize: "0.85rem", letterSpacing: "0.12em", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+          <motion.p initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} style={{ fontFamily: "'JetBrains Mono', monospace", color: "#fb923c", fontSize: "0.95rem", letterSpacing: "0.12em", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
             <span style={{ display: "inline-block", width: "40px", height: "1px", background: "linear-gradient(90deg, #fb923c, #f472b6)" }} />
-            Full Stack Developer · Python & React · Backend-focused
+            Hey, I'm
           </motion.p>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(3rem, 7vw, 5.5rem)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.04em", marginBottom: "0.75rem" }}>
             <span style={{ color: "#e2e8f0" }}>Jorge</span>{" "}
             <span style={{ background: "linear-gradient(135deg, #fb923c 0%, #f472b6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Otero</span>
           </motion.h1>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} style={{ minHeight: "2rem", marginBottom: "1.25rem" }}>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "clamp(0.85rem, 2vw, 1rem)", color: "rgba(226,232,240,0.55)" }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} style={{ minHeight: "2.5rem", marginBottom: "1.75rem" }}>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(1.1rem, 2.5vw, 1.6rem)", color: "rgba(226,232,240,0.75)", fontWeight: 400 }}>
               {role}<span style={{ animation: "blink 1s infinite", color: "#fb923c", marginLeft: "2px" }}>|</span>
             </span>
           </motion.div>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} style={{ color: "rgba(226,232,240,0.55)", lineHeight: 1.85, fontSize: "1rem", maxWidth: "540px", marginBottom: "2.5rem", fontFamily: "'Inter', sans-serif" }}>
-            I build and ship production web apps — FastAPI/Flask backends, React frontends, PostgreSQL, Docker, and CI/CD on Vercel & Render.{" "}
+            Full Stack Developer with 3+ years building and shipping production web apps — FastAPI/Flask backends, React & Next.js frontends, PostgreSQL, Docker, and CI/CD. Based in{" "}
             <span style={{ background: "linear-gradient(90deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 600 }}>Buenos Aires</span>
-            {" "}· Open to remote Mid-level roles.
+            {" "}· Open to remote.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <motion.button
@@ -133,7 +133,7 @@ export default function Hero() {
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} style={{ display: "flex", gap: "2rem", marginTop: "3rem", flexWrap: "wrap" }}>
-            {[{ n: "3+", label: "Years experience" }, { n: "5", label: "Live demos" }, { n: "67", label: "Tests written" }].map(({ n, label }) => (
+            {[{ n: "3+", label: "Years experience" }, { n: "5+", label: "Live demos" }, { n: "67", label: "Tests written" }].map(({ n, label }) => (
               <div key={label}>
                 <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1.8rem", fontWeight: 700, background: "linear-gradient(135deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", lineHeight: 1 }}>{n}</p>
                 <p style={{ color: "rgba(226,232,240,0.4)", fontSize: "0.8rem", marginTop: "4px", fontFamily: "'Inter', sans-serif" }}>{label}</p>
