@@ -60,7 +60,7 @@ export const FEATURED_PROJECTS = [
     tags: ["React", "Three.js", "React Three Fiber", "Framer Motion", "Vercel"],
     desc: "Interactive 3D globe visualizing global demographic data — pulsating nodes, animated arcs, and navigable Earth textures.",
     impact: "Deployed on Vercel with REST Countries data and a cinematic Three.js experience.",
-    live: "https://global-three.vercel.app/",
+    live: "https://global-three-one.vercel.app/",
     repo: "https://github.com/Jorgeotero1998/GlobalThree",
     color: "#f472b6",
     gradient: "linear-gradient(135deg, rgba(244,114,182,0.12), rgba(236,72,153,0.04))",
