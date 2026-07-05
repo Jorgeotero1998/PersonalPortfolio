@@ -4,43 +4,39 @@ import {
   siReact,
   siPython,
   siFlask,
+  siFastapi,
+  siNextdotjs,
   siTypescript,
   siJavascript,
   siVite,
   siPostgresql,
-  siSqlite,
   siDocker,
   siGithub,
   siTailwindcss,
-  siBootstrap,
-  siJsonwebtokens,
+  siGithubactions,
   siLinux,
-  siSelenium,
   siVercel,
   siRender,
 } from "simple-icons";
 
-// Use each brand's official color, overriding logos whose brand color is too
-// dark to read on the near-black background with a light tone.
 const LIGHT = "#e2e8f0";
 const TECH = [
-  { icon: siReact, label: "React" },
   { icon: siPython, label: "Python" },
+  { icon: siFastapi, label: "FastAPI" },
   { icon: siFlask, label: "Flask" },
+  { icon: siReact, label: "React" },
+  { icon: siNextdotjs, label: "Next.js", color: LIGHT },
   { icon: siTypescript, label: "TypeScript" },
   { icon: siJavascript, label: "JavaScript" },
-  { icon: siVite, label: "Vite", color: "#fb923c" },
   { icon: siPostgresql, label: "PostgreSQL", color: "#6ba2e8" },
-  { icon: siSqlite, label: "SQLite", color: "#6ba2e8" },
   { icon: siDocker, label: "Docker" },
-  { icon: siGithub, label: "GitHub", color: LIGHT },
-  { icon: siTailwindcss, label: "Tailwind" },
-  { icon: siBootstrap, label: "Bootstrap" },
-  { icon: siJsonwebtokens, label: "JWT", color: "#f472b6" },
-  { icon: siLinux, label: "Linux" },
-  { icon: siSelenium, label: "Selenium" },
+  { icon: siGithubactions, label: "GitHub Actions", color: LIGHT },
   { icon: siVercel, label: "Vercel", color: LIGHT },
   { icon: siRender, label: "Render", color: LIGHT },
+  { icon: siTailwindcss, label: "Tailwind" },
+  { icon: siVite, label: "Vite", color: "#fb923c" },
+  { icon: siGithub, label: "GitHub", color: LIGHT },
+  { icon: siLinux, label: "Linux" },
 ];
 
 function LogoChip({ tech }) {
@@ -166,7 +162,7 @@ export default function TechBalls() {
             </span>
           </h2>
           <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", marginTop: "0.5rem" }}>
-            The tools I reach for every day
+            Python · React · PostgreSQL · Docker · CI/CD
           </p>
         </motion.div>
 

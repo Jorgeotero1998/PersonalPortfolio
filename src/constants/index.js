@@ -1,56 +1,90 @@
+export const SITE = {
+  title: "Jorge Otero | Full Stack Developer",
+  description:
+    "Full Stack Developer specializing in Python (FastAPI/Flask) and React. Production apps deployed on Vercel & Render. Buenos Aires · Open to remote.",
+  url: "https://portofolio-mu-lac.vercel.app/",
+  email: "jorgotero1998@gmail.com",
+  linkedin: "https://linkedin.com/in/jorgeotero1998",
+  github: "https://github.com/Jorgeotero1998",
+};
+
 export const ROLES = [
-  "Full Stack Developer",
-  "Python Developer",
-  "Backend Engineer",
-  "Open Source Contributor",
-  "Builder of things",
+  "Python · FastAPI · Flask",
+  "React · TypeScript",
+  "PostgreSQL · Docker · CI/CD",
+  "Production deployments",
 ];
 
-export const PROJECTS = [
+export const FEATURED_PROJECTS = [
+  {
+    name: "Sonoteca",
+    emoji: "🎵",
+    featured: true,
+    flagship: true,
+    tags: ["React", "TypeScript", "FastAPI", "PostgreSQL", "Vercel", "Deezer API"],
+    desc: "Full-stack music platform with real Deezer catalog, 30s previews, and a production-grade player (queue, shuffle, repeat).",
+    impact: "Shipped end-to-end on Vercel + Neon Postgres — auth, library, playlists, and listening history.",
+    live: "https://sonoteca-hzbi.vercel.app/",
+    repo: "https://github.com/Jorgeotero1998/Sonoteca",
+    color: "#fb923c",
+    gradient: "linear-gradient(135deg, rgba(251,146,60,0.12), rgba(249,115,22,0.04))",
+  },
   {
     name: "LaVerde Tienda",
     emoji: "🛒",
+    featured: true,
     tags: ["React", "Flask", "PostgreSQL", "JWT", "Cloudinary", "Render"],
-    desc: "Production e-commerce platform for fruits & vegetables. Built with a 3-person team — full cart, order flow, admin panel, CI/CD deployment on Render.",
+    desc: "Production e-commerce for fruits & vegetables — cart, checkout, admin panel, and order management.",
+    impact: "Built with a 3-person team; live on Render with CI/CD and Cloudinary media pipeline.",
     live: "https://laverde-frontend.onrender.com",
     repo: "https://github.com/Jorgeotero1998/LaVerde-Tienda",
-    color: "#fb923c",
-    gradient: "linear-gradient(135deg, rgba(251,146,60,0.12), rgba(249,115,22,0.04))",
-    shots: [
-      "/projects/laverde/1.png",
-      "/projects/laverde/2.png",
-      "/projects/laverde/3.png",
-      "/projects/laverde/4.png",
-      "/projects/laverde/5.png",
-      "/projects/laverde/6.png",
-      "/projects/laverde/7.png",
-    ],
+    color: "#f472b6",
+    gradient: "linear-gradient(135deg, rgba(244,114,182,0.12), rgba(236,72,153,0.04))",
   },
   {
     name: "AI Task Orchestrator",
     emoji: "🤖",
+    featured: true,
     tags: ["Python", "Flask", "React", "Groq API", "Llama 3.3", "Docker"],
-    desc: "LLM-powered platform that decomposes complex goals into actionable steps using Groq's Llama 3.3. Docker Compose, PDF export, secure admin login.",
-    live: null,
+    desc: "LLM platform that decomposes complex goals into actionable steps using Groq's Llama 3.3.",
+    impact: "Docker Compose stack with PDF export, secure admin auth, and a live Vercel deployment.",
+    live: "https://ai-task-orchestrator-inky.vercel.app/",
     repo: "https://github.com/Jorgeotero1998/ai-task-orchestrator",
+    color: "#fb923c",
+    gradient: "linear-gradient(135deg, rgba(251,146,60,0.12), rgba(249,115,22,0.04))",
+  },
+  {
+    name: "Scraper",
+    emoji: "🕷️",
+    featured: true,
+    tags: ["TypeScript", "Node", "Cheerio", "Playwright", "Vitest", "Docker"],
+    desc: "Production-grade CLI scraper for Peruvian legal databases (OEFA, Poder Judicial).",
+    impact: "Retry/backoff, rate limiting, Docker packaging, 23 Vitest tests, and GitHub Actions CI.",
+    live: null,
+    repo: "https://github.com/Jorgeotero1998/Scraper",
     color: "#f472b6",
     gradient: "linear-gradient(135deg, rgba(244,114,182,0.12), rgba(236,72,153,0.04))",
   },
   {
     name: "FlowByte",
     emoji: "⚡",
+    featured: true,
     tags: ["React", "TypeScript", "Supabase", "PostgreSQL", "Cloudflare Workers", "Tailwind"],
-    desc: "Personal SaaS automation platform — real-time data, workflow execution engine, auth system, activity logging, and modular architecture.",
+    desc: "Personal SaaS automation platform with real-time workflows, auth, and activity logging.",
+    impact: "Modular architecture with Supabase backend and Cloudflare Workers for edge execution.",
     live: null,
     repo: "https://github.com/Jorgeotero1998",
     color: "#fb923c",
     gradient: "linear-gradient(135deg, rgba(251,146,60,0.12), rgba(249,115,22,0.04))",
   },
+];
+
+export const OTHER_PROJECTS = [
   {
     name: "SentinelSoc",
     emoji: "🛡️",
     tags: ["Python", "watchdog", "pywin32", "JSON logging"],
-    desc: "Lightweight Windows EDR engine. Detects ransomware patterns with burst-rate analysis and outputs SIEM-ready JSON telemetry logs.",
+    desc: "Windows EDR engine with burst-rate ransomware detection and SIEM-ready JSON telemetry.",
     live: null,
     repo: "https://github.com/Jorgeotero1998/SentinelSoc",
     color: "#f472b6",
@@ -60,7 +94,7 @@ export const PROJECTS = [
     name: "Security-SOAR",
     emoji: "🔐",
     tags: ["Python", "VirusTotal API", "Telegram Bot API", "psutil", "Docker"],
-    desc: "Automated incident response — reads telemetry, enriches with VirusTotal intel, suspends malicious processes, alerts via Telegram.",
+    desc: "Automated incident response — enriches telemetry with VirusTotal and alerts via Telegram.",
     live: null,
     repo: "https://github.com/Jorgeotero1998/Security-SOAR",
     color: "#fb923c",
@@ -70,7 +104,7 @@ export const PROJECTS = [
     name: "MemorySentinel",
     emoji: "🧠",
     tags: ["C++", "Windows API", "SIEM"],
-    desc: "Native C++ security engine for protected file monitoring and SIEM-ready telemetry generation built for Windows system security.",
+    desc: "Native C++ security engine for protected file monitoring and SIEM telemetry on Windows.",
     live: null,
     repo: "https://github.com/Jorgeotero1998/MemorySentinel",
     color: "#f472b6",
@@ -78,13 +112,14 @@ export const PROJECTS = [
   },
 ];
 
+/** @deprecated use FEATURED_PROJECTS + OTHER_PROJECTS */
+export const PROJECTS = [...FEATURED_PROJECTS, ...OTHER_PROJECTS];
+
 export const SKILLS = {
-  Frontend:    { color: "#fb923c", items: ["React", "TypeScript", "JavaScript", "Vite", "HTML/CSS", "Bootstrap", "Tailwind CSS"] },
-  Backend:     { color: "#f472b6", items: ["Python", "Flask", "REST APIs", "SQLAlchemy", "JWT", "Werkzeug"] },
-  Databases:   { color: "#fb923c", items: ["PostgreSQL", "SQLite"] },
-  DevOps:      { color: "#f472b6", items: ["Docker", "Docker Compose", "GitHub Actions", "Render", "Vercel", "Linux"] },
-  "AI / APIs": { color: "#fb923c", items: ["Groq API", "Cloudinary", "VirusTotal API", "Telegram Bot API"] },
-  Automation:  { color: "#f472b6", items: ["Selenium", "Playwright", "Python scripting"] },
+  Languages:   { color: "#fb923c", items: ["Python", "TypeScript", "JavaScript"] },
+  Frontend:    { color: "#f472b6", items: ["React", "Next.js", "Vite", "Tailwind CSS", "HTML/CSS"] },
+  Backend:     { color: "#fb923c", items: ["FastAPI", "Flask", "SQLAlchemy", "Alembic", "REST APIs", "JWT"] },
+  "DB & DevOps": { color: "#f472b6", items: ["PostgreSQL", "Docker", "GitHub Actions", "Vercel", "Render", "Linux"] },
 };
 
 export const CERTS = [

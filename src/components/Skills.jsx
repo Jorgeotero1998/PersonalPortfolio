@@ -35,6 +35,9 @@ export default function Skills() {
         <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 700, letterSpacing: "-0.03em", color: "#e2e8f0" }}>
           Tech{" "}<span style={{ background: "linear-gradient(135deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Stack</span>
         </h2>
+        <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", marginTop: "0.75rem", maxWidth: "520px", lineHeight: 1.6 }}>
+          Backend-first full stack — from API design and databases to React UIs and cloud deployment.
+        </p>
       </motion.div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.25rem" }}>
         {Object.entries(SKILLS).map(([cat, { color, items }], i) => (
