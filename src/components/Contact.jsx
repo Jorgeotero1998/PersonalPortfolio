@@ -55,6 +55,18 @@ const CONTACT_LINKS = [
       </svg>
     ),
   },
+  {
+    label: "Download CV",
+    href: "/JORGE_OTERO_CV.pdf",
+    download: true,
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="7 10 12 15 17 10" />
+        <line x1="12" y1="15" x2="12" y2="3" />
+      </svg>
+    ),
+  },
 ];
 
 export default function Contact() {
@@ -144,8 +156,9 @@ export default function Contact() {
                 <motion.a
                   key={link.label}
                   href={link.href}
-                  target={link.href.startsWith("mailto") ? undefined : "_blank"}
-                  rel={link.href.startsWith("mailto") ? undefined : "noreferrer"}
+                  download={link.download ? "" : undefined}
+                  target={link.href.startsWith("mailto") || link.download ? undefined : "_blank"}
+                  rel={link.href.startsWith("mailto") || link.download ? undefined : "noreferrer"}
                   whileHover={{ scale: 1.02, borderColor: link.primary ? undefined : "rgba(251,146,60,0.5)" }}
                   whileTap={{ scale: 0.98 }}
                   style={{
