@@ -5,6 +5,7 @@ import { FEATURED_PROJECTS, OTHER_PROJECTS } from "../constants";
 
 function ProjectCard({ project, index, compact }) {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const isFlagship = project.flagship && !compact;
 
   return (
     <motion.div
@@ -15,9 +16,9 @@ function ProjectCard({ project, index, compact }) {
       whileHover={{ y: -6, boxShadow: `0 20px 60px ${project.color}20` }}
       style={{
         background: project.gradient,
-        border: `1px solid ${project.color}25`,
-        borderRadius: "20px",
-        padding: compact ? "1.5rem" : "2rem",
+        border: `1px solid ${project.color}${isFlagship ? "35" : "25"}`,
+        borderRadius: isFlagship ? "24px" : "20px",
+        padding: compact ? "1.5rem" : isFlagship ? "2.25rem 2.5rem" : "2rem",
         backdropFilter: "blur(20px)",
         transition: "box-shadow 0.3s, transform 0.3s",
         display: "flex",
@@ -52,7 +53,7 @@ function ProjectCard({ project, index, compact }) {
 
       <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", paddingRight: project.flagship ? "4.5rem" : 0 }}>
         <span style={{ fontSize: "1.6rem" }}>{project.emoji}</span>
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#e2e8f0", fontWeight: 600, fontSize: "1.05rem", margin: 0 }}>
+        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#e2e8f0", fontWeight: 600, fontSize: isFlagship ? "1.35rem" : "1.05rem", margin: 0 }}>
           {project.name}
         </h3>
       </div>
@@ -64,6 +65,11 @@ function ProjectCard({ project, index, compact }) {
         {project.impact && (
           <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "'Inter', sans-serif", fontSize: "0.85rem", lineHeight: 1.6, margin: "0.5rem 0 0" }}>
             {project.impact}
+          </p>
+        )}
+        {project.architecture && (
+          <p style={{ color: "rgba(226,232,240,0.35)", fontFamily: "'JetBrains Mono', monospace", fontSize: "0.72rem", lineHeight: 1.5, margin: "0.5rem 0 0", letterSpacing: "0.02em" }}>
+            {project.architecture}
           </p>
         )}
       </div>
@@ -203,7 +209,9 @@ export default function Projects() {
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: "1.5rem" }}>
         {FEATURED_PROJECTS.map((p, i) => (
-          <ProjectCard key={p.name} project={p} index={i} />
+          <div key={p.name} style={p.flagship ? { gridColumn: "1 / -1" } : undefined}>
+            <ProjectCard project={p} index={i} />
+          </div>
         ))}
       </div>
 

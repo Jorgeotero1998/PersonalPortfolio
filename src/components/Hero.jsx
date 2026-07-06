@@ -69,11 +69,10 @@ export default function Hero() {
             </span>
           </motion.div>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} style={{ color: "rgba(226,232,240,0.55)", lineHeight: 1.85, fontSize: "1rem", maxWidth: "540px", marginBottom: "2.5rem", fontFamily: "'Inter', sans-serif" }}>
-            I build and ship full-stack products recruiters can click through in 60 seconds —{" "}
-            <strong style={{ color: "rgba(226,232,240,0.85)" }}>Python (FastAPI/Flask) + React</strong>, PostgreSQL, Docker, and CI/CD.
+            I design APIs, model data, and ship React frontends that stay in production —{" "}
+            <strong style={{ color: "rgba(226,232,240,0.85)" }}>FastAPI/Flask + React</strong>, PostgreSQL, Docker, and CI/CD.
             {" "}Based in{" "}
-            <span style={{ background: "linear-gradient(90deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 600 }}>Buenos Aires</span>
-            {" "}· open to remote mid-level roles.
+            <span style={{ background: "linear-gradient(90deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 600 }}>Buenos Aires</span>.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <motion.button
@@ -107,7 +106,7 @@ export default function Hero() {
             </motion.a>
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} style={{ display: "flex", gap: "2rem", marginTop: "3rem", flexWrap: "wrap" }}>
-            {[{ n: "3+", label: "Years experience" }, { n: "4", label: "Live demos" }, { n: "67", label: "Tests written" }].map(({ n, label }) => (
+            {[{ n: "3+", label: "Years building" }, { n: "4", label: "Live demos" }, { n: "67+", label: "Tests shipped" }].map(({ n, label }) => (
               <div key={label}>
                 <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1.8rem", fontWeight: 700, background: "linear-gradient(135deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", lineHeight: 1 }}>{n}</p>
                 <p style={{ color: "rgba(226,232,240,0.4)", fontSize: "0.8rem", marginTop: "4px", fontFamily: "'Inter', sans-serif" }}>{label}</p>
@@ -127,9 +126,9 @@ export default function Hero() {
                 alt="Jorge Otero"
                 style={{ width: "260px", height: "260px", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", position: "relative", border: "5px solid #06010f", display: "block", animation: "glow-pulse 4s ease-in-out infinite" }}
               />
-              <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity }} style={{ position: "absolute", bottom: "10px", left: "50%", transform: "translateX(-50%)", background: "rgba(6,1,15,0.95)", border: "1px solid rgba(251,146,60,0.5)", borderRadius: "20px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "6px", whiteSpace: "nowrap", backdropFilter: "blur(10px)" }}>
-                <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#fb923c", display: "inline-block", boxShadow: "0 0 8px #fb923c", animation: "blink 2s infinite" }} />
-                <span style={{ color: "#fb923c", fontSize: "0.75rem", fontFamily: "'JetBrains Mono', monospace" }}>Open to work</span>
+              <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity }} style={{ position: "absolute", bottom: "10px", left: "50%", transform: "translateX(-50%)", background: "rgba(6,1,15,0.95)", border: "1px solid rgba(251,146,60,0.35)", borderRadius: "20px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "6px", whiteSpace: "nowrap", backdropFilter: "blur(10px)" }}>
+                <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#22c55e", display: "inline-block", boxShadow: "0 0 8px #22c55e" }} />
+                <span style={{ color: "rgba(226,232,240,0.7)", fontSize: "0.75rem", fontFamily: "'JetBrains Mono', monospace" }}>Buenos Aires 🇦🇷</span>
               </motion.div>
             </div>
           </div>

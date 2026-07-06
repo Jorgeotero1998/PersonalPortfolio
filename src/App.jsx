@@ -19,7 +19,10 @@ export default function App() {
         <Skills />
         <Projects />
         <Contact />
-        <footer style={{ textAlign: "center", padding: "2rem", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+        <footer style={{ textAlign: "center", padding: "2.5rem 2rem", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+          <p style={{ color: "rgba(226,232,240,0.35)", fontFamily: "'Inter', sans-serif", fontSize: "0.85rem", marginBottom: "0.75rem" }}>
+            Buenos Aires, Argentina
+          </p>
           <p style={{ color: "rgba(226,232,240,0.2)", fontFamily: "'JetBrains Mono', monospace", fontSize: "0.8rem", letterSpacing: "0.05em" }}>
             Built with React + Three.js ·{" "}
             <span style={{ background: "linear-gradient(90deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>

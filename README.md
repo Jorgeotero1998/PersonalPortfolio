@@ -1,37 +1,39 @@
-# 🚀 Portfolio - 
+# Jorge Otero — Portfolio
 
-Welcome to my personal portfolio! An interactive web application built with **React**, **Vite**, and dynamic 3D elements in pink and orange tones.
+Interactive developer portfolio — **React**, **Three.js**, **Framer Motion**. Live production demos, architecture notes, and downloadable CV.
 
-## 🛠️ Tech Stack
-* **React.js** (Frontend)
-* **Vite** (Ultra-fast build tool)
-* **Tailwind CSS** / CSS (Styling)
-* **Three.js / React Three Fiber** (For the 3D spheres)
+**Live:** [portofolio-mu-lac.vercel.app](https://portofolio-mu-lac.vercel.app/)
 
-## Video 
+## Highlights
 
+- **Sonoteca** (flagship) — full-width featured card with live demo link
+- Project cards with tech pills, impact copy, and architecture hints
+- 3D tech marquee, skills grid, certifications, subtle contact section
+- Dark glass aesthetic · mobile responsive · Vercel deploy
 
+## Stack
 
-https://github.com/user-attachments/assets/d776e743-7568-40cc-b7cf-e0e4818b6105
+- React 18 + Vite
+- Three.js / React Three Fiber (stars, globe, tech marquee)
+- Framer Motion · react-intersection-observer
+- simple-icons for brand logos
 
+## Local setup
 
+```bash
+git clone https://github.com/Jorgeotero1998/PersonalPortfolio.git
+cd PersonalPortfolio
+npm install
+npm run dev
+```
 
+Build: `npm run build` · Preview: `npm run preview`
 
+## Featured work (live demos)
 
-
-
-
-
-
-
-
-
-## 🌐 Live Demo
-You can check out the live project here: 👉 https://portofolio-mu-lac.vercel.app/
-
-## 📦 Local Setup
-If you want to run this project locally, follow these steps:
-
-1. Clone the repository
-2. Run `npm install` to install dependencies
-3. Run `npm run dev` to start the local development server
+| Project | URL |
+|---------|-----|
+| Sonoteca | [sonoteca-hzbi.vercel.app](https://sonoteca-hzbi.vercel.app/) |
+| LaVerde Tienda | [laverde-frontend.onrender.com](https://laverde-frontend.onrender.com/) |
+| AI Task Orchestrator | [ai-task-orchestrator-inky.vercel.app](https://ai-task-orchestrator-inky.vercel.app/) |
+| GlobalThree | [global-three-one.vercel.app](https://global-three-one.vercel.app/) |
