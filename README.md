@@ -1,37 +1,38 @@
-# 🚀 Portfolio - 
+# Jorge Otero — Developer Portfolio
 
-Welcome to my personal portfolio! An interactive web application built with **React**, **Vite**, and dynamic 3D elements in pink and orange tones.
+**Live site:** [https://portofolio-mu-lac.vercel.app/](https://portofolio-mu-lac.vercel.app/)
 
-## 🛠️ Tech Stack
-* **React.js** (Frontend)
-* **Vite** (Ultra-fast build tool)
-* **Tailwind CSS** / CSS (Styling)
-* **Three.js / React Three Fiber** (For the 3D spheres)
+Interactive 3D portfolio built with **React**, **Vite**, and **Three.js** — showcasing production full-stack projects with live demos, downloadable CV, and direct contact CTAs.
 
-## Video 
+## Highlights
 
+- **Sonoteca** flagship project front and center — Deezer API integration, auth, live Vercel deploy
+- Status badges on every project (Live / Frontend Demo / CLI)
+- Open-to-work CTA with email, LinkedIn, and CV download
+- Mobile-responsive dark theme with subtle animations
 
+## Tech Stack
 
-https://github.com/user-attachments/assets/d776e743-7568-40cc-b7cf-e0e4818b6105
+- React + Vite
+- Three.js / React Three Fiber (3D tech spheres)
+- Framer Motion
+- Deployed on Vercel
 
+## Local Setup
 
+```bash
+git clone https://github.com/Jorgeotero1998/PersonalPortfolio.git
+cd PersonalPortfolio
+npm install
+npm run dev
+```
 
+## Links
 
-
-
-
-
-
-
-
-
-
-## 🌐 Live Demo
-You can check out the live project here: 👉 https://portofolio-mu-lac.vercel.app/
-
-## 📦 Local Setup
-If you want to run this project locally, follow these steps:
-
-1. Clone the repository
-2. Run `npm install` to install dependencies
-3. Run `npm run dev` to start the local development server
+| | |
+|---|---|
+| **Portfolio** | https://portofolio-mu-lac.vercel.app/ |
+| **CV (PDF)** | https://portofolio-mu-lac.vercel.app/JORGE_OTERO_CV.pdf |
+| **GitHub** | https://github.com/Jorgeotero1998 |
+| **LinkedIn** | https://linkedin.com/in/jorgeotero1998 |
+| **Email** | jorgotero4@gmail.com |

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FEATURED_PROJECTS, OTHER_PROJECTS } from "../constants";
+import { FEATURED_PROJECTS, OTHER_PROJECTS, STATUS_COLORS } from "../constants";
 
 function ProjectCard({ project, index, compact }) {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
@@ -29,26 +29,42 @@ function ProjectCard({ project, index, compact }) {
     >
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: `linear-gradient(90deg, transparent, ${project.color}, transparent)` }} />
 
-      {project.flagship && (
-        <span
-          style={{
-            position: "absolute",
-            top: "1rem",
-            right: "1rem",
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "0.65rem",
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            color: project.color,
-            background: `${project.color}18`,
-            border: `1px solid ${project.color}40`,
-            borderRadius: "6px",
-            padding: "3px 8px",
-          }}
-        >
-          Flagship
-        </span>
-      )}
+      <div style={{ position: "absolute", top: "1rem", right: "1rem", display: "flex", gap: "0.4rem", flexWrap: "wrap", justifyContent: "flex-end" }}>
+        {project.flagship && (
+          <span
+            style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "0.65rem",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: project.color,
+              background: `${project.color}18`,
+              border: `1px solid ${project.color}40`,
+              borderRadius: "6px",
+              padding: "3px 8px",
+            }}
+          >
+            Flagship
+          </span>
+        )}
+        {project.status && STATUS_COLORS[project.status] && (
+          <span
+            style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "0.65rem",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: STATUS_COLORS[project.status].text,
+              background: STATUS_COLORS[project.status].bg,
+              border: `1px solid ${STATUS_COLORS[project.status].border}`,
+              borderRadius: "6px",
+              padding: "3px 8px",
+            }}
+          >
+            {project.statusLabel}
+          </span>
+        )}
+      </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", paddingRight: project.flagship ? "4.5rem" : 0 }}>
         <span style={{ fontSize: "1.6rem" }}>{project.emoji}</span>
@@ -64,6 +80,11 @@ function ProjectCard({ project, index, compact }) {
         {project.impact && (
           <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "'Inter', sans-serif", fontSize: "0.85rem", lineHeight: 1.6, margin: "0.5rem 0 0" }}>
             {project.impact}
+          </p>
+        )}
+        {project.demoLogin && (
+          <p style={{ color: "rgba(226,232,240,0.35)", fontFamily: "'JetBrains Mono', monospace", fontSize: "0.75rem", margin: "0.5rem 0 0" }}>
+            Demo: {project.demoLogin}
           </p>
         )}
       </div>
