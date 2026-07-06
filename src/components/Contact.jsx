@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, MeshDistortMaterial, Float } from "@react-three/drei";
 import { Suspense, useRef } from "react";
-import { CERTS, SITE } from "../constants";
+import { SITE } from "../constants";
 
 function GlobeShape() {
   const ref = useRef();
@@ -72,42 +72,7 @@ export default function Contact() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <>
-      <section style={{ padding: "4rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} style={{ marginBottom: "2.5rem" }}>
-          <p style={{ fontFamily: "'JetBrains Mono', monospace", color: "#fb923c", fontSize: "0.85rem", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.75rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
-            <span style={{ width: "30px", height: "1px", background: "linear-gradient(90deg, #fb923c, #f472b6)", display: "inline-block" }} />
-            Certifications
-          </p>
-          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 700, letterSpacing: "-0.03em", color: "#e2e8f0" }}>
-            Cloud &{" "}
-            <span style={{ background: "linear-gradient(135deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-              Security
-            </span>
-          </h2>
-        </motion.div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: "1rem" }}>
-          {CERTS.map((c, i) => (
-            <motion.div
-              key={c.name}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.08 }}
-              viewport={{ once: true }}
-              whileHover={{ borderColor: `${c.color}50`, x: 4 }}
-              style={{ display: "flex", alignItems: "center", gap: "1rem", background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "12px", padding: "1rem 1.25rem", transition: "all 0.2s" }}
-            >
-              <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: c.color, boxShadow: `0 0 10px ${c.color}`, flexShrink: 0 }} />
-              <div>
-                <p style={{ color: "#e2e8f0", fontFamily: "'Inter', sans-serif", fontSize: "0.88rem", fontWeight: 500 }}>{c.name}</p>
-                <p style={{ color: "rgba(226,232,240,0.4)", fontFamily: "'JetBrains Mono', monospace", fontSize: "0.75rem", marginTop: "2px" }}>{c.issuer}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <section id="contact" style={{ padding: "7rem 2rem 5rem" }}>
+    <section id="contact" style={{ padding: "7rem 2rem 5rem" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", alignItems: "center", gap: "4rem", flexWrap: "wrap", justifyContent: "center" }}>
           <motion.div initial={{ opacity: 0, scale: 0.7 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="contact-globe" style={{ width: "280px", height: "280px", flexShrink: 0 }}>
             <Canvas camera={{ position: [0, 0, 4], fov: 50 }}>
@@ -178,6 +143,5 @@ export default function Contact() {
           </motion.div>
         </div>
       </section>
-    </>
   );
 }

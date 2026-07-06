@@ -4,8 +4,10 @@ import Hero from "./components/Hero";
 import TechBalls from "./components/TechBalls";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import SonotecaCaseStudy from "./components/SonotecaCaseStudy";
 import SocialProof from "./components/SocialProof";
 import Contact from "./components/Contact";
+import Certifications from "./components/Certifications";
 import { SITE } from "./constants";
 
 export default function App() {
@@ -20,11 +22,13 @@ export default function App() {
         </div>
         <Skills />
         <Projects />
+        <SonotecaCaseStudy />
         <SocialProof />
         <Contact />
+        <Certifications />
         <footer style={{ textAlign: "center", padding: "2.5rem 2rem", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
           <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", marginBottom: "0.75rem" }}>
-            Open to remote roles in LATAM & worldwide ·{" "}
+            Buenos Aires, Argentina ·{" "}
             <a href={`mailto:${SITE.email}`} style={{ color: "#fb923c", textDecoration: "none" }}>{SITE.email}</a>
             {" · "}
             <a href={SITE.linkedin} target="_blank" rel="noreferrer" style={{ color: "#fb923c", textDecoration: "none" }}>LinkedIn</a>

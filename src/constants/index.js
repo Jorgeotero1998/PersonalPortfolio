@@ -1,7 +1,7 @@
 export const SITE = {
   title: "Jorge Otero | Full Stack Engineer",
   description:
-    "Full Stack Engineer · Python (FastAPI/Flask) + React · Production apps with real APIs. Buenos Aires · Open to remote worldwide.",
+    "Full Stack Engineer · Python (FastAPI/Flask) + React · Production systems with live demos. Buenos Aires, Argentina.",
   url: "https://portofolio-mu-lac.vercel.app/",
   email: "jorgotero4@gmail.com",
   linkedin: "https://linkedin.com/in/jorgeotero1998",
@@ -12,8 +12,8 @@ export const SITE = {
 export const ROLES = [
   "Full Stack Engineer",
   "Python · FastAPI · React",
-  "Production apps with real APIs",
-  "Docker · PostgreSQL · CI/CD",
+  "Production systems · CI/CD",
+  "Architecture · PostgreSQL · Docker",
 ];
 
 export const SOCIAL_PROOF = {
@@ -125,15 +125,15 @@ export const OTHER_PROJECTS = [
 export const PROJECTS = [...FEATURED_PROJECTS, ...OTHER_PROJECTS];
 
 export const SKILLS = {
-  "Python Backend": {
+  Backend: {
     color: "#fb923c",
     items: ["FastAPI", "Flask", "SQLAlchemy", "Alembic", "Pydantic", "JWT/RBAC", "REST APIs", "pytest"],
   },
-  "React Frontend": {
+  Frontend: {
     color: "#f472b6",
     items: ["React", "TypeScript", "Vite", "Next.js", "Three.js", "Framer Motion", "Tailwind CSS"],
   },
-  "DevOps & Data": {
+  Platform: {
     color: "#60a5fa",
     items: ["PostgreSQL", "Neon", "Docker", "GitHub Actions", "Vercel", "Render", "Linux", "CI/CD"],
   },

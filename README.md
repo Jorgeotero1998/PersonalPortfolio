@@ -2,14 +2,14 @@
 
 **Live site:** [https://portofolio-mu-lac.vercel.app/](https://portofolio-mu-lac.vercel.app/)
 
-Interactive 3D portfolio built with **React**, **Vite**, and **Three.js** — showcasing production full-stack projects with live demos, downloadable CV, and direct contact CTAs.
+Interactive 3D portfolio built with **React**, **Vite**, and **Three.js** — showcasing production full-stack projects with live demos, Sonoteca case study, and downloadable CV.
 
 ## Highlights
 
-- **Sonoteca** flagship project front and center — Deezer API integration, auth, live Vercel deploy
-- Status badges on every project (Live / Frontend Demo / CLI)
-- Open-to-work CTA with email, LinkedIn, and CV download
-- Mobile-responsive dark theme with subtle animations
+- **Sonoteca** flagship case study — architecture, tech decisions, links to live app + `/api/docs`
+- Featured projects with honest status labels (Live / Frontend Demo / CLI)
+- Skills grouped by Backend / Frontend / Platform
+- Cloud & security certifications in a secondary section
 
 ## Tech Stack
 

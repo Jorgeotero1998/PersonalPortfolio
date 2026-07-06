@@ -69,12 +69,11 @@ export default function Hero() {
             </span>
           </motion.div>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }} style={{ color: "rgba(226,232,240,0.7)", lineHeight: 1.5, fontSize: "clamp(1rem, 2vw, 1.2rem)", maxWidth: "560px", marginBottom: "1.25rem", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
-            Full Stack Engineer · Python + React · Production apps with real APIs
+            Full Stack Engineer · Python + React · Production systems
           </motion.p>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} style={{ color: "rgba(226,232,240,0.55)", lineHeight: 1.85, fontSize: "1rem", maxWidth: "540px", marginBottom: "2.5rem", fontFamily: "'Inter', sans-serif" }}>
-            I ship full-stack products end to end — FastAPI/Flask backends, React frontends, PostgreSQL, Docker, and live deploys on Vercel. Based in{" "}
-            <span style={{ background: "linear-gradient(90deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 600 }}>Buenos Aires 🇦🇷</span>
-            {" "}· Open to remote worldwide.
+            ~3 years shipping full-stack products — API design, data modeling, React UIs, Docker, and CI/CD. Backend-first mindset with live deploys on Vercel and Render. Based in{" "}
+            <span style={{ background: "linear-gradient(90deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 600 }}>Buenos Aires 🇦🇷</span>.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <motion.a
