@@ -1,4 +1,4 @@
-"""Generate Jorge Otero CV PDFs with reportlab (reliable text rendering)."""
+﻿"""Generate Jorge Otero CV PDFs with reportlab (reliable text rendering)."""
 
 from pathlib import Path
 
@@ -46,9 +46,9 @@ EXPERIENCE = [
         "title": "Freelance Python Developer",
         "meta": "Remote | Nov 2023 - Present",
         "bullets": [
-            "Built REST APIs, automation pipelines, and web scraping tools in Python (Flask/FastAPI).",
-            "Integrated LLM APIs (Groq/Llama 3.3), third-party services, JWT auth, and SQLAlchemy models.",
-            "Shipped React frontends with PostgreSQL backends; deployed on Vercel and Render with Docker.",
+            "Shipped production REST APIs (FastAPI/Flask): JWT auth, SQLAlchemy, Alembic migrations, PostgreSQL.",
+            "Built automation and scraping pipelines (Playwright, Selenium); JSON/CSV export, retry/backoff, Docker.",
+            "LLM integrations (Groq/Llama 3.3): goal decomposition APIs, task orchestration, deployed on Vercel/Render.",
         ],
     },
     {
@@ -67,8 +67,9 @@ PROJECTS_FULLSTACK = [
         "meta": "React | TypeScript | FastAPI | PostgreSQL | Vercel | Neon | Deezer API | JWT/RBAC",
         "links": "sonoteca-hzbi.vercel.app | github.com/Jorgeotero1998/Sonoteca",
         "bullets": [
-            "Production monorepo: real Deezer catalog, 30s previews, playlists, favorites, listening history.",
-            "FastAPI API on /api, Alembic migrations, Neon Postgres, refs-only persistence.",
+            "Vercel monorepo + Neon Postgres: FastAPI under /api, Alembic migrations, JWT/RBAC auth.",
+            "Deezer API catalog: search, 30s previews, playlists, favorites, listening history.",
+            "Live demo: sonoteca-hzbi.vercel.app — production-deployed full-stack music platform.",
         ],
     },
     {
@@ -327,6 +328,10 @@ def _validate_pdf(path: Path):
     from pypdf import PdfReader
 
     data = path.read_bytes()
+    if not data.startswith(b"%PDF-"):
+        raise SystemExit(f"{path.name}: invalid PDF header")
+    if b"\r" in data:
+        raise SystemExit(f"{path.name}: contains CR bytes — git CRLF corruption")
     if len(data) < 3000:
         raise SystemExit(f"PDF too small ({len(data)} bytes): {path}")
 
@@ -334,9 +339,11 @@ def _validate_pdf(path: Path):
     if len(text) < 2000:
         raise SystemExit(f"PDF text too short ({len(text)} chars): {path}")
 
-    for required in ("Jorge Otero", "Sonoteca", "Junior+"):
+    for required in ("Jorge Otero", "Sonoteca", "Junior+", "jorgotero4@gmail.com"):
         if required not in text:
             raise SystemExit(f"Missing '{required}' in {path}")
+    if "Enginner" in text:
+        raise SystemExit(f"{path.name}: contains Enginner typo")
 
 
 def main():

@@ -6,7 +6,7 @@ export const SITE = {
   email: "jorgotero4@gmail.com",
   linkedin: "https://linkedin.com/in/jorgeotero1998",
   github: "https://github.com/Jorgeotero1998",
-  cv: "/JORGE_OTERO_CV.pdf?v=20260706b",
+  cv: "/JORGE_OTERO_CV.pdf?v=20260706r3",
 };
 
 export const ROLES = [
