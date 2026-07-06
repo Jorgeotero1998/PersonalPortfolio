@@ -4,12 +4,24 @@
 
 Interactive 3D portfolio built with **React**, **Vite**, and **Three.js** — showcasing production full-stack projects with live demos, Sonoteca case study, and downloadable CV.
 
+Positioning: **Junior+ Full Stack Developer** · ~3 años construyendo apps (desde 2023: freelance + proyectos + 4Geeks), not "3 years industry experience."
+
 ## Highlights
 
 - **Sonoteca** flagship case study — architecture, tech decisions, links to live app + `/api/docs`
 - Featured projects with honest status labels (Live / Frontend Demo / CLI)
 - Skills grouped by Backend / Frontend / Platform
-- Cloud & security certifications in a secondary section
+- Supplementary certifications in a secondary section (full list on LinkedIn)
+
+## CV
+
+PDFs in `public/` are generated from `scripts/generate_cv.py` (honest timeline: building since Nov 2023). Regenerate after copy changes:
+
+```bash
+python scripts/generate_cv.py
+```
+
+LinkedIn copy to paste manually: see `LINKEDIN_UPDATE.md`.
 
 ## Tech Stack
 
