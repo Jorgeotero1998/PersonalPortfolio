@@ -1,299 +1,187 @@
-"""Generate Jorge Otero CV PDFs with honest timeline (building since 2023)."""
+"""Generate Jorge Otero CV PDFs with reportlab (Helvetica, black on white)."""
+
+from __future__ import annotations
 
 from pathlib import Path
 
-
-
-from fpdf import FPDF
-
-
+from reportlab.lib import colors
+from reportlab.lib.enums import TA_LEFT
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+from reportlab.lib.units import inch
+from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 
 PUBLIC = Path(__file__).resolve().parent.parent / "public"
 
-
-
-ABOUT_FULLSTACK = """SUMMARY
-
-~3 years hands-on building full-stack applications since 2023 - freelance Python work, personal projects, and 4Geeks Academy training. This reflects time learning, building, and shipping (not 3 years at a single employer). Flagship project Sonoteca is a production music platform on FastAPI + React with real Deezer catalog integration, deployed on Vercel with Neon Postgres."""
-
-
-
-ABOUT_BACKEND = """SUMMARY
-
-~3 years hands-on building with Python since 2023 - freelance automation, REST APIs, scraping pipelines, and full-stack apps through 4Geeks Academy. Comfortable across backend architecture, PostgreSQL, Docker, and React frontends when the product needs an end-to-end delivery loop."""
-
-
-
-EXPERIENCE = """EXPERIENCE
-
-Freelance Python Developer
-
-Remote | Nov 2023 - Present
-
-- Built REST APIs, automation pipelines, and web scraping tools in Python (Flask/FastAPI).
-
-- Integrated LLM APIs (Groq/Llama 3.3), third-party services, JWT auth, and SQLAlchemy models.
-
-- Shipped React frontends with PostgreSQL backends; deployed on Vercel and Render with Docker.
-
-
-
-Full Stack Developer - 4Geeks Academy
-
-Jun 2025 - Present
-
-- LaVerde Tienda capstone with a 3-person team - e-commerce with cart, checkout, admin panel, and 44 pytest tests.
-
-- Backend: Flask REST API, SQLAlchemy, JWT, Cloudinary; GitHub Actions CI; Render deployment."""
-
-
-
-PROJECTS_FULLSTACK = """PROJECTS
-
-Sonoteca - Music Platform (FLAGSHIP | LIVE)
-
-React | TypeScript | FastAPI | PostgreSQL | Vercel | Neon | Deezer API | JWT/RBAC
-
-sonoteca-hzbi.vercel.app | github.com/Jorgeotero1998/Sonoteca
-
-- Production monorepo: real Deezer catalog, 30s previews, playlists, favorites, listening history.
-
-- FastAPI API on /api, Alembic migrations, Neon Postgres, refs-only persistence.
-
-
-
-LaVerde Tienda - E-Commerce Capstone (Frontend Demo)
-
-React | Flask | PostgreSQL | JWT | Cloudinary | pytest | GitHub Actions
-
-laverde-frontend.onrender.com | github.com/Jorgeotero1998/LaVerde-Tienda
-
-- Team capstone: product catalog, cart, orders, admin panel; 44 pytest tests and CI pipeline.
-
-
-
-AI Task Orchestrator - LLM Productivity Platform (LIVE)
-
-Python | Flask | Groq API (Llama 3.3) | React | PostgreSQL | Docker
-
-ai-task-orchestrator-inky.vercel.app | github.com/Jorgeotero1998/ai-task-orchestrator
-
-- Decomposes complex goals into actionable steps; task history, PDF export, admin auth.
-
-
-
-Jurisprudencia Scraper - Legal Document CLI
-
-TypeScript | Playwright | Cheerio | Vitest | Docker
-
-github.com/Jorgeotero1998/Scraper
-
-- Production-grade CLI scraper with rate limiting, retry/backoff, and 23 Vitest tests.
-
-
-
-GlobalThree - 3D Data Visualization (LIVE)
-
-React | Three.js | React Three Fiber | Vercel
-
-global-three-one.vercel.app | github.com/Jorgeotero1998/GlobalThree
-
-- Interactive navigable 3D globe with pulsing demographic nodes and animated flow arcs."""
-
-
-
-PROJECTS_BACKEND = """PROJECTS
-
-Sonoteca - FastAPI + PostgreSQL Music API (FLAGSHIP | LIVE)
-
-FastAPI | SQLAlchemy | Alembic | PostgreSQL | JWT/RBAC | Deezer API
-
-sonoteca-hzbi.vercel.app | github.com/Jorgeotero1998/Sonoteca
-
-- REST API design, migrations, auth, and third-party catalog integration in production.
-
-
-
-LaVerde Tienda - Flask E-Commerce Capstone
-
-Flask | PostgreSQL | JWT | pytest | GitHub Actions
-
-github.com/Jorgeotero1998/LaVerde-Tienda
-
-- Team capstone with 44 pytest tests, JWT auth, and CI pipeline.
-
-
-
-AI Task Orchestrator - Flask LLM Backend (LIVE)
-
-Python | Flask | Groq API | PostgreSQL | Docker
-
-ai-task-orchestrator-inky.vercel.app | github.com/Jorgeotero1998/ai-task-orchestrator
-
-- LLM orchestration API with persistence, admin auth, and Docker Compose local stack.
-
-
-
-Jurisprudencia Scraper - Automation CLI
-
-TypeScript | Playwright | Cheerio | Vitest | Docker
-
-github.com/Jorgeotero1998/Scraper
-
-- Scraping pipeline with exponential backoff, structured export, and test coverage."""
-
-
-
-SKILLS_FULLSTACK = """SKILLS
-
-Backend: Python | FastAPI | Flask | SQLAlchemy | Alembic | Pydantic | JWT/RBAC | REST APIs | pytest
-
-Frontend: React | TypeScript | Vite | Tailwind CSS | Three.js | React Three Fiber
-
-DevOps: Docker | GitHub Actions | Vercel | Render | Neon | PostgreSQL | Linux | CI/CD"""
-
-
-
-SKILLS_BACKEND = """SKILLS
-
-Backend: Python | FastAPI | Flask | SQLAlchemy | Alembic | Pydantic | JWT | REST APIs | pytest
-
-Frontend: React | TypeScript | Vite
-
-DevOps: Docker | GitHub Actions | Vercel | Render | Neon | PostgreSQL | Linux | CI/CD
-
-Automation: Playwright | Selenium | web scraping pipelines"""
-
-
-
-EDUCATION = """EDUCATION
-
-Full Stack Developer - 4Geeks Academy
-
-Jun 2025 - Present"""
-
-
-
-CERTS = """CERTIFICATIONS
-
-- Python - Verified by Talently (May 2026)
-
-- JavaScript - Verified by Talently (May 2026)
-
-- Automate Cybersecurity with Python - Google (Oct 2025)
-
-- Cloud-Native Development with OpenShift and Kubernetes - Red Hat
-
-- Additional cloud security credentials (AWS, Azure, Google) - see LinkedIn"""
-
-
-
-
-
-class CV(FPDF):
-
-    def __init__(self):
-
-        super().__init__()
-
-        self.set_margins(14, 14, 14)
-
-        self.set_auto_page_break(auto=True, margin=12)
-
-        self.add_page()
-
-
-
-    def block(self, text: str, size: int = 9, gap: float = 4):
-
-        w = self.epw
-
-        for line in text.strip().split("\n"):
-
-            if line.isupper() and len(line) < 40 and not line.startswith("-"):
-
-                self.set_font("Helvetica", "B", size + 1)
-
-                self.multi_cell(w, 5.5, line)
-
-            else:
-
-                self.set_font("Helvetica", size=size)
-
-                self.multi_cell(w, 5.2, line)
-
-        self.ln(gap)
-
-
-
-
-
-def write_pdf(path: Path, about: str, projects: str, skills: str):
-
-    pdf = CV()
-
-    w = pdf.epw
-
-    pdf.set_font("Helvetica", "B", 16)
-
-    pdf.multi_cell(w, 7, "Jorge Otero")
-
-    pdf.set_font("Helvetica", size=10)
-
-    pdf.multi_cell(w, 5, "Junior+ Full Stack Developer")
-
-    pdf.set_font("Helvetica", size=8)
-
-    pdf.multi_cell(
-
-        w,
-
-        4.5,
-
-        "Buenos Aires, Argentina | jorgotero4@gmail.com | linkedin.com/in/jorgeotero1998 | github.com/Jorgeotero1998",
-
+CV_SECTIONS = [
+    ("name", "JORGE OTERO"),
+    ("subtitle", "Junior+ Full Stack Developer"),
+    (
+        "contact",
+        "Buenos Aires, Argentina · Remote OK<br/>"
+        "jorgotero4@gmail.com | linkedin.com/in/jorgeotero1998 | github.com/Jorgeotero1998<br/>"
+        "Portfolio: portofolio-mu-lac.vercel.app",
+    ),
+    (
+        "SUMMARY",
+        "Full Stack Developer building production apps since 2023 (~3 years hands-on building: "
+        "freelance + bootcamp + deployed projects — not formal employment at one company). "
+        "Flagship: Sonoteca (live Deezer-integrated music platform).",
+    ),
+    (
+        "EXPERIENCE",
+        "<b>Freelance Python Developer</b> | Nov 2023 – Present<br/>"
+        "• REST APIs (FastAPI/Flask), PostgreSQL, automation, web scraping, LLM pipelines<br/>"
+        "• Docker, CI/CD, production deploys on Vercel/Render<br/><br/>"
+        "<b>Full Stack Developer (Bootcamp)</b> | 4Geeks Academy | Jun 2025 – Present<br/>"
+        "• Capstone LaVerde Tienda: Flask + React e-commerce, JWT auth, 44 pytest tests, CI",
+    ),
+    (
+        "PROJECTS",
+        "<b>Sonoteca (Flagship)</b> — sonoteca-hzbi.vercel.app<br/>"
+        "FastAPI + React + Neon Postgres, Deezer API, JWT/RBAC, Vercel monorepo<br/><br/>"
+        "<b>LaVerde Tienda</b> — laverde-frontend.onrender.com<br/>"
+        "Flask + React e-commerce, PostgreSQL, Cloudinary, 44 tests<br/><br/>"
+        "<b>AI Task Orchestrator</b> — ai-task-orchestrator-inky.vercel.app<br/>"
+        "FastAPI + Groq LLM, goal decomposition, Docker<br/><br/>"
+        "<b>Scraper</b> — github.com/Jorgeotero1998/Scraper<br/>"
+        "TypeScript CLI, 23 Vitest tests, CI, Docker",
+    ),
+    (
+        "SKILLS",
+        "Backend: Python, FastAPI, Flask, SQLAlchemy, PostgreSQL, pytest<br/>"
+        "Frontend: React, TypeScript, Vite<br/>"
+        "Platform: Docker, GitHub Actions, Vercel, Render",
+    ),
+    (
+        "EDUCATION",
+        "4Geeks Academy — Full Stack Development (Jun 2025 – Present)",
+    ),
+    (
+        "CERTIFICATIONS (supplementary)",
+        "Talently Python &amp; JavaScript Verified",
+    ),
+]
+
+OUTPUT_FILES = (
+    "JORGE_OTERO_CV.pdf",
+    "Jorge_Otero_CV.pdf",
+)
+
+
+def _build_styles():
+    base = getSampleStyleSheet()
+    black = colors.black
+    return {
+        "name": ParagraphStyle(
+            "CVName",
+            parent=base["Normal"],
+            fontName="Helvetica-Bold",
+            fontSize=18,
+            leading=22,
+            textColor=black,
+            alignment=TA_LEFT,
+            spaceAfter=4,
+        ),
+        "subtitle": ParagraphStyle(
+            "CVSubtitle",
+            parent=base["Normal"],
+            fontName="Helvetica",
+            fontSize=11,
+            leading=14,
+            textColor=black,
+            spaceAfter=4,
+        ),
+        "contact": ParagraphStyle(
+            "CVContact",
+            parent=base["Normal"],
+            fontName="Helvetica",
+            fontSize=9,
+            leading=12,
+            textColor=black,
+            spaceAfter=10,
+        ),
+        "heading": ParagraphStyle(
+            "CVHeading",
+            parent=base["Normal"],
+            fontName="Helvetica-Bold",
+            fontSize=10,
+            leading=13,
+            textColor=black,
+            spaceBefore=8,
+            spaceAfter=4,
+        ),
+        "body": ParagraphStyle(
+            "CVBody",
+            parent=base["Normal"],
+            fontName="Helvetica",
+            fontSize=9,
+            leading=12,
+            textColor=black,
+            spaceAfter=2,
+        ),
+    }
+
+
+def _story(styles):
+    story = []
+    for kind, text in CV_SECTIONS:
+        if kind == "name":
+            story.append(Paragraph(text, styles["name"]))
+        elif kind == "subtitle":
+            story.append(Paragraph(text, styles["subtitle"]))
+        elif kind == "contact":
+            story.append(Paragraph(text, styles["contact"]))
+        else:
+            story.append(Paragraph(kind, styles["heading"]))
+            story.append(Paragraph(text, styles["body"]))
+    story.append(Spacer(1, 0.1 * inch))
+    return story
+
+
+def write_pdf(path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=letter,
+        leftMargin=0.75 * inch,
+        rightMargin=0.75 * inch,
+        topMargin=0.65 * inch,
+        bottomMargin=0.65 * inch,
+        title="Jorge Otero CV",
+        author="Jorge Otero",
     )
-
-    pdf.multi_cell(
-
-        w,
-
-        4.5,
-
-        "Portfolio: portofolio-mu-lac.vercel.app | Sonoteca: sonoteca-hzbi.vercel.app",
-
-    )
-
-    pdf.ln(3)
-
-    for section in (about, EXPERIENCE, projects, skills, EDUCATION, CERTS):
-
-        pdf.block(section)
-
-    pdf.output(str(path))
+    styles = _build_styles()
+    doc.build(_story(styles))
 
 
+def validate_pdf(path: Path) -> str:
+    from pypdf import PdfReader
+
+    reader = PdfReader(str(path))
+    text = "\n".join((page.extract_text() or "") for page in reader.pages)
+    if "Jorge Otero" not in text and "JORGE OTERO" not in text:
+        raise RuntimeError(f"{path.name}: missing name — PDF may be blank")
+    if "Sonoteca" not in text:
+        raise RuntimeError(f"{path.name}: missing Sonoteca — PDF may be incomplete")
+    return text
 
 
-
-def main():
-
+def main() -> None:
     PUBLIC.mkdir(parents=True, exist_ok=True)
+    generated = []
+    for filename in OUTPUT_FILES:
+        out = PUBLIC / filename
+        write_pdf(out)
+        size = out.stat().st_size
+        text = validate_pdf(out)
+        print(f"OK {filename}: {size:,} bytes, {len(text)} chars extracted")
+        preview = " ".join(text.split())[:120]
+        print(f"   preview: {preview}...")
+        generated.append(out.name)
 
-    write_pdf(PUBLIC / "JORGE_OTERO_CV.pdf", ABOUT_FULLSTACK, PROJECTS_FULLSTACK, SKILLS_FULLSTACK)
-
-    write_pdf(PUBLIC / "jorge_otero_fullstack_cv.pdf", ABOUT_FULLSTACK, PROJECTS_FULLSTACK, SKILLS_FULLSTACK)
-
-    write_pdf(PUBLIC / "jorge_otero_backend_cv.pdf", ABOUT_BACKEND, PROJECTS_BACKEND, SKILLS_BACKEND)
-
-    print("Generated:", ", ".join(p.name for p in sorted(PUBLIC.glob("*.pdf"))))
-
-
-
+    print("Generated:", ", ".join(generated))
 
 
 if __name__ == "__main__":
-
     main()
-
-
