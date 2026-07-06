@@ -1,18 +1,18 @@
 export const SITE = {
   title: "Jorge Otero | Full Stack Developer",
   description:
-    "Full Stack Developer specializing in Python (FastAPI/Flask) and React. Production apps deployed on Vercel & Render. Buenos Aires · Open to remote.",
+    "Full Stack Engineer · Python (FastAPI/Flask) + React · Buenos Aires · Open to remote Mid roles. 4 live demos.",
   url: "https://portofolio-mu-lac.vercel.app/",
-  email: "jorgotero1998@gmail.com",
+  email: "jorgotero4@gmail.com",
   linkedin: "https://linkedin.com/in/jorgeotero1998",
   github: "https://github.com/Jorgeotero1998",
 };
 
 export const ROLES = [
-  "Builder of things",
-  "Full Stack Developer",
-  "Python · FastAPI · React",
-  "PostgreSQL · Docker · CI/CD",
+  "Python FastAPI/Flask + React",
+  "Full Stack · Backend-focused",
+  "Open to remote Mid roles",
+  "Buenos Aires · Shipping production apps",
 ];
 
 export const FEATURED_PROJECTS = [

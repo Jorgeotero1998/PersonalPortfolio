@@ -69,9 +69,11 @@ export default function Hero() {
             </span>
           </motion.div>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} style={{ color: "rgba(226,232,240,0.55)", lineHeight: 1.85, fontSize: "1rem", maxWidth: "540px", marginBottom: "2.5rem", fontFamily: "'Inter', sans-serif" }}>
-            Full Stack Developer with 3+ years building and shipping production web apps — FastAPI/Flask backends, React & Next.js frontends, PostgreSQL, Docker, and CI/CD. Based in{" "}
+            I build and ship full-stack products recruiters can click through in 60 seconds —{" "}
+            <strong style={{ color: "rgba(226,232,240,0.85)" }}>Python (FastAPI/Flask) + React</strong>, PostgreSQL, Docker, and CI/CD.
+            {" "}Based in{" "}
             <span style={{ background: "linear-gradient(90deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 600 }}>Buenos Aires</span>
-            {" "}· Open to remote.
+            {" "}· open to remote mid-level roles.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <motion.button
