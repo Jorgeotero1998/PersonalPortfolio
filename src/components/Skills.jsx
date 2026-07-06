@@ -36,7 +36,7 @@ export default function Skills() {
           Tech{" "}<span style={{ background: "linear-gradient(135deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Stack</span>
         </h2>
         <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", marginTop: "0.75rem", maxWidth: "520px", lineHeight: 1.6 }}>
-          Backend-first full stack — from API design and databases to React UIs and cloud deployment.
+          Junior+ full stack — APIs, databases, React UIs, and cloud deployment. Portfolio evidence over title inflation.
         </p>
       </motion.div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.25rem" }}>

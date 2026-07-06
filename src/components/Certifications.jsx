@@ -24,7 +24,7 @@ export default function Certifications() {
             marginBottom: "0.5rem",
           }}
         >
-          Also · Cloud & security credentials
+          Also · supplementary credentials
         </p>
         <h3
           style={{

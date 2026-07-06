@@ -69,11 +69,11 @@ export default function Hero() {
             </span>
           </motion.div>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }} style={{ color: "rgba(226,232,240,0.7)", lineHeight: 1.5, fontSize: "clamp(1rem, 2vw, 1.2rem)", maxWidth: "560px", marginBottom: "1.25rem", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
-            Full Stack Engineer · Python + React · Production systems
+            Junior+ Full Stack Developer · Python + React · Production portfolio
           </motion.p>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} style={{ color: "rgba(226,232,240,0.55)", lineHeight: 1.85, fontSize: "1rem", maxWidth: "540px", marginBottom: "2.5rem", fontFamily: "'Inter', sans-serif" }}>
-            ~3 years shipping full-stack products — API design, data modeling, React UIs, Docker, and CI/CD. Backend-first mindset with live deploys on Vercel and Render. Based in{" "}
-            <span style={{ background: "linear-gradient(90deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 600 }}>Buenos Aires 🇦🇷</span>.
+            ~3 años construyendo aplicaciones full stack desde 2023 — freelance (automation, APIs, scraping), capstone LaVerde en 4Geeks, y proyectos en producción. Hands-on building, not 3 years at one employer. FastAPI/Flask, React, PostgreSQL, Docker, CI/CD. Based in{" "}
+            <span style={{ background: "linear-gradient(90deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 600 }}>Buenos Aires 🇦🇷</span> · Open to remote.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <motion.a
@@ -106,7 +106,7 @@ export default function Hero() {
             </motion.a>
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} style={{ display: "flex", gap: "2rem", marginTop: "3rem", flexWrap: "wrap" }}>
-            {[{ n: "3+", label: "Years shipping" }, { n: "5", label: "Live demos" }, { n: "67", label: "Automated tests" }].map(({ n, label }) => (
+            {[{ n: "~3", label: "Años construyendo" }, { n: "5", label: "Live demos" }, { n: "67", label: "Automated tests" }].map(({ n, label }) => (
               <div key={label}>
                 <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1.8rem", fontWeight: 700, background: "linear-gradient(135deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", lineHeight: 1 }}>{n}</p>
                 <p style={{ color: "rgba(226,232,240,0.4)", fontSize: "0.8rem", marginTop: "4px", fontFamily: "'Inter', sans-serif" }}>{label}</p>

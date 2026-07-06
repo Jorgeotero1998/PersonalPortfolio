@@ -28,10 +28,16 @@ export default function App() {
         <Certifications />
         <footer style={{ textAlign: "center", padding: "2.5rem 2rem", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
           <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", marginBottom: "0.75rem" }}>
-            Buenos Aires, Argentina ·{" "}
-            <a href={`mailto:${SITE.email}`} style={{ color: "#fb923c", textDecoration: "none" }}>{SITE.email}</a>
+            Buenos Aires, Argentina · Open to remote ·{" "}
+            <a href={SITE.url} style={{ color: "#fb923c", textDecoration: "none" }}>Portfolio</a>
+            {" · "}
+            <a href={SITE.github} target="_blank" rel="noreferrer" style={{ color: "#fb923c", textDecoration: "none" }}>GitHub</a>
+            {" · "}
+            <a href={SITE.cv} style={{ color: "#fb923c", textDecoration: "none" }}>CV</a>
             {" · "}
             <a href={SITE.linkedin} target="_blank" rel="noreferrer" style={{ color: "#fb923c", textDecoration: "none" }}>LinkedIn</a>
+            {" · "}
+            <a href={`mailto:${SITE.email}`} style={{ color: "#fb923c", textDecoration: "none" }}>{SITE.email}</a>
           </p>
           <p style={{ color: "rgba(226,232,240,0.2)", fontFamily: "'JetBrains Mono', monospace", fontSize: "0.8rem", letterSpacing: "0.05em" }}>
             Built with React + Three.js ·{" "}

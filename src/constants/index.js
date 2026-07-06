@@ -1,7 +1,7 @@
 export const SITE = {
-  title: "Jorge Otero | Full Stack Engineer",
+  title: "Jorge Otero | Junior+ Full Stack Developer",
   description:
-    "Full Stack Engineer · Python (FastAPI/Flask) + React · Production systems with live demos. Buenos Aires, Argentina.",
+    "Junior+ Full Stack Developer · ~3 años construyendo apps con Python + React · Demos en producción. Buenos Aires · Remote.",
   url: "https://portofolio-mu-lac.vercel.app/",
   email: "jorgotero4@gmail.com",
   linkedin: "https://linkedin.com/in/jorgeotero1998",
@@ -10,10 +10,10 @@ export const SITE = {
 };
 
 export const ROLES = [
-  "Full Stack Engineer",
+  "Junior+ Full Stack Developer",
   "Python · FastAPI · React",
-  "Production systems · CI/CD",
-  "Architecture · PostgreSQL · Docker",
+  "~3 años construyendo apps",
+  "Portfolio en producción",
 ];
 
 export const SOCIAL_PROOF = {
@@ -140,12 +140,10 @@ export const SKILLS = {
 };
 
 export const CERTS = [
-  { name: "AWS Certified Security Specialty", issuer: "Amazon Web Services", color: "#fb923c" },
-  { name: "Azure AZ-500 Security Engineer", issuer: "Microsoft", color: "#f472b6" },
-  { name: "Google Cloud Cybersecurity", issuer: "Google", color: "#fb923c" },
+  { name: "Cloud-Native with OpenShift & Kubernetes", issuer: "Red Hat", color: "#60a5fa" },
   { name: "Automate Cybersecurity with Python", issuer: "Google · Oct 2025", color: "#f472b6" },
-  { name: "Penetration Testing & Cryptography", issuer: "IBM · Oct 2025", color: "#fb923c" },
-  { name: "Cloud-Native with OpenShift & Kubernetes", issuer: "Red Hat", color: "#f472b6" },
+  { name: "Crash Course on Python", issuer: "Google", color: "#fb923c" },
+  { name: "AWS / Azure / GCP security credentials", issuer: "See LinkedIn for full list", color: "#94a3b8" },
 ];
 
 export const STATUS_COLORS = {
