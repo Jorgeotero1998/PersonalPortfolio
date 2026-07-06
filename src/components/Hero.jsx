@@ -127,9 +127,9 @@ export default function Hero() {
                 alt="Jorge Otero"
                 style={{ width: "260px", height: "260px", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", position: "relative", border: "5px solid #06010f", display: "block", animation: "glow-pulse 4s ease-in-out infinite" }}
               />
-              <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity }} style={{ position: "absolute", bottom: "10px", left: "50%", transform: "translateX(-50%)", background: "rgba(6,1,15,0.95)", border: "1px solid rgba(251,146,60,0.5)", borderRadius: "20px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "6px", whiteSpace: "nowrap", backdropFilter: "blur(10px)" }}>
-                <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#fb923c", display: "inline-block", boxShadow: "0 0 8px #fb923c", animation: "blink 2s infinite" }} />
-                <span style={{ color: "#fb923c", fontSize: "0.75rem", fontFamily: "'JetBrains Mono', monospace" }}>Open to work</span>
+              <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity }} style={{ position: "absolute", bottom: "10px", left: "50%", transform: "translateX(-50%)", background: "rgba(6,1,15,0.95)", border: "1px solid rgba(251,146,60,0.35)", borderRadius: "20px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "6px", whiteSpace: "nowrap", backdropFilter: "blur(10px)" }}>
+                <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#22c55e", display: "inline-block", boxShadow: "0 0 8px #22c55e" }} />
+                <span style={{ color: "rgba(226,232,240,0.7)", fontSize: "0.75rem", fontFamily: "'JetBrains Mono', monospace" }}>Buenos Aires 🇦🇷</span>
               </motion.div>
             </div>
           </div>

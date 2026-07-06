@@ -27,17 +27,6 @@ function GlobeShape() {
 
 const CONTACT_LINKS = [
   {
-    label: "Email",
-    href: `mailto:${SITE.email}`,
-    primary: true,
-    icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-        <polyline points="22,6 12,13 2,6" />
-      </svg>
-    ),
-  },
-  {
     label: "LinkedIn",
     href: SITE.linkedin,
     icon: (
@@ -52,6 +41,16 @@ const CONTACT_LINKS = [
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Email",
+    href: `mailto:${SITE.email}`,
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+        <polyline points="22,6 12,13 2,6" />
       </svg>
     ),
   },
@@ -130,16 +129,9 @@ export default function Contact() {
           >
             <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "1px", background: "linear-gradient(90deg, transparent, #fb923c, #f472b6, transparent)" }} />
 
-            <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", marginBottom: "1.25rem", background: "rgba(251,146,60,0.1)", border: "1px solid rgba(251,146,60,0.35)", borderRadius: "20px", padding: "5px 14px" }}>
-              <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#fb923c", boxShadow: "0 0 8px #fb923c", animation: "blink 2s infinite" }} />
-              <span style={{ color: "#fb923c", fontSize: "0.75rem", fontFamily: "'JetBrains Mono', monospace", letterSpacing: "0.05em" }}>
-                Open to work
-              </span>
-            </div>
-
             <p style={{ fontFamily: "'JetBrains Mono', monospace", color: "#fb923c", fontSize: "0.82rem", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
               <span style={{ width: "20px", height: "1px", background: "linear-gradient(90deg, #fb923c, #f472b6)", display: "inline-block" }} />
-              Let's connect
+              Contact
             </p>
             <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", fontWeight: 700, letterSpacing: "-0.03em", color: "#e2e8f0", marginBottom: "1rem" }}>
               Get in{" "}
@@ -148,7 +140,7 @@ export default function Contact() {
               </span>
             </h2>
             <p style={{ color: "rgba(226,232,240,0.55)", fontFamily: "'Inter', sans-serif", fontSize: "0.95rem", lineHeight: 1.8, marginBottom: "2rem" }}>
-              Open to full-stack and Python backend roles — remote or Buenos Aires. Mid-level positions welcome. Let's talk about your team.
+              Portfolio, live demos, and source code above. Reach out if you'd like to discuss the work.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
