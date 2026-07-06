@@ -95,30 +95,6 @@ export const OTHER_PROJECTS = [
     color: "#60a5fa",
     gradient: "linear-gradient(135deg, rgba(96,165,250,0.12), rgba(59,130,246,0.04))",
   },
-  {
-    name: "SentinelSoc",
-    emoji: "🛡️",
-    status: "repo",
-    statusLabel: "Repo",
-    tags: ["Python", "watchdog", "pywin32", "JSON logging"],
-    desc: "Windows EDR engine with burst-rate ransomware detection and SIEM-ready JSON telemetry.",
-    live: null,
-    repo: "https://github.com/Jorgeotero1998/SentinelSoc",
-    color: "#f472b6",
-    gradient: "linear-gradient(135deg, rgba(244,114,182,0.12), rgba(236,72,153,0.04))",
-  },
-  {
-    name: "Security-SOAR",
-    emoji: "🔐",
-    status: "repo",
-    statusLabel: "Repo",
-    tags: ["Python", "VirusTotal API", "Telegram Bot API", "Docker"],
-    desc: "Automated incident response — enriches telemetry with VirusTotal and alerts via Telegram.",
-    live: null,
-    repo: "https://github.com/Jorgeotero1998/Security-SOAR",
-    color: "#fb923c",
-    gradient: "linear-gradient(135deg, rgba(251,146,60,0.12), rgba(249,115,22,0.04))",
-  },
 ];
 
 /** @deprecated use FEATURED_PROJECTS + OTHER_PROJECTS */
