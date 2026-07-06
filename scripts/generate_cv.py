@@ -109,10 +109,11 @@ PROJECTS_FULLSTACK = [
 PROJECTS_BACKEND = [
     {
         "title": "Sonoteca - FastAPI + PostgreSQL Music API (FLAGSHIP | LIVE)",
-        "meta": "FastAPI | SQLAlchemy | Alembic | PostgreSQL | JWT/RBAC | Deezer API",
+        "meta": "FastAPI | SQLAlchemy | Alembic | PostgreSQL | JWT/RBAC | Deezer API | Neon | Vercel",
         "links": "sonoteca-hzbi.vercel.app | github.com/Jorgeotero1998/Sonoteca",
         "bullets": [
-            "REST API design, migrations, auth, and third-party catalog integration in production.",
+            "Vercel monorepo + Neon Postgres: REST API, Alembic migrations, JWT/RBAC, Deezer catalog.",
+            "Third-party Deezer integration: search, previews, playlists; live at sonoteca-hzbi.vercel.app.",
         ],
     },
     {
