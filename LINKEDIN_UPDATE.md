@@ -4,6 +4,41 @@ Mensaje consistente en los tres canales: **~3 años construyendo** (desde 2023: 
 
 ---
 
+## 0. Banner de portada (cover photo)
+
+Asset en el repo: `public/linkedin-banner.png` (1584 × 396 px, estándar LinkedIn). Versión vectorial opcional: `public/linkedin-banner.svg`.
+
+### Subir el banner
+
+1. LinkedIn → **Yo** → **Ver perfil**
+2. Clic en el ícono de **cámara** sobre la imagen de portada (arriba del perfil)
+3. **Editar foto de portada** → **Subir foto**
+4. Seleccionar `linkedin-banner.png` (descargado del repo o desde la URL de abajo)
+5. Ajustar recorte si LinkedIn lo pide (el diseño ya respeta la zona segura center-left)
+6. **Guardar**
+
+### URL directa (después del deploy en Vercel)
+
+```
+https://portofolio-mu-lac.vercel.app/linkedin-banner.png
+```
+
+Descarga: abrir la URL en el navegador → clic derecho → **Guardar imagen como…** → subir en LinkedIn.
+
+### Diseño
+
+- Tema oscuro alineado con portfolio/Sonoteca (navy, acentos purple/cyan)
+- Texto: **Jorge Otero** · Full Stack Developer · Python + React · Buenos Aires · Remote
+- Sin CTAs tipo "Open to work" / "Hire me" en el banner (zona segura center-left para la foto de perfil)
+
+### Regenerar
+
+```bash
+python scripts/generate_linkedin_banner.py
+```
+
+---
+
 ## 1. Headline (elegir esta)
 
 ```
@@ -57,6 +92,9 @@ GitHub: https://github.com/Jorgeotero1998
 ---
 
 ## 4. Cambios manuales en LinkedIn UI
+
+### Cover photo (Portada)
+- [ ] Subir `linkedin-banner.png` — ver sección **0. Banner de portada** arriba
 
 ### Featured (Destacado)
 - [ ] **Reemplazar CV** con PDF corregido (sin typo "Enginner"): https://portofolio-mu-lac.vercel.app/JORGE_OTERO_CV.pdf
