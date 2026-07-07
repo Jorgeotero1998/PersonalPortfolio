@@ -1,7 +1,7 @@
 export const SITE = {
   title: "Jorge Otero | Full Stack Developer",
   description:
-    "Full Stack Developer · ~3 años construyendo apps con Python + React · Demos en producción. Buenos Aires · Remote.",
+    "Full Stack Developer · Python (FastAPI/Flask) + React · PostgreSQL · Docker · Live demos. Buenos Aires · Remote.",
   url: "https://portofolio-mu-lac.vercel.app/",
   email: "jorgotero4@gmail.com",
   linkedin: "https://linkedin.com/in/jorgeotero1998",
@@ -12,8 +12,8 @@ export const SITE = {
 export const ROLES = [
   "Full Stack Developer",
   "Python · FastAPI · React",
-  "~3 años construyendo apps",
-  "Portfolio en producción",
+  "PostgreSQL · Docker · CI/CD",
+  "Sonoteca · Live demos",
 ];
 
 export const SOCIAL_PROOF = {
