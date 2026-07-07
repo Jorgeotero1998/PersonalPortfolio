@@ -27,7 +27,7 @@ export default function App() {
         <Contact />
         <Certifications />
         <footer className="site-footer">
-          <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", marginBottom: "0.75rem" }}>
+          <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "var(--font-body)", fontSize: "0.9rem", marginBottom: "0.75rem" }}>
             Buenos Aires, Argentina · Open to remote ·{" "}
             <a href={SITE.url}>Portfolio</a>
             {" · "}

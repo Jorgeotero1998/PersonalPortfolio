@@ -3,6 +3,12 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FEATURED_PROJECTS, OTHER_PROJECTS, STATUS_COLORS } from "../constants";
 
+const SHOWCASE_METRICS = [
+  { value: "5", label: "Live demos" },
+  { value: "67", label: "Automated tests" },
+  { value: "6", label: "Shipped repos" },
+];
+
 const showcaseStagger = {
   hidden: {},
   show: { transition: { staggerChildren: 0.14, delayChildren: 0.08 } },
@@ -13,7 +19,7 @@ const showcaseItem = {
   show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
 };
 
-function ProjectCard({ project, index, compact }) {
+function ProjectCard({ project, index, compact, displayIndex }) {
   const cardRef = useRef(null);
   const { ref: inViewRef, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const isFlagship = project.flagship && !compact;
@@ -45,6 +51,8 @@ function ProjectCard({ project, index, compact }) {
     cardRef.current.style.setProperty("--tilt-y", "0deg");
   };
 
+  const indexLabel = displayIndex != null ? String(displayIndex).padStart(2, "0") : null;
+
   return (
     <motion.div
       ref={setRefs}
@@ -56,19 +64,19 @@ function ProjectCard({ project, index, compact }) {
       className={`project-card${isFlagship ? " project-card--flagship" : ""}${isShowcase ? " project-card--showcase" : ""}`}
       style={{
         background: project.gradient,
-        border: `1px solid ${project.color}${isFlagship ? "35" : "25"}`,
+        border: `1px solid ${project.color}${isFlagship ? "40" : "25"}`,
         borderRadius: isFlagship ? "24px" : "20px",
-        padding: compact ? "1.5rem" : isFlagship ? "2.25rem 2.5rem" : "2rem",
+        padding: compact ? "1.5rem" : isFlagship ? "2.5rem 2.75rem" : "2rem",
         ["--card-accent"]: project.color,
       }}
     >
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: `linear-gradient(90deg, transparent, ${project.color}, transparent)` }} />
+      {isFlagship && <span className="project-card__ribbon" aria-hidden="true">Flagship</span>}
 
       <div style={{ position: "absolute", top: "1rem", right: "1rem", display: "flex", gap: "0.4rem", flexWrap: "wrap", justifyContent: "flex-end" }}>
-        {project.flagship && (
+        {project.flagship && !isFlagship && (
           <span
             style={{
-              fontFamily: "'JetBrains Mono', monospace",
+              fontFamily: "var(--font-mono)",
               fontSize: "0.65rem",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
@@ -85,7 +93,7 @@ function ProjectCard({ project, index, compact }) {
         {project.status && STATUS_COLORS[project.status] && (
           <span
             style={{
-              fontFamily: "'JetBrains Mono', monospace",
+              fontFamily: "var(--font-mono)",
               fontSize: "0.65rem",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
@@ -101,26 +109,45 @@ function ProjectCard({ project, index, compact }) {
         )}
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", paddingRight: project.flagship ? "4.5rem" : 0 }}>
-        <span style={{ fontSize: "1.6rem" }}>{project.emoji}</span>
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#e2e8f0", fontWeight: 600, fontSize: isFlagship ? "1.35rem" : "1.05rem", margin: 0 }}>
+      {indexLabel && (
+        <p className={`project-card__index${isFlagship ? " project-card__index--flagship" : ""}`}>
+          {indexLabel}{isFlagship ? " · Flagship" : ""}
+        </p>
+      )}
+
+      <div className="project-card__title-row">
+        <span className="project-card__emoji">{project.emoji}</span>
+        <h3 className={`project-card__title${isFlagship ? " project-card__title--flagship" : " project-card__title--standard"}`}>
           {project.name}
         </h3>
       </div>
 
-      <div style={{ flex: 1 }}>
-        <p style={{ color: "rgba(226,232,240,0.75)", fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", lineHeight: 1.65, margin: 0 }}>
-          {project.desc}
-        </p>
-        {project.impact && (
-          <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "'Inter', sans-serif", fontSize: "0.85rem", lineHeight: 1.6, margin: "0.5rem 0 0" }}>
-            {project.impact}
+      <div className={isFlagship ? "project-card__body" : undefined} style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <div>
+          <p className={`project-card__desc${isFlagship ? " project-card__desc--flagship" : ""}`}>
+            {project.desc}
           </p>
-        )}
-        {project.demoLogin && (
-          <p style={{ color: "rgba(226,232,240,0.35)", fontFamily: "'JetBrains Mono', monospace", fontSize: "0.75rem", margin: "0.5rem 0 0" }}>
-            Demo: {project.demoLogin}
-          </p>
+          {project.impact && (
+            <p className={`project-card__impact${isFlagship ? " project-card__impact--flagship" : ""}`} style={{ marginTop: "0.65rem" }}>
+              {project.impact}
+            </p>
+          )}
+          {project.demoLogin && (
+            <p style={{ color: "rgba(226,232,240,0.35)", fontFamily: "var(--font-mono)", fontSize: "0.75rem", margin: "0.65rem 0 0" }}>
+              Demo: {project.demoLogin}
+            </p>
+          )}
+        </div>
+
+        {isFlagship && (
+          <div className="project-card__stack-panel">
+            <p className="project-card__stack-label">Stack & delivery</p>
+            <div className="project-card__highlights">
+              {["Monorepo", "Neon Postgres", "JWT / RBAC", "Alembic", "Vercel CI"].map((item) => (
+                <span key={item} className="project-card__highlight">{item}</span>
+              ))}
+            </div>
+          </div>
         )}
       </div>
 
@@ -135,7 +162,7 @@ function ProjectCard({ project, index, compact }) {
               borderRadius: "6px",
               padding: "2px 10px",
               fontSize: "0.72rem",
-              fontFamily: "'JetBrains Mono', monospace",
+              fontFamily: "var(--font-mono)",
               fontWeight: 500,
             }}
           >
@@ -154,15 +181,15 @@ function ProjectCard({ project, index, compact }) {
             whileTap={{ scale: 0.97 }}
             aria-label={`${project.name} live demo — opens in new tab`}
             style={{
-              padding: "0.55rem 1.1rem",
+              padding: isFlagship ? "0.7rem 1.35rem" : "0.55rem 1.1rem",
               background: `${project.color}20`,
               border: `1px solid ${project.color}50`,
               color: project.color,
               borderRadius: "8px",
               textDecoration: "none",
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: "0.82rem",
-              fontWeight: 600,
+              fontFamily: "var(--font-display)",
+              fontSize: isFlagship ? "0.9rem" : "0.82rem",
+              fontWeight: 700,
               display: "inline-flex",
               alignItems: "center",
               gap: "0.35rem",
@@ -178,7 +205,7 @@ function ProjectCard({ project, index, compact }) {
               border: "1px solid rgba(255,255,255,0.12)",
               color: "rgba(226,232,240,0.55)",
               borderRadius: "8px",
-              fontFamily: "'JetBrains Mono', monospace",
+              fontFamily: "var(--font-mono)",
               fontSize: "0.72rem",
               fontWeight: 600,
               letterSpacing: "0.04em",
@@ -195,7 +222,7 @@ function ProjectCard({ project, index, compact }) {
               border: "1px solid rgba(255,255,255,0.12)",
               color: "rgba(226,232,240,0.55)",
               borderRadius: "8px",
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "var(--font-display)",
               fontSize: "0.82rem",
               fontWeight: 600,
             }}
@@ -217,7 +244,7 @@ function ProjectCard({ project, index, compact }) {
               color: "rgba(226,232,240,0.75)",
               borderRadius: "8px",
               textDecoration: "none",
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "var(--font-display)",
               fontSize: "0.82rem",
               fontWeight: 600,
               display: "inline-flex",
@@ -248,12 +275,23 @@ export default function Projects() {
           Featured{" "}
           <span className="gradient-text">Projects</span>
         </h2>
-        <p className="lead" style={{ marginTop: "0.75rem" }}>
-          Sonoteca (flagship), LaVerde e-commerce, and AI Task Orchestrator — live demos with source on GitHub.
+        <p className="lead" style={{ marginTop: "0.75rem", maxWidth: "42rem" }}>
+          Evidence over adjectives — live demos, automated tests, and CI on every flagship repo.
         </p>
       </motion.div>
 
       <div className="projects-showcase">
+        <div className="projects-showcase__intro">
+          <div className="projects-showcase__metrics" aria-label="Portfolio metrics">
+            {SHOWCASE_METRICS.map(({ value, label }) => (
+              <div key={label} className="projects-metric">
+                <span className="projects-metric__value">{value}</span>
+                <span className="projects-metric__label">{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <motion.div
           className="projects-showcase__grid"
           variants={showcaseStagger}
@@ -266,7 +304,7 @@ export default function Projects() {
               variants={showcaseItem}
               className={p.flagship ? "projects-showcase__flagship" : "projects-showcase__card"}
             >
-              <ProjectCard project={p} index={i} />
+              <ProjectCard project={p} index={i} displayIndex={i + 1} />
             </motion.div>
           ))}
         </motion.div>
@@ -283,7 +321,7 @@ export default function Projects() {
               color: "rgba(226,232,240,0.7)",
               borderRadius: "10px",
               padding: "0.75rem 1.25rem",
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "var(--font-display)",
               fontSize: "0.88rem",
               fontWeight: 600,
               cursor: "pointer",
@@ -313,7 +351,7 @@ export default function Projects() {
               }}
             >
               {OTHER_PROJECTS.map((p, i) => (
-                <ProjectCard key={p.name} project={p} index={i} compact />
+                <ProjectCard key={p.name} project={p} index={i} compact displayIndex={FEATURED_PROJECTS.length + i + 1} />
               ))}
             </motion.div>
           )}

@@ -72,25 +72,25 @@ export default function Hero() {
       <div className="hero-layout">
         {/* Left text */}
         <motion.div variants={heroStagger} initial="hidden" animate="show" style={{ flex: "1 1 480px" }}>
-          <motion.p variants={heroItem} style={{ fontFamily: "'JetBrains Mono', monospace", color: "#fb923c", fontSize: "0.95rem", letterSpacing: "0.12em", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <span style={{ display: "inline-block", width: "40px", height: "1px", background: "linear-gradient(90deg, #fb923c, #f472b6)" }} />
-            Hey, I'm
+          <motion.p variants={heroItem} className="hero-eyebrow">
+            <span className="hero-eyebrow__line" aria-hidden="true" />
+            Full Stack · Since 2023
           </motion.p>
           <motion.h1 variants={heroItem} className="heading-display" style={{ marginBottom: "0.75rem" }}>
-            <span style={{ color: "#e2e8f0" }}>Jorge</span>{" "}
+            <span style={{ color: "#e2e8f0", fontWeight: 700 }}>Jorge</span>{" "}
             <span className="gradient-text">Otero</span>
           </motion.h1>
-          <motion.div variants={heroItem} style={{ minHeight: "2.5rem", marginBottom: "1.75rem" }}>
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(1.1rem, 2.5vw, 1.6rem)", color: "rgba(226,232,240,0.75)", fontWeight: 400 }}>
+          <motion.div variants={heroItem} className="hero-role" style={{ minHeight: "2.5rem", marginBottom: "1.75rem" }}>
+            <span className="hero-role__text">
               {role}<span className="cursor-blink">|</span>
             </span>
           </motion.div>
-          <motion.p variants={heroItem} className="lead" style={{ color: "rgba(226,232,240,0.7)", lineHeight: 1.5, fontSize: "clamp(1rem, 2vw, 1.2rem)", maxWidth: "560px", marginBottom: "1.25rem", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+          <motion.p variants={heroItem} className="lead hero-lead" style={{ marginBottom: "1.25rem" }}>
             Full Stack Developer · Python (FastAPI/Flask) + React
           </motion.p>
-          <motion.p variants={heroItem} style={{ color: "rgba(226,232,240,0.55)", lineHeight: 1.85, fontSize: "1rem", maxWidth: "540px", marginBottom: "2.5rem", fontFamily: "'Inter', sans-serif" }}>
-            I build full-stack web apps end to end — APIs, databases, and React frontends. Freelance Python work, 4Geeks capstone LaVerde, and flagship Sonoteca on Vercel. FastAPI/Flask, React, PostgreSQL, Docker, CI/CD. Based in{" "}
-            <span style={{ background: "linear-gradient(90deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 600 }}>Buenos Aires 🇦🇷</span> · Open to remote.
+          <motion.p variants={heroItem} className="hero-copy">
+            I ship full-stack web apps end to end — APIs, PostgreSQL schemas, and React frontends. Freelance Python work, 4Geeks capstone LaVerde, and flagship Sonoteca on Vercel. FastAPI/Flask, React, Docker, CI/CD. Based in{" "}
+            <span className="gradient-text" style={{ fontWeight: 600 }}>Buenos Aires 🇦🇷</span> · Open to remote.
           </motion.p>
           <motion.div variants={heroItem} style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <motion.a
@@ -150,7 +150,7 @@ export default function Hero() {
               />
               <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity }} className="hero-badge">
                 <span className="hero-badge__dot" aria-hidden="true" />
-                <span style={{ color: "rgba(226,232,240,0.7)", fontSize: "0.75rem", fontFamily: "'JetBrains Mono', monospace" }}>Buenos Aires 🇦🇷</span>
+                <span style={{ color: "rgba(226,232,240,0.7)", fontSize: "0.75rem", fontFamily: "var(--font-mono)" }}>Buenos Aires 🇦🇷</span>
               </motion.div>
             </div>
           </div>
@@ -159,7 +159,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="scroll-hint" aria-hidden="true">
-        <span style={{ color: "rgba(226,232,240,0.3)", fontSize: "0.75rem", fontFamily: "'JetBrains Mono', monospace", letterSpacing: "0.1em" }}>scroll</span>
+        <span style={{ color: "rgba(226,232,240,0.3)", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>scroll</span>
         <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }} className="scroll-hint__line" />
       </motion.div>
     </section>
