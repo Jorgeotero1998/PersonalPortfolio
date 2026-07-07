@@ -126,7 +126,7 @@ export default function TechBalls() {
           initial={{ opacity: 0, scale: 0.97 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="marquee-mask"
+          className="marquee-mask marquee-glass"
           style={{
             display: "flex",
             flexDirection: "column",

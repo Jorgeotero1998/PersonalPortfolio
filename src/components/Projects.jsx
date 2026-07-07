@@ -1,20 +1,59 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FEATURED_PROJECTS, OTHER_PROJECTS, STATUS_COLORS } from "../constants";
 
+const showcaseStagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.14, delayChildren: 0.08 } },
+};
+
+const showcaseItem = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
+};
+
 function ProjectCard({ project, index, compact }) {
-  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const cardRef = useRef(null);
+  const { ref: inViewRef, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const isFlagship = project.flagship && !compact;
+  const isShowcase = !compact;
+
+  const setRefs = (el) => {
+    cardRef.current = el;
+    inViewRef(el);
+  };
+
+  const handlePointer = (e) => {
+    if (!isShowcase || !cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    cardRef.current.style.setProperty("--spot-x", `${x}%`);
+    cardRef.current.style.setProperty("--spot-y", `${y}%`);
+    const tiltX = ((e.clientY - rect.top) / rect.height - 0.5) * -10;
+    const tiltY = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
+    cardRef.current.style.setProperty("--tilt-x", `${tiltX}deg`);
+    cardRef.current.style.setProperty("--tilt-y", `${tiltY}deg`);
+  };
+
+  const resetPointer = () => {
+    if (!cardRef.current) return;
+    cardRef.current.style.setProperty("--spot-x", "50%");
+    cardRef.current.style.setProperty("--spot-y", "50%");
+    cardRef.current.style.setProperty("--tilt-x", "0deg");
+    cardRef.current.style.setProperty("--tilt-y", "0deg");
+  };
 
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: (index % 3) * 0.12 }}
-      whileHover={{ y: -6, boxShadow: `0 20px 60px ${project.color}20` }}
-      className={`project-card${isFlagship ? " project-card--flagship" : ""}`}
+      ref={setRefs}
+      initial={isShowcase ? false : { opacity: 0, y: 50 }}
+      animate={isShowcase ? undefined : inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: isShowcase ? 0 : (index % 3) * 0.12 }}
+      onMouseMove={isShowcase ? handlePointer : undefined}
+      onMouseLeave={isShowcase ? resetPointer : undefined}
+      className={`project-card${isFlagship ? " project-card--flagship" : ""}${isShowcase ? " project-card--showcase" : ""}`}
       style={{
         background: project.gradient,
         border: `1px solid ${project.color}${isFlagship ? "35" : "25"}`,
@@ -215,11 +254,22 @@ export default function Projects() {
       </motion.div>
 
       <div className="projects-showcase">
-        {FEATURED_PROJECTS.map((p, i) => (
-          <div key={p.name} className={p.flagship ? "projects-showcase__flagship" : "projects-showcase__card"}>
-            <ProjectCard project={p} index={i} />
-          </div>
-        ))}
+        <motion.div
+          className="projects-showcase__grid"
+          variants={showcaseStagger}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+        >
+          {FEATURED_PROJECTS.map((p, i) => (
+            <motion.div
+              key={p.name}
+              variants={showcaseItem}
+              className={p.flagship ? "projects-showcase__flagship" : "projects-showcase__card"}
+            >
+              <ProjectCard project={p} index={i} />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
 
       {OTHER_PROJECTS.length > 0 && (
