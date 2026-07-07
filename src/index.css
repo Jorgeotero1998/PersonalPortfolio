@@ -527,6 +527,31 @@ body {
 .project-card--flagship {
   border-radius: var(--radius-xl) !important;
   padding: 2.25rem 2.5rem !important;
+  box-shadow: 0 0 48px rgba(251, 146, 60, 0.12);
+}
+
+.projects-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 1.5rem;
+}
+
+.projects-showcase__flagship {
+  grid-column: 1 / -1;
+}
+
+.projects-showcase__card .project-card {
+  min-height: 100%;
+}
+
+@media (min-width: 900px) {
+  .projects-showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-showcase__flagship {
+    grid-column: 1 / -1;
+  }
 }
 
 /* ── Marquee ───────────────────────────────────────────────────── */

@@ -113,6 +113,7 @@ function ProjectCard({ project, index, compact }) {
             rel="noreferrer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
+            aria-label={`${project.name} live demo — opens in new tab`}
             style={{
               padding: "0.55rem 1.1rem",
               background: `${project.color}20`,
@@ -209,13 +210,13 @@ export default function Projects() {
           <span className="gradient-text">Projects</span>
         </h2>
         <p className="lead" style={{ marginTop: "0.75rem" }}>
-          Full-stack apps shipped to production — live demos where available, source on GitHub.
+          Sonoteca (flagship), LaVerde e-commerce, and AI Task Orchestrator — live demos with source on GitHub.
         </p>
       </motion.div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: "1.5rem" }}>
+      <div className="projects-showcase">
         {FEATURED_PROJECTS.map((p, i) => (
-          <div key={p.name} style={p.flagship ? { gridColumn: "1 / -1" } : undefined}>
+          <div key={p.name} className={p.flagship ? "projects-showcase__flagship" : "projects-showcase__card"}>
             <ProjectCard project={p} index={i} />
           </div>
         ))}

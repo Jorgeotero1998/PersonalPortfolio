@@ -6,19 +6,19 @@ export const SITE = {
   email: "jorgotero4@gmail.com",
   linkedin: "https://linkedin.com/in/jorgeotero1998",
   github: "https://github.com/Jorgeotero1998",
-  cv: "/JORGE_OTERO_CV.pdf?v=20260707def",
+  cv: "/JORGE_OTERO_CV.pdf?v=20260707hire",
 };
 
 export const ROLES = [
   "Full Stack Developer",
   "Python · FastAPI · React",
+  "Sonoteca · LaVerde · Orchestrator",
   "PostgreSQL · Docker · CI/CD",
-  "Sonoteca · Live demos",
 ];
 
 export const SOCIAL_PROOF = {
   repos: "20+",
-  highlights: ["CI/CD", "Docker", "PostgreSQL", "Live demos", "Vitest & pytest"],
+  highlights: ["Sonoteca", "LaVerde", "AI Orchestrator", "CI/CD", "Live demos"],
 };
 
 export const FEATURED_PROJECTS = [
@@ -35,7 +35,21 @@ export const FEATURED_PROJECTS = [
     live: "https://sonoteca-hzbi.vercel.app/",
     repo: "https://github.com/Jorgeotero1998/Sonoteca",
     color: "#fb923c",
-    gradient: "linear-gradient(135deg, rgba(251,146,60,0.12), rgba(249,115,22,0.04))",
+    gradient: "linear-gradient(135deg, rgba(251,146,60,0.14), rgba(249,115,22,0.05))",
+  },
+  {
+    name: "LaVerde Tienda",
+    emoji: "🛒",
+    featured: true,
+    status: "frontend",
+    statusLabel: "Frontend Demo",
+    tags: ["React", "Flask", "PostgreSQL", "JWT", "Cloudinary", "pytest"],
+    desc: "Full-stack e-commerce capstone — cart, checkout, admin panel, Cloudinary media, and order management. 3-person team project at 4Geeks Academy.",
+    impact: "44 pytest tests, GitHub Actions CI, Flask API + React frontend. Live UI on Render.",
+    live: "https://laverde-frontend.onrender.com/",
+    repo: "https://github.com/Jorgeotero1998/LaVerde-Tienda",
+    color: "#4ade80",
+    gradient: "linear-gradient(135deg, rgba(74,222,128,0.14), rgba(34,197,94,0.05))",
   },
   {
     name: "AI Task Orchestrator",
@@ -45,33 +59,22 @@ export const FEATURED_PROJECTS = [
     statusLabel: "Live",
     demoLogin: "admin@example.com / change-me",
     tags: ["Python", "Flask", "React", "Groq API", "Llama 3.3", "Docker", "PostgreSQL"],
-    desc: "LLM platform that decomposes complex goals into 5 actionable steps using Groq's Llama 3.3 — with PDF export and task history dashboard.",
+    desc: "LLM platform that decomposes complex goals into 5 actionable steps using Groq Llama 3.3 — task history dashboard and PDF export.",
     impact: "Docker Compose stack, secure admin auth, Postgres persistence, deployed on Vercel.",
     live: "https://ai-task-orchestrator-inky.vercel.app/",
     repo: "https://github.com/Jorgeotero1998/ai-task-orchestrator",
     color: "#a78bfa",
-    gradient: "linear-gradient(135deg, rgba(167,139,250,0.12), rgba(139,92,246,0.04))",
+    gradient: "linear-gradient(135deg, rgba(167,139,250,0.14), rgba(139,92,246,0.05))",
   },
-  {
-    name: "LaVerde Tienda",
-    emoji: "🛒",
-    featured: true,
-    status: "frontend",
-    statusLabel: "Frontend Demo",
-    tags: ["React", "Flask", "PostgreSQL", "JWT", "Cloudinary", "pytest"],
-    desc: "Production e-commerce for fruits & vegetables — cart, checkout, admin panel, Cloudinary media, and order management.",
-    impact: "3-person team capstone with 44 pytest tests and GitHub Actions CI. Backend on Render may sleep — frontend UI is live.",
-    live: "https://laverde-frontend.onrender.com",
-    repo: "https://github.com/Jorgeotero1998/LaVerde-Tienda",
-    color: "#4ade80",
-    gradient: "linear-gradient(135deg, rgba(74,222,128,0.12), rgba(34,197,94,0.04))",
-  },
+];
+
+export const OTHER_PROJECTS = [
   {
     name: "Scraper",
     emoji: "🕷️",
-    featured: true,
     status: "cli",
     statusLabel: "CLI",
+    sourceKind: "cli",
     tags: ["TypeScript", "Playwright", "Cheerio", "Vitest", "Docker", "GitHub Actions"],
     desc: "Production-grade CLI scraper for Peruvian legal databases (OEFA, Poder Judicial) — JSON/CSV export, rate limiting, retry/backoff.",
     impact: "23 Vitest tests, Docker packaging, exponential backoff, GitHub Actions CI pipeline.",
@@ -80,9 +83,6 @@ export const FEATURED_PROJECTS = [
     color: "#f472b6",
     gradient: "linear-gradient(135deg, rgba(244,114,182,0.12), rgba(236,72,153,0.04))",
   },
-];
-
-export const OTHER_PROJECTS = [
   {
     name: "GlobalThree",
     emoji: "🌍",
