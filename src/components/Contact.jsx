@@ -72,8 +72,8 @@ export default function Contact() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section id="contact" style={{ padding: "7rem 2rem 5rem" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", alignItems: "center", gap: "4rem", flexWrap: "wrap", justifyContent: "center" }}>
+    <section id="contact" className="section" style={{ paddingBottom: "5rem" }} aria-labelledby="contact-heading">
+        <div className="section-inner" style={{ display: "flex", alignItems: "center", gap: "4rem", flexWrap: "wrap", justifyContent: "center" }}>
           <motion.div initial={{ opacity: 0, scale: 0.7 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="contact-globe" style={{ width: "280px", height: "280px", flexShrink: 0 }}>
             <Canvas camera={{ position: [0, 0, 4], fov: 50 }}>
               <ambientLight intensity={0.3} />
@@ -90,19 +90,13 @@ export default function Contact() {
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
-            style={{ flex: "1 1 360px", maxWidth: "520px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(251,146,60,0.2)", borderRadius: "24px", padding: "3rem 2.5rem", backdropFilter: "blur(20px)", position: "relative", overflow: "hidden" }}
+            className="glass-panel glass-panel--contact"
+            style={{ flex: "1 1 360px", maxWidth: "520px" }}
           >
-            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "1px", background: "linear-gradient(90deg, transparent, #fb923c, #f472b6, transparent)" }} />
-
-            <p style={{ fontFamily: "'JetBrains Mono', monospace", color: "#fb923c", fontSize: "0.82rem", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <span style={{ width: "20px", height: "1px", background: "linear-gradient(90deg, #fb923c, #f472b6)", display: "inline-block" }} />
-              Contact
-            </p>
-            <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", fontWeight: 700, letterSpacing: "-0.03em", color: "#e2e8f0", marginBottom: "1rem" }}>
+            <p className="eyebrow" style={{ fontSize: "0.82rem" }}>Contact</p>
+            <h2 id="contact-heading" className="heading-section" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", marginBottom: "1rem" }}>
               Get in{" "}
-              <span style={{ background: "linear-gradient(135deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                Touch
-              </span>
+              <span className="gradient-text">Touch</span>
             </h2>
             <p style={{ color: "rgba(226,232,240,0.55)", fontFamily: "'Inter', sans-serif", fontSize: "0.95rem", lineHeight: 1.8, marginBottom: "2rem" }}>
               Portfolio, live demos, and source code above. Reach out if you'd like to discuss the work.

@@ -43,19 +43,8 @@ function LogoChip({ tech }) {
   const color = tech.color || `#${tech.icon.hex}`;
   return (
     <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "0.7rem",
-        padding: "0.9rem 1.5rem",
-        margin: "0 0.6rem",
-        borderRadius: "14px",
-        background: "rgba(255,255,255,0.025)",
-        border: "1px solid rgba(255,255,255,0.07)",
-        backdropFilter: "blur(10px)",
-        whiteSpace: "nowrap",
-        flexShrink: 0,
-      }}
+      className="chip-logo"
+      style={{}}
     >
       <svg
         role="img"
@@ -104,7 +93,7 @@ export default function TechBalls() {
   const rowB = TECH.slice(half);
 
   return (
-    <section style={{ padding: "6rem 2rem", position: "relative" }}>
+    <section className="section" style={{ position: "relative" }} aria-labelledby="tech-heading">
       <div
         style={{
           position: "absolute",
@@ -115,7 +104,7 @@ export default function TechBalls() {
         }}
       />
 
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+      <div className="section-inner">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -123,43 +112,10 @@ export default function TechBalls() {
           transition={{ duration: 0.6 }}
           style={{ textAlign: "center", marginBottom: "3rem" }}
         >
-          <p
-            style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              color: "#fb923c",
-              fontSize: "0.85rem",
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
-              marginBottom: "0.75rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "0.75rem",
-            }}
-          >
-            <span style={{ width: "30px", height: "1px", background: "linear-gradient(90deg, transparent, #fb923c)", display: "inline-block" }} />
-            Technologies
-            <span style={{ width: "30px", height: "1px", background: "linear-gradient(90deg, #f472b6, transparent)", display: "inline-block" }} />
-          </p>
-          <h2
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: "clamp(2rem, 4vw, 3.2rem)",
-              fontWeight: 700,
-              letterSpacing: "-0.03em",
-              color: "#e2e8f0",
-            }}
-          >
+          <p className="eyebrow eyebrow--center">Technologies</p>
+          <h2 id="tech-heading" className="heading-section">
             My{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #fb923c, #f472b6)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              Arsenal
-            </span>
+            <span className="gradient-text">Arsenal</span>
           </h2>
           <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", marginTop: "0.5rem" }}>
             Python · React · PostgreSQL · Docker · CI/CD
@@ -170,15 +126,12 @@ export default function TechBalls() {
           initial={{ opacity: 0, scale: 0.97 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
+          className="marquee-mask"
           style={{
             display: "flex",
             flexDirection: "column",
             gap: "0.8rem",
             position: "relative",
-            WebkitMaskImage:
-              "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)",
-            maskImage:
-              "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)",
           }}
         >
           <MarqueeRow items={rowA} />

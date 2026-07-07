@@ -47,25 +47,24 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="about" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "6rem 2rem 4rem", position: "relative", overflow: "hidden" }}>
-      {/* Ambient glows */}
-      <div style={{ position: "absolute", top: "15%", left: "-5%", width: "500px", height: "500px", background: "radial-gradient(circle, rgba(251,146,60,0.07) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
-      <div style={{ position: "absolute", bottom: "10%", right: "-5%", width: "400px", height: "400px", background: "radial-gradient(circle, rgba(244,114,182,0.08) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
+    <section id="about" className="hero-section" aria-label="About Jorge Otero">
+      <div className="hero-glow hero-glow--orange" aria-hidden="true" />
+      <div className="hero-glow hero-glow--pink" aria-hidden="true" />
 
-      <div style={{ maxWidth: "1200px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "4rem", flexWrap: "wrap", position: "relative", zIndex: 1 }}>
+      <div className="hero-layout">
         {/* Left text */}
         <div style={{ flex: "1 1 480px" }}>
           <motion.p initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} style={{ fontFamily: "'JetBrains Mono', monospace", color: "#fb923c", fontSize: "0.95rem", letterSpacing: "0.12em", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
             <span style={{ display: "inline-block", width: "40px", height: "1px", background: "linear-gradient(90deg, #fb923c, #f472b6)" }} />
             Hey, I'm
           </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(3rem, 7vw, 5.5rem)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.04em", marginBottom: "0.75rem" }}>
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="heading-display" style={{ marginBottom: "0.75rem" }}>
             <span style={{ color: "#e2e8f0" }}>Jorge</span>{" "}
-            <span style={{ background: "linear-gradient(135deg, #fb923c 0%, #f472b6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Otero</span>
+            <span className="gradient-text">Otero</span>
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} style={{ minHeight: "2.5rem", marginBottom: "1.75rem" }}>
             <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(1.1rem, 2.5vw, 1.6rem)", color: "rgba(226,232,240,0.75)", fontWeight: 400 }}>
-              {role}<span style={{ animation: "blink 1s infinite", color: "#fb923c", marginLeft: "2px" }}>|</span>
+              {role}<span className="cursor-blink">|</span>
             </span>
           </motion.div>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }} style={{ color: "rgba(226,232,240,0.7)", lineHeight: 1.5, fontSize: "clamp(1rem, 2vw, 1.2rem)", maxWidth: "560px", marginBottom: "1.25rem", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
@@ -80,7 +79,7 @@ export default function Hero() {
               href={`mailto:${SITE.email}`}
               whileHover={{ scale: 1.04, boxShadow: "0 0 30px rgba(251,146,60,0.5)" }}
               whileTap={{ scale: 0.97 }}
-              style={{ padding: "0.85rem 2rem", background: "linear-gradient(135deg, #fb923c, #f472b6)", color: "#06010f", fontWeight: 700, borderRadius: "8px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "0.9rem", border: "none", cursor: "pointer", textDecoration: "none", display: "inline-flex", alignItems: "center" }}
+              className="btn-primary"
             >
               Let's talk →
             </motion.a>
@@ -89,7 +88,7 @@ export default function Hero() {
               onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
               whileHover={{ scale: 1.04, borderColor: "#fb923c", color: "#fb923c" }}
               whileTap={{ scale: 0.97 }}
-              style={{ padding: "0.85rem 2rem", background: "transparent", color: "rgba(226,232,240,0.8)", fontWeight: 600, borderRadius: "8px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "0.9rem", border: "1px solid rgba(226,232,240,0.2)", cursor: "pointer", transition: "all 0.2s" }}
+              className="btn-secondary"
             >
               View Projects
             </motion.button>
@@ -99,17 +98,18 @@ export default function Hero() {
               download
               whileHover={{ scale: 1.04, borderColor: "#f472b6", color: "#f472b6" }}
               whileTap={{ scale: 0.97 }}
-              style={{ padding: "0.85rem 2rem", background: "transparent", color: "rgba(226,232,240,0.8)", fontWeight: 600, borderRadius: "8px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "0.9rem", border: "1px solid rgba(226,232,240,0.2)", display: "inline-flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", transition: "all 0.2s", textDecoration: "none" }}
+              className="btn-secondary"
+              aria-label="Download CV as PDF"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
               Download CV
             </motion.a>
           </motion.div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} style={{ display: "flex", gap: "2rem", marginTop: "3rem", flexWrap: "wrap" }}>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="stat-grid">
             {[{ n: "~3", label: "Años construyendo" }, { n: "5", label: "Live demos" }, { n: "67", label: "Automated tests" }].map(({ n, label }) => (
               <div key={label}>
-                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1.8rem", fontWeight: 700, background: "linear-gradient(135deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", lineHeight: 1 }}>{n}</p>
-                <p style={{ color: "rgba(226,232,240,0.4)", fontSize: "0.8rem", marginTop: "4px", fontFamily: "'Inter', sans-serif" }}>{label}</p>
+                <p className="stat-value">{n}</p>
+                <p className="stat-label">{label}</p>
               </div>
             ))}
           </motion.div>
@@ -119,15 +119,19 @@ export default function Hero() {
         <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} style={{ flex: "0 0 auto", display: "flex", justifyContent: "center" }}>
           <div ref={imgRef} style={{ transition: "transform 0.15s ease-out", transformStyle: "preserve-3d" }}>
             <div style={{ position: "relative" }}>
-              <div style={{ position: "absolute", inset: "-8px", borderRadius: "50%", background: "conic-gradient(from 0deg, #fb923c, #f472b6, #fb923c)", animation: "spin-slow 8s linear infinite", filter: "blur(2px)" }} />
-              <div style={{ position: "absolute", inset: "-3px", borderRadius: "50%", background: "conic-gradient(from 0deg, #fb923c, #f472b6, #fb923c)", animation: "spin-slow 8s linear infinite" }} />
+              <div className="hero-photo-ring" style={{ filter: "blur(2px)" }} aria-hidden="true" />
+              <div className="hero-photo-ring hero-photo-ring--inner" aria-hidden="true" />
               <img
                 src={`data:image/jpeg;base64,${PHOTO_B64}`}
-                alt="Jorge Otero"
-                style={{ width: "260px", height: "260px", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", position: "relative", border: "5px solid #06010f", display: "block", animation: "glow-pulse 4s ease-in-out infinite" }}
+                alt="Portrait of Jorge Otero, Full Stack Developer from Buenos Aires"
+                className="hero-photo"
+                loading="lazy"
+                decoding="async"
+                width={260}
+                height={260}
               />
-              <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity }} style={{ position: "absolute", bottom: "10px", left: "50%", transform: "translateX(-50%)", background: "rgba(6,1,15,0.95)", border: "1px solid rgba(251,146,60,0.35)", borderRadius: "20px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "6px", whiteSpace: "nowrap", backdropFilter: "blur(10px)" }}>
-                <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#22c55e", display: "inline-block", boxShadow: "0 0 8px #22c55e" }} />
+              <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity }} className="hero-badge">
+                <span className="hero-badge__dot" aria-hidden="true" />
                 <span style={{ color: "rgba(226,232,240,0.7)", fontSize: "0.75rem", fontFamily: "'JetBrains Mono', monospace" }}>Buenos Aires 🇦🇷</span>
               </motion.div>
             </div>
@@ -136,9 +140,9 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", zIndex: 3, display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="scroll-hint" aria-hidden="true">
         <span style={{ color: "rgba(226,232,240,0.3)", fontSize: "0.75rem", fontFamily: "'JetBrains Mono', monospace", letterSpacing: "0.1em" }}>scroll</span>
-        <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }} style={{ width: "1px", height: "40px", background: "linear-gradient(to bottom, #fb923c, transparent)" }} />
+        <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }} className="scroll-hint__line" />
       </motion.div>
     </section>
   );

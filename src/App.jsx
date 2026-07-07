@@ -12,9 +12,9 @@ import { SITE } from "./constants";
 
 export default function App() {
   return (
-    <div style={{ background: "#06010f", minHeight: "100vh", position: "relative" }}>
+    <div className="portfolio-root" style={{ background: "#06010f", minHeight: "100vh", position: "relative" }}>
       <StarsCanvas />
-      <div style={{ position: "relative", zIndex: 1 }}>
+      <div className="portfolio-content">
         <Navbar />
         <Hero />
         <div id="stack">
@@ -26,25 +26,22 @@ export default function App() {
         <SocialProof />
         <Contact />
         <Certifications />
-        <footer style={{ textAlign: "center", padding: "2.5rem 2rem", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+        <footer className="site-footer">
           <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", marginBottom: "0.75rem" }}>
             Buenos Aires, Argentina · Open to remote ·{" "}
-            <a href={SITE.url} style={{ color: "#fb923c", textDecoration: "none" }}>Portfolio</a>
+            <a href={SITE.url}>Portfolio</a>
             {" · "}
-            <a href={SITE.github} target="_blank" rel="noreferrer" style={{ color: "#fb923c", textDecoration: "none" }}>GitHub</a>
+            <a href={SITE.github} target="_blank" rel="noreferrer">GitHub</a>
             {" · "}
-            <a href={SITE.cv} style={{ color: "#fb923c", textDecoration: "none" }}>CV</a>
+            <a href={SITE.cv}>CV</a>
             {" · "}
-            <a href={SITE.linkedin} target="_blank" rel="noreferrer" style={{ color: "#fb923c", textDecoration: "none" }}>LinkedIn</a>
+            <a href={SITE.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
             {" · "}
-            <a href={`mailto:${SITE.email}`} style={{ color: "#fb923c", textDecoration: "none" }}>{SITE.email}</a>
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
           </p>
           <p style={{ color: "rgba(226,232,240,0.2)", fontFamily: "'JetBrains Mono', monospace", fontSize: "0.8rem", letterSpacing: "0.05em" }}>
             Built with React + Three.js ·{" "}
-            <span style={{ background: "linear-gradient(90deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-              Jorge Otero
-            </span>{" "}
-            © 2026
+            <span className="gradient-text">Jorge Otero</span> © 2026
           </p>
         </footer>
       </div>

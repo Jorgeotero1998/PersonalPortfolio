@@ -6,7 +6,9 @@ function SkillCard({ category, color, items, index }) {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   return (
     <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: index * 0.1 }} whileHover={{ y: -6, borderColor: `${color}60` }}
-      style={{ background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "16px", padding: "1.5rem", transition: "border-color 0.3s, transform 0.3s", backdropFilter: "blur(10px)" }}>
+      className="glass-card"
+      style={{ borderColor: "rgba(255,255,255,0.07)" }}
+    >
       <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "1rem" }}>
         <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: color, boxShadow: `0 0 10px ${color}` }} />
         <p style={{ fontFamily: "'JetBrains Mono', monospace", color, fontSize: "0.78rem", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase" }}>{category}</p>
@@ -26,16 +28,13 @@ function SkillCard({ category, color, items, index }) {
 export default function Skills() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   return (
-    <section id="skills" style={{ padding: "7rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
-      <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} style={{ marginBottom: "4rem" }}>
-        <p style={{ fontFamily: "'JetBrains Mono', monospace", color: "#fb923c", fontSize: "0.85rem", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.75rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          <span style={{ width: "30px", height: "1px", background: "linear-gradient(90deg, #fb923c, #f472b6)", display: "inline-block" }} />
-          What I work with
-        </p>
-        <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 700, letterSpacing: "-0.03em", color: "#e2e8f0" }}>
-          Tech{" "}<span style={{ background: "linear-gradient(135deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Stack</span>
+    <section id="skills" className="section section-inner" aria-labelledby="skills-heading">
+      <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="section-header">
+        <p className="eyebrow">What I work with</p>
+        <h2 id="skills-heading" className="heading-section">
+          Tech{" "}<span className="gradient-text">Stack</span>
         </h2>
-        <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", marginTop: "0.75rem", maxWidth: "520px", lineHeight: 1.6 }}>
+        <p className="lead" style={{ marginTop: "0.75rem" }}>
           Junior+ full stack — APIs, databases, React UIs, and cloud deployment. Portfolio evidence over title inflation.
         </p>
       </motion.div>

@@ -6,24 +6,13 @@ export default function SocialProof() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section style={{ padding: "0 2rem 4rem", maxWidth: "1200px", margin: "0 auto" }}>
+    <section className="section" style={{ paddingTop: 0, paddingBottom: "4rem" }} aria-label="Open source and production highlights">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 24 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "1.5rem",
-          padding: "1.75rem 2rem",
-          background: "rgba(255,255,255,0.025)",
-          border: "1px solid rgba(255,255,255,0.08)",
-          borderRadius: "16px",
-          backdropFilter: "blur(12px)",
-        }}
+        className="proof-bar section-inner"
       >
         <div>
           <p style={{ fontFamily: "'JetBrains Mono', monospace", color: "#fb923c", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.5rem" }}>
@@ -56,17 +45,8 @@ export default function SocialProof() {
           target="_blank"
           rel="noreferrer"
           whileHover={{ scale: 1.03 }}
-          style={{
-            padding: "0.65rem 1.25rem",
-            background: "linear-gradient(135deg, #fb923c, #f472b6)",
-            color: "#06010f",
-            borderRadius: "8px",
-            textDecoration: "none",
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontWeight: 700,
-            fontSize: "0.88rem",
-            whiteSpace: "nowrap",
-          }}
+          className="btn-primary"
+          style={{ whiteSpace: "nowrap", fontSize: "0.88rem", padding: "0.65rem 1.25rem" }}
         >
           View GitHub ↗
         </motion.a>

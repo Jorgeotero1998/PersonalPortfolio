@@ -50,6 +50,8 @@ export default function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
+        className={`portfolio-nav${scrolled || menuOpen ? " portfolio-nav--scrolled" : ""}`}
+        aria-label="Main navigation"
         style={{
           position: "fixed",
           top: 0,
@@ -60,10 +62,6 @@ export default function Navbar() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          background: scrolled || menuOpen ? "rgba(6,1,15,0.92)" : "transparent",
-          backdropFilter: scrolled || menuOpen ? "blur(20px)" : "none",
-          borderBottom: scrolled || menuOpen ? "1px solid rgba(251,146,60,0.12)" : "none",
-          transition: "all 0.4s ease",
         }}
       >
         <motion.div
@@ -90,9 +88,8 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08 + 0.3 }}
               onClick={() => scrollTo(link.id)}
-              style={navLinkStyle(active === link.id)}
-              onMouseEnter={(e) => { e.currentTarget.style.color = "#fb923c"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = active === link.id ? "#fb923c" : "rgba(226,232,240,0.65)"; }}
+              className="nav-link"
+              style={{ color: active === link.id ? "#fb923c" : "rgba(226,232,240,0.65)" }}
             >
               <span style={{ fontFamily: "'JetBrains Mono', monospace", color: "#f472b6", fontSize: "0.7rem", marginRight: "4px" }}>
                 0{i + 1}.
@@ -105,16 +102,7 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
             whileHover={{ scale: 1.05, borderColor: "#fb923c" }}
-            style={{
-              padding: "0.5rem 1.25rem",
-              border: "1px solid rgba(251,146,60,0.5)",
-              borderRadius: "6px",
-              color: "#fb923c",
-              textDecoration: "none",
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "0.82rem",
-              transition: "all 0.2s",
-            }}
+            className="nav-github-btn"
           >
             GitHub ↗
           </motion.a>

@@ -14,18 +14,13 @@ function ProjectCard({ project, index, compact }) {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: (index % 3) * 0.12 }}
       whileHover={{ y: -6, boxShadow: `0 20px 60px ${project.color}20` }}
+      className={`project-card${isFlagship ? " project-card--flagship" : ""}`}
       style={{
         background: project.gradient,
         border: `1px solid ${project.color}${isFlagship ? "35" : "25"}`,
         borderRadius: isFlagship ? "24px" : "20px",
         padding: compact ? "1.5rem" : isFlagship ? "2.25rem 2.5rem" : "2rem",
-        backdropFilter: "blur(20px)",
-        transition: "box-shadow 0.3s, transform 0.3s",
-        display: "flex",
-        flexDirection: "column",
-        gap: "1rem",
-        position: "relative",
-        overflow: "hidden",
+        ["--card-accent"]: project.color,
       }}
     >
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: `linear-gradient(90deg, transparent, ${project.color}, transparent)` }} />
@@ -206,19 +201,14 @@ export default function Projects() {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <section id="projects" style={{ padding: "7rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
-      <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} style={{ marginBottom: "3.5rem" }}>
-        <p style={{ fontFamily: "'JetBrains Mono', monospace", color: "#fb923c", fontSize: "0.85rem", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.75rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          <span style={{ width: "30px", height: "1px", background: "linear-gradient(90deg, #fb923c, #f472b6)", display: "inline-block" }} />
-          Production work
-        </p>
-        <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 700, letterSpacing: "-0.03em", color: "#e2e8f0", marginBottom: "0.75rem" }}>
+    <section id="projects" className="section section-inner" aria-labelledby="projects-heading">
+      <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="section-header">
+        <p className="eyebrow">Production work</p>
+        <h2 id="projects-heading" className="heading-section">
           Featured{" "}
-          <span style={{ background: "linear-gradient(135deg, #fb923c, #f472b6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-            Projects
-          </span>
+          <span className="gradient-text">Projects</span>
         </h2>
-        <p style={{ color: "rgba(226,232,240,0.5)", fontFamily: "'Inter', sans-serif", fontSize: "0.95rem", maxWidth: "560px", lineHeight: 1.7 }}>
+        <p className="lead" style={{ marginTop: "0.75rem" }}>
           Full-stack apps shipped to production — live demos where available, source on GitHub.
         </p>
       </motion.div>

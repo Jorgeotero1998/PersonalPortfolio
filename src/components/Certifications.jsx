@@ -6,7 +6,7 @@ export default function Certifications() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section style={{ padding: "3rem 2rem 5rem", maxWidth: "1200px", margin: "0 auto" }}>
+    <section className="section section-inner" style={{ paddingTop: "3rem", paddingBottom: "5rem" }} aria-labelledby="certs-heading">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 20 }}
@@ -26,15 +26,7 @@ export default function Certifications() {
         >
           Also · supplementary credentials
         </p>
-        <h3
-          style={{
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: "clamp(1.25rem, 2.5vw, 1.6rem)",
-            fontWeight: 600,
-            color: "rgba(226,232,240,0.75)",
-            margin: 0,
-          }}
-        >
+        <h3 id="certs-heading" className="heading-section" style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.6rem)", fontWeight: 600, color: "rgba(226,232,240,0.75)", margin: 0 }}>
           Certifications
         </h3>
       </motion.div>
@@ -45,15 +37,8 @@ export default function Certifications() {
             initial={{ opacity: 0, y: 12 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: i * 0.05 }}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.75rem",
-              background: "rgba(255,255,255,0.015)",
-              border: "1px solid rgba(255,255,255,0.05)",
-              borderRadius: "10px",
-              padding: "0.85rem 1rem",
-            }}
+            className="glass-card"
+            style={{ display: "flex", alignItems: "center", gap: "0.75rem", padding: "0.85rem 1rem", borderRadius: "10px" }}
           >
             <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: c.color, opacity: 0.7, flexShrink: 0 }} />
             <div>
