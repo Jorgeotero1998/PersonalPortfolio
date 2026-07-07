@@ -20,9 +20,45 @@
   --radius-xl: 24px;
   --section-y: clamp(4.5rem, 8vw, 7rem);
   --content-max: 1200px;
+
+  /* Premium font pairing */
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Type scale */
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+  --text-display: clamp(3rem, 7vw, 5.5rem);
+
+  --leading-tight: 1.08;
+  --leading-snug: 1.2;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  --tracking-tighter: -0.04em;
+  --tracking-tight: -0.03em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+  --tracking-label: 0.12em;
+  --tracking-eyebrow: 0.15em;
+
+  /* 8px spacing rhythm */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-7: 56px;
+  --space-8: 64px;
+
   --gradient-accent: linear-gradient(135deg, var(--orange), var(--pink));
   --gradient-accent-h: linear-gradient(90deg, var(--orange), var(--pink));
   --shadow-card: 0 24px 64px rgba(0, 0, 0, 0.35);
@@ -40,11 +76,14 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  line-height: 1.6;
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
 }
 
 /* Subtle grain overlay for depth */
@@ -74,7 +113,7 @@ body {
   color: var(--bg);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
   border-radius: var(--radius-sm);
   text-decoration: none;
   transition: top 0.2s var(--ease-out);
@@ -108,13 +147,15 @@ body {
 .eyebrow {
   font-family: var(--font-mono);
   color: var(--orange);
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-1);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--space-1);
 }
 
 .eyebrow::before {
@@ -147,19 +188,19 @@ body {
 
 .heading-section {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(var(--text-xl), 4vw, var(--text-2xl));
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--tracking-tight);
   color: var(--text);
-  line-height: 1.1;
+  line-height: var(--leading-tight);
 }
 
 .heading-display {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-size: var(--text-display);
   font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tighter);
 }
 
 .gradient-text {
@@ -172,18 +213,29 @@ body {
 .lead {
   color: var(--text-muted);
   font-family: var(--font-body);
-  font-size: clamp(0.95rem, 1.5vw, 1rem);
-  line-height: 1.75;
+  font-size: clamp(var(--text-base), 1.5vw, var(--text-md));
+  line-height: var(--leading-relaxed);
   max-width: 36rem;
 }
 
 .case-label {
   font-family: var(--font-mono);
   color: var(--orange);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-1);
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--text-subtle);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-wide);
 }
 
 /* ── Layout ──────────────────────────────────────────────────── */
@@ -257,13 +309,15 @@ body {
 .btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 2rem;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-4);
   background: var(--gradient-accent);
   color: var(--bg);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-snug);
   border: none;
   border-radius: var(--radius-sm);
   text-decoration: none;
@@ -279,13 +333,15 @@ body {
 .btn-secondary {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 2rem;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-4);
   background: transparent;
   color: var(--text-secondary);
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-snug);
   border: 1px solid rgba(226, 232, 240, 0.2);
   border-radius: var(--radius-sm);
   text-decoration: none;
@@ -319,13 +375,19 @@ body {
   color: var(--orange);
   font-family: var(--font-display);
   font-weight: 600;
-  margin: 0 0 0.35rem;
+  font-size: var(--text-md);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+  margin: 0 0 var(--space-1);
 }
 
 .link-card__sub {
   color: var(--text-subtle);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  line-height: var(--leading-snug);
   margin: 0;
 }
 
@@ -336,9 +398,11 @@ body {
   color: var(--text-secondary);
   border-radius: 6px;
   padding: 3px 10px;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   font-family: var(--font-mono);
   font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  line-height: var(--leading-snug);
   transition: background 0.2s, border-color 0.2s;
 }
 
@@ -374,20 +438,25 @@ body {
 
 .stat-value {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: var(--text-xl);
   font-weight: 700;
   background: var(--gradient-accent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  line-height: 1;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  font-variant-numeric: tabular-nums;
 }
 
 .stat-label {
   color: var(--text-faint);
-  font-size: 0.8rem;
-  margin-top: 4px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin-top: var(--space-1);
   font-family: var(--font-body);
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-snug);
 }
 
 /* ── Ambient canvas & mesh ───────────────────────────────────── */
@@ -711,17 +780,23 @@ body {
 .arch-pre {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  line-height: 1.65;
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
   color: rgba(226, 232, 240, 0.65);
+  letter-spacing: var(--tracking-normal);
   white-space: pre;
 }
 
-/* ── Footer ──────────────────────────────────────────────────── */
 .site-footer {
   text-align: center;
-  padding: 2.5rem 2rem;
+  padding: var(--space-4) var(--space-3);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-subtle);
 }
 
 .site-footer a {
@@ -765,21 +840,26 @@ body {
   border: none;
   cursor: pointer;
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-snug);
   transition: color 0.2s;
   text-align: left;
   padding: 0;
 }
 
 .nav-github-btn {
-  padding: 0.5rem 1.25rem;
+  padding: var(--space-1) var(--space-2);
   border: 1px solid rgba(251, 146, 60, 0.5);
   border-radius: 6px;
   color: var(--orange);
   text-decoration: none;
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  line-height: var(--leading-snug);
   transition: border-color 0.2s, background 0.2s, transform 0.2s;
 }
 
