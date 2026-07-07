@@ -35,7 +35,7 @@ export default function Skills() {
           Tech{" "}<span className="gradient-text">Stack</span>
         </h2>
         <p className="lead" style={{ marginTop: "0.75rem" }}>
-          Junior+ full stack — APIs, databases, React UIs, and cloud deployment. Portfolio evidence over title inflation.
+          Full stack — APIs, databases, React UIs, and cloud deployment. Portfolio evidence over title inflation.
         </p>
       </motion.div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.25rem" }}>

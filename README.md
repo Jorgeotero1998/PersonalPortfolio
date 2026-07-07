@@ -4,7 +4,7 @@
 
 Interactive 3D portfolio built with **React**, **Vite**, and **Three.js** — showcasing production full-stack projects with live demos, Sonoteca case study, and downloadable CV.
 
-Positioning: **Junior+ Full Stack Developer** · ~3 años construyendo apps (desde 2023: freelance + proyectos + 4Geeks), not "3 years industry experience."
+Positioning: **Full Stack Developer** · ~3 años construyendo apps (desde 2023: freelance + proyectos + 4Geeks), not "3 years industry experience."
 
 ## Highlights
 

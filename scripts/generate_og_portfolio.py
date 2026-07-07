@@ -142,7 +142,7 @@ def main() -> None:
     font_url = pick_font(18)
 
     draw.text((110, 120), "Jorge Otero", fill=WHITE, font=font_name)
-    draw.text((110, 195), "Junior+ Full Stack Developer", fill=(*ORANGE, 255), font=font_role)
+    draw.text((110, 195), "Full Stack Developer", fill=(*ORANGE, 255), font=font_role)
     draw.text(
         (110, 250),
         "Python · FastAPI · Flask · React · PostgreSQL",

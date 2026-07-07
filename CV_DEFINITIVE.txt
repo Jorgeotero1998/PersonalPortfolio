@@ -1,0 +1,65 @@
+Jorge Otero
+Full Stack Developer
+Buenos Aires, Argentina | jorgotero4@gmail.com | linkedin.com/in/jorgeotero1998 | github.com/Jorgeotero1998
+Portfolio: portofolio-mu-lac.vercel.app | Sonoteca: sonoteca-hzbi.vercel.app
+
+SUMMARY
+~3 years hands-on building full-stack applications since 2023 - freelance Python work, personal projects, and 4Geeks Academy training. This reflects time learning, building, and shipping (not 3 years at a single employer). Flagship project Sonoteca is a production music platform on FastAPI + React with real Deezer catalog integration, deployed on Vercel with Neon Postgres.
+
+EXPERIENCE
+
+Freelance Python Developer
+Remote | Nov 2023 - Present
+- Shipped production REST APIs (FastAPI/Flask): JWT auth, SQLAlchemy, Alembic migrations, PostgreSQL.
+- Built automation and scraping pipelines (Playwright, Selenium); JSON/CSV export, retry/backoff, Docker.
+- LLM integrations (Groq/Llama 3.3): goal decomposition APIs, task orchestration, deployed on Vercel/Render.
+
+Full Stack Developer - 4Geeks Academy
+Jun 2025 - Present
+- LaVerde Tienda capstone with a 3-person team - e-commerce with cart, checkout, admin panel, and 44 pytest tests.
+- Backend: Flask REST API, SQLAlchemy, JWT, Cloudinary; GitHub Actions CI; Render deployment.
+
+PROJECTS
+
+Sonoteca - Music Platform (FLAGSHIP | LIVE)
+React | TypeScript | FastAPI | PostgreSQL | Vercel | Neon | Deezer API | JWT/RBAC
+sonoteca-hzbi.vercel.app | github.com/Jorgeotero1998/Sonoteca
+- Vercel monorepo + Neon Postgres: FastAPI under /api, Alembic migrations, JWT/RBAC auth.
+- Deezer API catalog: search, 30s previews, playlists, favorites, listening history.
+- Live demo: sonoteca-hzbi.vercel.app - production-deployed full-stack music platform.
+
+LaVerde Tienda - E-Commerce Capstone (Frontend Demo)
+React | Flask | PostgreSQL | JWT | Cloudinary | pytest | GitHub Actions
+laverde-frontend.onrender.com | github.com/Jorgeotero1998/LaVerde-Tienda
+- Team capstone: product catalog, cart, orders, admin panel; 44 pytest tests and CI pipeline.
+
+AI Task Orchestrator - LLM Productivity Platform (LIVE)
+Python | Flask | Groq API (Llama 3.3) | React | PostgreSQL | Docker
+ai-task-orchestrator-inky.vercel.app | github.com/Jorgeotero1998/ai-task-orchestrator
+- Decomposes complex goals into actionable steps; task history, PDF export, admin auth.
+
+Jurisprudencia Scraper - Legal Document CLI
+TypeScript | Playwright | Cheerio | Vitest | Docker
+github.com/Jorgeotero1998/Scraper
+- Production-grade CLI scraper with rate limiting, retry/backoff, and 23 Vitest tests.
+
+GlobalThree - 3D Data Visualization (LIVE)
+React | Three.js | React Three Fiber | Vercel
+global-three-one.vercel.app | github.com/Jorgeotero1998/GlobalThree
+- Interactive navigable 3D globe with pulsing demographic nodes and animated flow arcs.
+
+SKILLS
+Backend: Python | FastAPI | Flask | SQLAlchemy | Alembic | Pydantic | JWT/RBAC | REST APIs | pytest
+Frontend: React | TypeScript | Vite | Tailwind CSS | Three.js | React Three Fiber
+DevOps: Docker | GitHub Actions | Vercel | Render | Neon | PostgreSQL | Linux | CI/CD
+
+EDUCATION
+Full Stack Developer - 4Geeks Academy
+Jun 2025 - Present
+
+CERTIFICATIONS
+- Python - Verified by Talently (May 2026)
+- JavaScript - Verified by Talently (May 2026)
+- Automate Cybersecurity with Python - Google (Oct 2025)
+- Cloud-Native Development with OpenShift and Kubernetes - Red Hat
+- Additional cloud security credentials (AWS, Azure, Google) - see LinkedIn

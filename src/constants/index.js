@@ -1,16 +1,16 @@
 export const SITE = {
-  title: "Jorge Otero | Junior+ Full Stack Developer",
+  title: "Jorge Otero | Full Stack Developer",
   description:
-    "Junior+ Full Stack Developer · ~3 años construyendo apps con Python + React · Demos en producción. Buenos Aires · Remote.",
+    "Full Stack Developer · ~3 años construyendo apps con Python + React · Demos en producción. Buenos Aires · Remote.",
   url: "https://portofolio-mu-lac.vercel.app/",
   email: "jorgotero4@gmail.com",
   linkedin: "https://linkedin.com/in/jorgeotero1998",
   github: "https://github.com/Jorgeotero1998",
-  cv: "/JORGE_OTERO_CV.pdf?v=20260706final",
+  cv: "/JORGE_OTERO_CV.pdf?v=20260707def",
 };
 
 export const ROLES = [
-  "Junior+ Full Stack Developer",
+  "Full Stack Developer",
   "Python · FastAPI · React",
   "~3 años construyendo apps",
   "Portfolio en producción",

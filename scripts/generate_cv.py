@@ -278,7 +278,7 @@ def write_pdf(path: Path, about: str, projects: list, skills: list):
     story = []
 
     story.append(Paragraph("Jorge Otero", styles["name"]))
-    story.append(Paragraph("Junior+ Full Stack Developer", styles["title"]))
+    story.append(Paragraph("Full Stack Developer", styles["title"]))
     story.append(Paragraph(CONTACT, styles["contact"]))
     story.append(Paragraph(LINKS, styles["contact"]))
     story.append(Spacer(1, 0.08 * inch))
@@ -340,9 +340,11 @@ def _validate_pdf(path: Path):
     if len(text) < 2000:
         raise SystemExit(f"PDF text too short ({len(text)} chars): {path}")
 
-    for required in ("Jorge Otero", "Sonoteca", "Junior+", "jorgotero4@gmail.com"):
+    for required in ("Jorge Otero", "Full Stack Developer", "Sonoteca", "jorgotero4@gmail.com"):
         if required not in text:
             raise SystemExit(f"Missing '{required}' in {path}")
+    if "Junior" in text:
+        raise SystemExit(f"{path.name}: still contains 'Junior' seniority label")
     if "Enginner" in text:
         raise SystemExit(f"{path.name}: contains Enginner typo")
 
