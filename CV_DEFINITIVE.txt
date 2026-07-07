@@ -8,8 +8,8 @@ SUMMARY
 
 EXPERIENCE
 
-Freelance Python Developer
-Remote | Nov 2023 - Present
+Full Stack Developer (Freelance)
+Remote | Mar 2023 - Present
 - Shipped production REST APIs (FastAPI/Flask): JWT auth, SQLAlchemy, Alembic migrations, PostgreSQL.
 - Built automation and scraping pipelines (Playwright, Selenium); JSON/CSV export, retry/backoff, Docker.
 - LLM integrations (Groq/Llama 3.3): goal decomposition APIs, task orchestration, deployed on Vercel/Render.
@@ -34,7 +34,7 @@ laverde-frontend.onrender.com | github.com/Jorgeotero1998/LaVerde-Tienda
 - Team capstone: product catalog, cart, orders, admin panel; 44 pytest tests and CI pipeline.
 
 AI Task Orchestrator - LLM Productivity Platform (LIVE)
-Python | Flask | Groq API (Llama 3.3) | React | PostgreSQL | Docker
+Python | FastAPI | Groq API (Llama 3.3) | React | PostgreSQL | Docker
 ai-task-orchestrator-inky.vercel.app | github.com/Jorgeotero1998/ai-task-orchestrator
 - Decomposes complex goals into actionable steps; task history, PDF export, admin auth.
 
@@ -43,10 +43,10 @@ TypeScript | Playwright | Cheerio | Vitest | Docker
 github.com/Jorgeotero1998/Scraper
 - Production-grade CLI scraper with rate limiting, retry/backoff, and 23 Vitest tests.
 
-GlobalThree - 3D Data Visualization (LIVE)
+Global Pulse - Geography Encyclopedia (LIVE)
 React | Three.js | React Three Fiber | Vercel
 global-three-one.vercel.app | github.com/Jorgeotero1998/GlobalThree
-- Interactive navigable 3D globe with pulsing demographic nodes and animated flow arcs.
+- Interactive geography encyclopedia — 249 countries, 54 fields each, 3D globe, search, compare, and metric layers.
 
 SKILLS
 Backend: Python | FastAPI | Flask | SQLAlchemy | Alembic | Pydantic | JWT/RBAC | REST APIs | pytest
@@ -60,6 +60,4 @@ Jun 2025 - Present
 CERTIFICATIONS
 - Python - Verified by Talently (May 2026)
 - JavaScript - Verified by Talently (May 2026)
-- Automate Cybersecurity with Python - Google (Oct 2025)
 - Cloud-Native Development with OpenShift and Kubernetes - Red Hat
-- Additional cloud security credentials (AWS, Azure, Google) - see LinkedIn

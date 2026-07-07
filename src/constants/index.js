@@ -6,7 +6,7 @@ export const SITE = {
   email: "jorgotero4@gmail.com",
   linkedin: "https://linkedin.com/in/jorgeotero1998",
   github: "https://github.com/Jorgeotero1998",
-  cv: "/JORGE_OTERO_CV.pdf?v=20260707hire",
+  cv: "/JORGE_OTERO_CV.pdf?v=20260707polish",
 };
 
 export const ROLES = [
@@ -58,7 +58,7 @@ export const FEATURED_PROJECTS = [
     status: "live",
     statusLabel: "Live",
     demoLogin: "admin@example.com / change-me",
-    tags: ["Python", "Flask", "React", "Groq API", "Llama 3.3", "Docker", "PostgreSQL"],
+    tags: ["Python", "FastAPI", "React", "Groq API", "Llama 3.3", "Docker", "PostgreSQL"],
     desc: "LLM platform that decomposes complex goals into 5 actionable steps using Groq Llama 3.3 — task history dashboard and PDF export.",
     impact: "Docker Compose stack, secure admin auth, Postgres persistence, deployed on Vercel.",
     live: "https://ai-task-orchestrator-inky.vercel.app/",
@@ -66,12 +66,24 @@ export const FEATURED_PROJECTS = [
     color: "#a78bfa",
     gradient: "linear-gradient(135deg, rgba(167,139,250,0.14), rgba(139,92,246,0.05))",
   },
-];
-
-export const OTHER_PROJECTS = [
+  {
+    name: "Global Pulse",
+    emoji: "🌍",
+    featured: true,
+    status: "live",
+    statusLabel: "Live",
+    tags: ["React", "Three.js", "React Three Fiber", "Vercel"],
+    desc: "Geography encyclopedia — interactive 3D globe with 249 countries, 54 fields each, search, compare, and metric layers.",
+    impact: "React Three Fiber visualization with REST Countries data baked at build time — zero API keys at runtime.",
+    live: "https://global-three-one.vercel.app/",
+    repo: "https://github.com/Jorgeotero1998/GlobalThree",
+    color: "#60a5fa",
+    gradient: "linear-gradient(135deg, rgba(96,165,250,0.12), rgba(59,130,246,0.04))",
+  },
   {
     name: "Scraper",
     emoji: "🕷️",
+    featured: true,
     status: "cli",
     statusLabel: "CLI",
     sourceKind: "cli",
@@ -83,19 +95,9 @@ export const OTHER_PROJECTS = [
     color: "#f472b6",
     gradient: "linear-gradient(135deg, rgba(244,114,182,0.12), rgba(236,72,153,0.04))",
   },
-  {
-    name: "GlobalThree",
-    emoji: "🌍",
-    status: "live",
-    statusLabel: "Live",
-    tags: ["React", "Three.js", "React Three Fiber", "Vercel"],
-    desc: "Interactive 3D globe with pulsating demographic nodes and animated arcs simulating global data flows.",
-    live: "https://global-three-one.vercel.app/",
-    repo: "https://github.com/Jorgeotero1998/GlobalThree",
-    color: "#60a5fa",
-    gradient: "linear-gradient(135deg, rgba(96,165,250,0.12), rgba(59,130,246,0.04))",
-  },
 ];
+
+export const OTHER_PROJECTS = [];
 
 /** @deprecated use FEATURED_PROJECTS + OTHER_PROJECTS */
 export const PROJECTS = [...FEATURED_PROJECTS, ...OTHER_PROJECTS];

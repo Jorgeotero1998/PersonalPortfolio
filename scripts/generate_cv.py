@@ -43,8 +43,8 @@ ABOUT_BACKEND = (
 
 EXPERIENCE = [
     {
-        "title": "Freelance Python Developer",
-        "meta": "Remote | Nov 2023 - Present",
+        "title": "Full Stack Developer (Freelance)",
+        "meta": "Remote | Mar 2023 - Present",
         "bullets": [
             "Shipped production REST APIs (FastAPI/Flask): JWT auth, SQLAlchemy, Alembic migrations, PostgreSQL.",
             "Built automation and scraping pipelines (Playwright, Selenium); JSON/CSV export, retry/backoff, Docker.",
@@ -82,7 +82,7 @@ PROJECTS_FULLSTACK = [
     },
     {
         "title": "AI Task Orchestrator - LLM Productivity Platform (LIVE)",
-        "meta": "Python | Flask | Groq API (Llama 3.3) | React | PostgreSQL | Docker",
+        "meta": "Python | FastAPI | Groq API (Llama 3.3) | React | PostgreSQL | Docker",
         "links": "ai-task-orchestrator-inky.vercel.app | github.com/Jorgeotero1998/ai-task-orchestrator",
         "bullets": [
             "Decomposes complex goals into actionable steps; task history, PDF export, admin auth.",
@@ -97,11 +97,11 @@ PROJECTS_FULLSTACK = [
         ],
     },
     {
-        "title": "GlobalThree - 3D Data Visualization (LIVE)",
+        "title": "Global Pulse - Geography Encyclopedia (LIVE)",
         "meta": "React | Three.js | React Three Fiber | Vercel",
         "links": "global-three-one.vercel.app | github.com/Jorgeotero1998/GlobalThree",
         "bullets": [
-            "Interactive navigable 3D globe with pulsing demographic nodes and animated flow arcs.",
+            "Interactive geography encyclopedia — 249 countries, 54 fields each, 3D globe, search, compare, and metric layers.",
         ],
     },
 ]
@@ -125,8 +125,8 @@ PROJECTS_BACKEND = [
         ],
     },
     {
-        "title": "AI Task Orchestrator - Flask LLM Backend (LIVE)",
-        "meta": "Python | Flask | Groq API | PostgreSQL | Docker",
+        "title": "AI Task Orchestrator - FastAPI LLM Backend (LIVE)",
+        "meta": "Python | FastAPI | Groq API | PostgreSQL | Docker",
         "links": "ai-task-orchestrator-inky.vercel.app | github.com/Jorgeotero1998/ai-task-orchestrator",
         "bullets": [
             "LLM orchestration API with persistence, admin auth, and Docker Compose local stack.",
@@ -162,9 +162,7 @@ EDUCATION = [
 CERTS = [
     "Python - Verified by Talently (May 2026)",
     "JavaScript - Verified by Talently (May 2026)",
-    "Automate Cybersecurity with Python - Google (Oct 2025)",
     "Cloud-Native Development with OpenShift and Kubernetes — Red Hat",
-    "Additional cloud security credentials (AWS, Azure, Google) - see LinkedIn",
 ]
 
 

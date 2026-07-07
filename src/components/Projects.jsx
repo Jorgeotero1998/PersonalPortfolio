@@ -276,7 +276,7 @@ export default function Projects() {
           <span className="gradient-text">Projects</span>
         </h2>
         <p className="lead" style={{ marginTop: "0.75rem", maxWidth: "42rem" }}>
-          Evidence over adjectives — live demos, automated tests, and CI on every flagship repo.
+          Five flagship builds — Sonoteca, LaVerde, AI Task Orchestrator, Global Pulse, and Scraper — live demos, automated tests, and CI on every repo.
         </p>
       </motion.div>
 
