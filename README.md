@@ -2,9 +2,9 @@
 
 **Live site:** [https://portofolio-mu-lac.vercel.app/](https://portofolio-mu-lac.vercel.app/)
 
-Interactive 3D portfolio built with **React**, **Vite**, and **Three.js** — showcasing production full-stack projects with live demos, Sonoteca case study, and downloadable CV.
+Interactive 3D portfolio built with **React**, **Vite**, and **Three.js** — showcasing practical full-stack projects, live demos, the Sonoteca case study, and a downloadable CV.
 
-Positioning: **Full Stack Developer** · ~3 años construyendo apps (desde 2023: freelance + proyectos + 4Geeks), not "3 years industry experience."
+Positioning: **Full Stack Developer** · building full-stack apps since 2023 through freelance Python work, personal projects, and 4Geeks Academy training.
 
 ## Highlights
 
@@ -15,7 +15,7 @@ Positioning: **Full Stack Developer** · ~3 años construyendo apps (desde 2023:
 
 ## CV
 
-PDFs in `public/` are generated from `scripts/generate_cv.py` (honest timeline: building since Nov 2023). Regenerate after copy changes:
+PDFs in `public/` are generated from `scripts/generate_cv.py`. Regenerate after copy changes:
 
 ```bash
 python scripts/generate_cv.py

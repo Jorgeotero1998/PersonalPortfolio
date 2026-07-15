@@ -4,54 +4,55 @@ Buenos Aires, Argentina | jorgotero4@gmail.com | linkedin.com/in/jorgeotero1998 
 Portfolio: portofolio-mu-lac.vercel.app | Sonoteca: sonoteca-hzbi.vercel.app
 
 SUMMARY
-~3 years hands-on building full-stack applications since 2023 - freelance Python work, personal projects, and 4Geeks Academy training. This reflects time learning, building, and shipping (not 3 years at a single employer). Flagship project Sonoteca is a production music platform on FastAPI + React with real Deezer catalog integration, deployed on Vercel with Neon Postgres.
-
-EXPERIENCE
-
-Full Stack Developer (Freelance)
-Remote | Mar 2023 - Present
-- Shipped production REST APIs (FastAPI/Flask): JWT auth, SQLAlchemy, Alembic migrations, PostgreSQL.
-- Built automation and scraping pipelines (Playwright, Selenium); JSON/CSV export, retry/backoff, Docker.
-- LLM integrations (Groq/Llama 3.3): goal decomposition APIs, task orchestration, deployed on Vercel/Render.
-
-Full Stack Developer - 4Geeks Academy
-Jun 2025 - Present
-- LaVerde Tienda capstone with a 3-person team - e-commerce with cart, checkout, admin panel, and 44 pytest tests.
-- Backend: Flask REST API, SQLAlchemy, JWT, Cloudinary; GitHub Actions CI; Render deployment.
-
-PROJECTS
-
-Sonoteca - Music Platform (FLAGSHIP | LIVE)
-React | TypeScript | FastAPI | PostgreSQL | Vercel | Neon | Deezer API | JWT/RBAC
-sonoteca-hzbi.vercel.app | github.com/Jorgeotero1998/Sonoteca
-- Vercel monorepo + Neon Postgres: FastAPI under /api, Alembic migrations, JWT/RBAC auth.
-- Deezer API catalog: search, 30s previews, playlists, favorites, listening history.
-- Live demo: sonoteca-hzbi.vercel.app - production-deployed full-stack music platform.
-
-LaVerde Tienda - E-Commerce Capstone (Frontend Demo)
-React | Flask | PostgreSQL | JWT | Cloudinary | pytest | GitHub Actions
-laverde-frontend.onrender.com | github.com/Jorgeotero1998/LaVerde-Tienda
-- Team capstone: product catalog, cart, orders, admin panel; 44 pytest tests and CI pipeline.
-
-AI Task Orchestrator - LLM Productivity Platform (LIVE)
-Python | FastAPI | Groq API (Llama 3.3) | React | PostgreSQL | Docker
-ai-task-orchestrator-inky.vercel.app | github.com/Jorgeotero1998/ai-task-orchestrator
-- Decomposes complex goals into actionable steps; task history, PDF export, admin auth.
-
-Jurisprudencia Scraper - Legal Document CLI
-TypeScript | Playwright | Cheerio | Vitest | Docker
-github.com/Jorgeotero1998/Scraper
-- Production-grade CLI scraper with rate limiting, retry/backoff, and 23 Vitest tests.
-
-Global Pulse - Geography Encyclopedia (LIVE)
-React | Three.js | React Three Fiber | Vercel
-global-three-one.vercel.app | github.com/Jorgeotero1998/GlobalThree
-- Interactive geography encyclopedia — 249 countries, 54 fields each, 3D globe, search, compare, and metric layers.
+Full Stack Developer focused on Python, FastAPI/Flask, React, TypeScript, and PostgreSQL. Since 2023 I have built freelance Python work, personal products, and 4Geeks Academy projects with live deploys, automated tests, and practical end-to-end delivery. Flagship project: Sonoteca, a React + FastAPI music platform using the Deezer API, Vercel, and Neon Postgres.
 
 SKILLS
 Backend: Python | FastAPI | Flask | SQLAlchemy | Alembic | Pydantic | JWT/RBAC | REST APIs | pytest
 Frontend: React | TypeScript | Vite | Tailwind CSS | Three.js | React Three Fiber
-DevOps: Docker | GitHub Actions | Vercel | Render | Neon | PostgreSQL | Linux | CI/CD
+Data/Platform: PostgreSQL | Neon | Docker | GitHub Actions | Vercel | Render | Linux | CI/CD
+Automation: Playwright | Selenium | web scraping | JSON/CSV export | retry/backoff pipelines
+
+SELECTED PROJECTS
+
+Sonoteca - Music Platform (Flagship | Live)
+React | TypeScript | FastAPI | PostgreSQL | Vercel | Neon | Deezer API | JWT/RBAC
+sonoteca-hzbi.vercel.app | github.com/Jorgeotero1998/Sonoteca
+- Built a React + FastAPI monorepo with FastAPI served under /api, Alembic migrations, JWT/RBAC auth, and refs-only persistence.
+- Integrated the Deezer API for catalog search, 30s previews, playlists, favorites, and listening history.
+- Deployed on Vercel with Neon Postgres and public OpenAPI docs.
+
+LaVerde Tienda - E-Commerce Capstone (Frontend Demo)
+React | Flask | PostgreSQL | JWT | Cloudinary | pytest | GitHub Actions
+laverde-frontend.onrender.com | github.com/Jorgeotero1998/LaVerde-Tienda
+- 3-person capstone project with product catalog, cart, checkout flow, orders, admin panel, 44 pytest tests, and CI pipeline.
+
+AI Task Orchestrator - LLM Productivity App (Live)
+Python | Flask | Groq API (Llama 3.3) | React | PostgreSQL | Docker
+ai-task-orchestrator-inky.vercel.app | github.com/Jorgeotero1998/ai-task-orchestrator
+- Built an app that decomposes complex goals into actionable steps, with task history, PDF export, and admin auth.
+
+Jurisprudencia Scraper - Legal Document CLI
+TypeScript | Playwright | Cheerio | Vitest | Docker
+github.com/Jorgeotero1998/Scraper
+- Built a CLI scraper with structured JSON/CSV export, rate limiting, retry/backoff, Docker packaging, and 23 Vitest tests.
+
+GlobalThree - 3D Data Visualization (Live)
+React | Three.js | React Three Fiber | Vercel
+global-three-one.vercel.app | github.com/Jorgeotero1998/GlobalThree
+- Built an interactive 3D globe with demographic nodes and animated flow arcs.
+
+FREELANCE / PRACTICAL EXPERIENCE
+
+Freelance Python Developer
+Remote | Nov 2023 - Present
+- Built REST APIs with FastAPI/Flask, JWT auth, SQLAlchemy, Alembic migrations, and PostgreSQL.
+- Built automation and scraping pipelines (Playwright, Selenium); JSON/CSV export, retry/backoff, Docker.
+- Integrated Groq/Llama 3.3 for goal decomposition APIs and task orchestration workflows.
+
+Full Stack Developer Training - 4Geeks Academy
+Jun 2025 - Present
+- LaVerde Tienda capstone with a 3-person team - e-commerce with cart, checkout, admin panel, and 44 pytest tests.
+- Backend: Flask REST API, SQLAlchemy, JWT, Cloudinary; GitHub Actions CI; Render deployment.
 
 EDUCATION
 Full Stack Developer - 4Geeks Academy

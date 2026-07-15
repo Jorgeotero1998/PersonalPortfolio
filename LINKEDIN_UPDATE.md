@@ -1,6 +1,6 @@
 # LinkedIn — copy para pegar (Jorge Otero)
 
-Mensaje consistente en los tres canales: **~3 años construyendo** (desde 2023: freelance + proyectos + bootcamp), **Junior+** con portfolio en producción, flagship **Sonoteca**.
+Mensaje consistente en los tres canales: **Full Stack Developer** enfocado en Python/FastAPI/React/PostgreSQL, construyendo desde 2023 (freelance + proyectos + bootcamp), con **Sonoteca** como proyecto principal.
 
 ---
 
@@ -42,7 +42,7 @@ python scripts/generate_linkedin_banner.py
 ## 1. Headline (elegir esta)
 
 ```
-Full Stack Developer · Python (FastAPI/Flask) + React · Production apps · Buenos Aires · Remote
+Full Stack Developer | Python · FastAPI · React · PostgreSQL | Live demos on Vercel · Remote
 ```
 
 ---
@@ -50,18 +50,18 @@ Full Stack Developer · Python (FastAPI/Flask) + React · Production apps · Bue
 ## 2. About — English (~1,180 caracteres)
 
 ```
-I build production full-stack applications with Python and React — not as a job title, but as a track record.
+I build full-stack applications with Python and React, with public projects and live demos recruiters can review.
 
-Since 2023 I've been hands-on building: freelance Python work (automation, REST APIs, scraping), personal projects deployed on Vercel/Render, and structured training at 4Geeks Academy. That's ~3 years of learning, building, and shipping — not 3 years at a single employer.
+Since 2023 I've been hands-on building through freelance Python work (automation, REST APIs, scraping), personal projects deployed on Vercel/Render, and structured training at 4Geeks Academy.
 
-What I ship today:
+Selected work:
 • Sonoteca (flagship) — music platform with real Deezer catalog, 30s previews, playlists, JWT/RBAC. FastAPI + React monorepo on Vercel with Neon Postgres. https://sonoteca-hzbi.vercel.app/
 • LaVerde Tienda — 4Geeks capstone e-commerce (Flask, React, PostgreSQL, 44 pytest tests, CI/CD)
 • AI Task Orchestrator — LLM goal decomposition with Groq/Llama 3.3, live demo on Vercel
 
 Stack: FastAPI, Flask, SQLAlchemy, Alembic, React, TypeScript, PostgreSQL, Docker, GitHub Actions.
 
-I'm a strong junior / junior+ full-stack developer with production portfolio evidence. Open to remote full-stack roles — portfolio and live demos speak louder than years on a payroll.
+I'm open to remote Full Stack Developer and Python Backend Developer roles where I can contribute on APIs, databases, React interfaces, testing, and deployment.
 
 Portfolio: https://portofolio-mu-lac.vercel.app/
 GitHub: https://github.com/Jorgeotero1998
@@ -72,18 +72,18 @@ GitHub: https://github.com/Jorgeotero1998
 ## 3. About — Español (alternativa bilingüe)
 
 ```
-Desarrollo aplicaciones full stack en producción con Python y React — con portfolio que lo demuestra, no solo con un título.
+Desarrollo aplicaciones full stack con Python y React, con proyectos públicos y demos en vivo que se pueden revisar.
 
-Desde 2023 construyo de forma constante: freelance en Python (automatización, APIs REST, scraping), proyectos personales desplegados en Vercel/Render, y formación en 4Geeks Academy. Son ~3 años aprendiendo, construyendo y publicando — no 3 años en una sola empresa.
+Desde 2023 construyo de forma constante: freelance en Python (automatización, APIs REST, scraping), proyectos personales desplegados en Vercel/Render, y formación en 4Geeks Academy.
 
-Lo que tengo en producción hoy:
+Proyectos seleccionados:
 • Sonoteca (proyecto estrella) — plataforma musical con catálogo real de Deezer, previews de 30s, playlists, JWT/RBAC. Monorepo FastAPI + React en Vercel con Neon Postgres. https://sonoteca-hzbi.vercel.app/
 • LaVerde Tienda — capstone de 4Geeks, e-commerce (Flask, React, PostgreSQL, 44 tests pytest, CI/CD)
 • AI Task Orchestrator — descomposición de objetivos con Groq/Llama 3.3, demo en vivo
 
 Stack: FastAPI, Flask, SQLAlchemy, Alembic, React, TypeScript, PostgreSQL, Docker, GitHub Actions.
 
-Me posiciono como desarrollador full stack junior+ con evidencia en producción. Abierto a roles remote full stack — el portfolio y las demos hablan más que los años en nómina.
+Estoy abierto a roles remotos como Full Stack Developer o Python Backend Developer, especialmente donde pueda aportar en APIs, bases de datos, interfaces React, testing y despliegue.
 
 Portfolio: https://portofolio-mu-lac.vercel.app/
 GitHub: https://github.com/Jorgeotero1998
@@ -137,7 +137,7 @@ GitHub: https://github.com/Jorgeotero1998
 |--------|-----------|---------------|----------|
 | ~3 años **construyendo** desde 2023 | ✅ Hero | ✅ About | ✅ About EN/ES |
 | No "3 years at one employer" | ✅ Hero copy | ✅ About | ✅ About |
-| Nivel **Junior+** | ✅ Title/roles | ✅ Subtitle | ✅ About (subtle) |
+| Nivel objetivo **Junior Advanced / early Mid** | ✅ Title/roles | ✅ Subtitle | ✅ About (subtle) |
 | Flagship **Sonoteca** | ✅ Case study | ✅ Featured table | ✅ About + Featured |
 | Sin hire-me spam | ✅ | ✅ | ✅ (badge OK) |
 | Security no domina | ✅ Certs secondary | ✅ No security focus | ⚠️ Manual skills fix |

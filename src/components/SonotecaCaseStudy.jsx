@@ -45,7 +45,7 @@ export default function SonotecaCaseStudy() {
           <span className="gradient-text">Music Library</span>
         </h2>
         <p className="lead">
-          Full-stack music platform with real Deezer catalog, 30s previews, auth, and playlists — designed and shipped as a production monorepo on Vercel + Neon.
+          Full-stack music platform with Deezer catalog browsing, 30s previews, auth, and playlists, built as a React + FastAPI monorepo on Vercel + Neon.
         </p>
       </motion.div>
 
@@ -124,7 +124,7 @@ export default function SonotecaCaseStudy() {
         >
           <p className="case-label">Challenges</p>
           <p style={{ color: "rgba(226,232,240,0.65)", fontFamily: "'Inter', sans-serif", fontSize: "0.88rem", lineHeight: 1.7, margin: 0 }}>
-            CORS across Vercel frontend + API routes, async Postgres on serverless cold starts, and Deezer preview URL edge cases — solved with monorepo routing, connection pooling, and graceful player fallbacks.
+            CORS across Vercel frontend + API routes, async Postgres on serverless cold starts, and Deezer preview URL edge cases, handled with monorepo routing, connection pooling, and graceful player fallbacks.
           </p>
         </motion.div>
         <motion.div
@@ -135,7 +135,7 @@ export default function SonotecaCaseStudy() {
         >
           <p className="case-label">Results</p>
           <p style={{ color: "rgba(226,232,240,0.65)", fontFamily: "'Inter', sans-serif", fontSize: "0.88rem", lineHeight: 1.7, margin: 0 }}>
-            Live at sonoteca-hzbi.vercel.app with OpenAPI docs, CI on every push, JWT auth, playlists, and 30s previews from real Deezer catalog — flagship proof of full-stack delivery.
+            Live at sonoteca-hzbi.vercel.app with OpenAPI docs, CI, JWT auth, playlists, and 30s previews from the Deezer catalog — the flagship example of my full-stack work.
           </p>
         </motion.div>
       </div>

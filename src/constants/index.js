@@ -1,7 +1,7 @@
 export const SITE = {
   title: "Jorge Otero | Full Stack Developer",
   description:
-    "Full Stack Developer · Python (FastAPI/Flask) + React · PostgreSQL · Docker · Live demos. Buenos Aires · Remote.",
+    "Full Stack Developer focused on Python, FastAPI, React, PostgreSQL, and practical full-stack delivery. Buenos Aires · Remote.",
   url: "https://portofolio-mu-lac.vercel.app/",
   email: "jorgotero4@gmail.com",
   linkedin: "https://linkedin.com/in/jorgeotero1998",
@@ -12,13 +12,13 @@ export const SITE = {
 export const ROLES = [
   "Full Stack Developer",
   "Python · FastAPI · React",
-  "Sonoteca · LaVerde · Orchestrator",
+  "Sonoteca · LaVerde · AI Orchestrator",
   "PostgreSQL · Docker · CI/CD",
 ];
 
 export const SOCIAL_PROOF = {
   repos: "20+",
-  highlights: ["Sonoteca", "LaVerde", "AI Orchestrator", "CI/CD", "Live demos"],
+  highlights: ["Sonoteca", "LaVerde", "AI Orchestrator", "Automated tests", "CI/CD"],
 };
 
 export const FEATURED_PROJECTS = [
@@ -30,8 +30,8 @@ export const FEATURED_PROJECTS = [
     status: "live",
     statusLabel: "Live",
     tags: ["React", "TypeScript", "FastAPI", "PostgreSQL", "Vercel", "Deezer API", "JWT/RBAC"],
-    desc: "Flagship music platform — real Deezer catalog, 30s previews, built-in player (queue, shuffle, repeat), playlists, favorites, and listening history.",
-    impact: "Monorepo on Vercel + Neon Postgres: FastAPI API under /api, Alembic migrations, JWT auth, refs-only persistence.",
+    desc: "Flagship music platform using the Deezer API for catalog browsing, 30s previews, a built-in player, playlists, favorites, and listening history.",
+    impact: "React + FastAPI monorepo on Vercel with Neon Postgres, Alembic migrations, JWT auth, and refs-only persistence.",
     live: "https://sonoteca-hzbi.vercel.app/",
     repo: "https://github.com/Jorgeotero1998/Sonoteca",
     color: "#fb923c",
@@ -44,7 +44,7 @@ export const FEATURED_PROJECTS = [
     status: "frontend",
     statusLabel: "Frontend Demo",
     tags: ["React", "Flask", "PostgreSQL", "JWT", "Cloudinary", "pytest"],
-    desc: "Full-stack e-commerce capstone — cart, checkout, admin panel, Cloudinary media, and order management. 3-person team project at 4Geeks Academy.",
+    desc: "Full-stack e-commerce capstone with cart, checkout, admin panel, Cloudinary media, and order management. 3-person team project at 4Geeks Academy.",
     impact: "44 pytest tests, GitHub Actions CI, Flask API + React frontend. Live UI on Render.",
     live: "https://laverde-frontend.onrender.com/",
     repo: "https://github.com/Jorgeotero1998/LaVerde-Tienda",
@@ -59,7 +59,7 @@ export const FEATURED_PROJECTS = [
     statusLabel: "Live",
     demoLogin: "admin@example.com / change-me",
     tags: ["Python", "FastAPI", "React", "Groq API", "Llama 3.3", "Docker", "PostgreSQL"],
-    desc: "LLM platform that decomposes complex goals into 5 actionable steps using Groq Llama 3.3 — task history dashboard and PDF export.",
+    desc: "LLM task app that decomposes complex goals into actionable steps using Groq Llama 3.3, with task history and PDF export.",
     impact: "Docker Compose stack, secure admin auth, Postgres persistence, deployed on Vercel.",
     live: "https://ai-task-orchestrator-inky.vercel.app/",
     repo: "https://github.com/Jorgeotero1998/ai-task-orchestrator",
@@ -88,7 +88,7 @@ export const FEATURED_PROJECTS = [
     statusLabel: "CLI",
     sourceKind: "cli",
     tags: ["TypeScript", "Playwright", "Cheerio", "Vitest", "Docker", "GitHub Actions"],
-    desc: "Production-grade CLI scraper for Peruvian legal databases (OEFA, Poder Judicial) — JSON/CSV export, rate limiting, retry/backoff.",
+    desc: "CLI scraper for Peruvian legal databases (OEFA, Poder Judicial) with JSON/CSV export, rate limiting, and retry/backoff.",
     impact: "23 Vitest tests, Docker packaging, exponential backoff, GitHub Actions CI pipeline.",
     live: null,
     repo: "https://github.com/Jorgeotero1998/Scraper",
@@ -121,7 +121,7 @@ export const CERTS = [
   { name: "Cloud-Native with OpenShift & Kubernetes", issuer: "Red Hat", color: "#60a5fa" },
   { name: "Automate Cybersecurity with Python", issuer: "Google · Oct 2025", color: "#f472b6" },
   { name: "Crash Course on Python", issuer: "Google", color: "#fb923c" },
-  { name: "AWS / Azure / GCP security credentials", issuer: "See LinkedIn for full list", color: "#94a3b8" },
+  { name: "Additional cloud/security coursework", issuer: "See LinkedIn for full list", color: "#94a3b8" },
 ];
 
 export const STATUS_COLORS = {

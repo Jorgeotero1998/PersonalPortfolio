@@ -270,13 +270,13 @@ export default function Projects() {
   return (
     <section id="projects" className="section section-inner" aria-labelledby="projects-heading">
       <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="section-header">
-        <p className="eyebrow">Production work</p>
+        <p className="eyebrow">Selected work</p>
         <h2 id="projects-heading" className="heading-section">
           Featured{" "}
           <span className="gradient-text">Projects</span>
         </h2>
         <p className="lead" style={{ marginTop: "0.75rem", maxWidth: "42rem" }}>
-          Five flagship builds — Sonoteca, LaVerde, AI Task Orchestrator, Global Pulse, and Scraper — live demos, automated tests, and CI on every repo.
+          Practical full-stack projects with live demos, automated tests, and CI where it adds confidence.
         </p>
       </motion.div>
 

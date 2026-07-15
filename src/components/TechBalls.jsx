@@ -114,8 +114,8 @@ export default function TechBalls() {
         >
           <p className="eyebrow eyebrow--center">Technologies</p>
           <h2 id="tech-heading" className="heading-section">
-            My{" "}
-            <span className="gradient-text">Arsenal</span>
+            Core{" "}
+            <span className="gradient-text">Stack</span>
           </h2>
           <p style={{ color: "rgba(226,232,240,0.45)", fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", marginTop: "0.5rem" }}>
             Python · React · PostgreSQL · Docker · CI/CD

@@ -27,18 +27,18 @@ LINKS = (
 )
 
 ABOUT_FULLSTACK = (
-    "~3 years hands-on building full-stack applications since 2023 - freelance Python work, "
-    "personal projects, and 4Geeks Academy training. This reflects time learning, building, "
-    "and shipping (not 3 years at a single employer). Flagship project Sonoteca is a production "
-    "music platform on FastAPI + React with real Deezer catalog integration, deployed on Vercel "
-    "with Neon Postgres."
+    "Full Stack Developer focused on Python, FastAPI/Flask, React, TypeScript, and PostgreSQL. "
+    "Since 2023 I have built freelance Python work, personal products, and 4Geeks Academy "
+    "projects with live deploys, automated tests, and practical end-to-end delivery. Flagship "
+    "project: Sonoteca, a React + FastAPI music platform using the Deezer API, Vercel, and Neon "
+    "Postgres."
 )
 
 ABOUT_BACKEND = (
-    "~3 years hands-on building with Python since 2023 - freelance automation, REST APIs, "
-    "scraping pipelines, and full-stack apps through 4Geeks Academy. Comfortable across backend "
-    "architecture, PostgreSQL, Docker, and React frontends when the product needs an end-to-end "
-    "delivery loop."
+    "Python backend developer profile focused on FastAPI/Flask, PostgreSQL, automation, and "
+    "API delivery. Since 2023 I have built freelance Python work, scraping pipelines, REST APIs, "
+    "and full-stack projects through 4Geeks Academy, with React experience when the product needs "
+    "an end-to-end delivery loop."
 )
 
 EXPERIENCE = [
@@ -46,13 +46,13 @@ EXPERIENCE = [
         "title": "Full Stack Developer (Freelance)",
         "meta": "Remote | Mar 2023 - Present",
         "bullets": [
-            "Shipped production REST APIs (FastAPI/Flask): JWT auth, SQLAlchemy, Alembic migrations, PostgreSQL.",
+            "Built REST APIs with FastAPI/Flask, JWT auth, SQLAlchemy, Alembic migrations, and PostgreSQL.",
             "Built automation and scraping pipelines (Playwright, Selenium); JSON/CSV export, retry/backoff, Docker.",
-            "LLM integrations (Groq/Llama 3.3): goal decomposition APIs, task orchestration, deployed on Vercel/Render.",
+            "Integrated Groq/Llama 3.3 for goal decomposition APIs and task orchestration workflows.",
         ],
     },
     {
-        "title": "Full Stack Developer - 4Geeks Academy",
+        "title": "Full Stack Developer Training - 4Geeks Academy",
         "meta": "Jun 2025 - Present",
         "bullets": [
             "LaVerde Tienda capstone with a 3-person team - e-commerce with cart, checkout, admin panel, and 44 pytest tests.",
@@ -63,13 +63,13 @@ EXPERIENCE = [
 
 PROJECTS_FULLSTACK = [
     {
-        "title": "Sonoteca - Music Platform (FLAGSHIP | LIVE)",
+        "title": "Sonoteca - Music Platform (Flagship | Live)",
         "meta": "React | TypeScript | FastAPI | PostgreSQL | Vercel | Neon | Deezer API | JWT/RBAC",
         "links": "sonoteca-hzbi.vercel.app | github.com/Jorgeotero1998/Sonoteca",
         "bullets": [
-            "Vercel monorepo + Neon Postgres: FastAPI under /api, Alembic migrations, JWT/RBAC auth.",
-            "Deezer API catalog: search, 30s previews, playlists, favorites, listening history.",
-            "Live demo: sonoteca-hzbi.vercel.app — production-deployed full-stack music platform.",
+            "Built a React + FastAPI monorepo with FastAPI served under /api, Alembic migrations, JWT/RBAC auth, and refs-only persistence.",
+            "Integrated the Deezer API for catalog search, 30s previews, playlists, favorites, and listening history.",
+            "Deployed on Vercel with Neon Postgres and public OpenAPI docs.",
         ],
     },
     {
@@ -85,7 +85,7 @@ PROJECTS_FULLSTACK = [
         "meta": "Python | FastAPI | Groq API (Llama 3.3) | React | PostgreSQL | Docker",
         "links": "ai-task-orchestrator-inky.vercel.app | github.com/Jorgeotero1998/ai-task-orchestrator",
         "bullets": [
-            "Decomposes complex goals into actionable steps; task history, PDF export, admin auth.",
+            "Built an app that decomposes complex goals into actionable steps, with task history, PDF export, and admin auth.",
         ],
     },
     {
@@ -93,7 +93,7 @@ PROJECTS_FULLSTACK = [
         "meta": "TypeScript | Playwright | Cheerio | Vitest | Docker",
         "links": "github.com/Jorgeotero1998/Scraper",
         "bullets": [
-            "Production-grade CLI scraper with rate limiting, retry/backoff, and 23 Vitest tests.",
+            "Built a CLI scraper with structured JSON/CSV export, rate limiting, retry/backoff, Docker packaging, and 23 Vitest tests.",
         ],
     },
     {
@@ -108,12 +108,12 @@ PROJECTS_FULLSTACK = [
 
 PROJECTS_BACKEND = [
     {
-        "title": "Sonoteca - FastAPI + PostgreSQL Music API (FLAGSHIP | LIVE)",
+        "title": "Sonoteca - FastAPI + PostgreSQL Music API (Flagship | Live)",
         "meta": "FastAPI | SQLAlchemy | Alembic | PostgreSQL | JWT/RBAC | Deezer API | Neon | Vercel",
         "links": "sonoteca-hzbi.vercel.app | github.com/Jorgeotero1998/Sonoteca",
         "bullets": [
-            "Vercel monorepo + Neon Postgres: REST API, Alembic migrations, JWT/RBAC, Deezer catalog.",
-            "Third-party Deezer integration: search, previews, playlists; live at sonoteca-hzbi.vercel.app.",
+            "Built the FastAPI API with Alembic migrations, JWT/RBAC, Neon Postgres, and Deezer catalog integration.",
+            "Supports search, 30s previews, playlists, favorites, and listening history; live at sonoteca-hzbi.vercel.app.",
         ],
     },
     {
@@ -137,7 +137,7 @@ PROJECTS_BACKEND = [
         "meta": "TypeScript | Playwright | Cheerio | Vitest | Docker",
         "links": "github.com/Jorgeotero1998/Scraper",
         "bullets": [
-            "Scraping pipeline with exponential backoff, structured export, and test coverage.",
+            "Built a scraping pipeline with exponential backoff, structured export, Docker packaging, and test coverage.",
         ],
     },
 ]
@@ -145,7 +145,8 @@ PROJECTS_BACKEND = [
 SKILLS_FULLSTACK = [
     ("Backend", "Python | FastAPI | Flask | SQLAlchemy | Alembic | Pydantic | JWT/RBAC | REST APIs | pytest"),
     ("Frontend", "React | TypeScript | Vite | Tailwind CSS | Three.js | React Three Fiber"),
-    ("DevOps", "Docker | GitHub Actions | Vercel | Render | Neon | PostgreSQL | Linux | CI/CD"),
+    ("Data/Platform", "PostgreSQL | Neon | Docker | GitHub Actions | Vercel | Render | Linux | CI/CD"),
+    ("Automation", "Playwright | Selenium | web scraping | JSON/CSV export | retry/backoff pipelines"),
 ]
 
 SKILLS_BACKEND = [
@@ -284,13 +285,11 @@ def write_pdf(path: Path, about: str, projects: list, skills: list):
     _section("Summary", story, styles)
     story.append(Paragraph(about, styles["body"]))
 
-    _section("Experience", story, styles)
-    for job in EXPERIENCE:
-        story.append(Paragraph(job["title"], styles["job_title"]))
-        story.append(Paragraph(job["meta"], styles["meta"]))
-        story.append(_bullet_list(job["bullets"], styles["bullet"]))
+    _section("Skills", story, styles)
+    for label, items in skills:
+        story.append(Paragraph(f"<b>{label}:</b> {items}", styles["skill"]))
 
-    _section("Projects", story, styles)
+    _section("Selected Projects", story, styles)
     for project in projects:
         story.append(Paragraph(project["title"], styles["job_title"]))
         story.append(Paragraph(project["meta"], styles["meta"]))
@@ -298,9 +297,11 @@ def write_pdf(path: Path, about: str, projects: list, skills: list):
             story.append(Paragraph(project["links"], styles["meta"]))
         story.append(_bullet_list(project["bullets"], styles["bullet"]))
 
-    _section("Skills", story, styles)
-    for label, items in skills:
-        story.append(Paragraph(f"<b>{label}:</b> {items}", styles["skill"]))
+    _section("Freelance / Practical Experience", story, styles)
+    for job in EXPERIENCE:
+        story.append(Paragraph(job["title"], styles["job_title"]))
+        story.append(Paragraph(job["meta"], styles["meta"]))
+        story.append(_bullet_list(job["bullets"], styles["bullet"]))
 
     _section("Education", story, styles)
     for title, meta in EDUCATION:

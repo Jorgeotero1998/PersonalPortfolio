@@ -6,7 +6,7 @@ export default function SocialProof() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section className="section" style={{ paddingTop: 0, paddingBottom: "4rem" }} aria-label="Open source and production highlights">
+    <section className="section" style={{ paddingTop: 0, paddingBottom: "4rem" }} aria-label="Open source and project highlights">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 24 }}
@@ -16,7 +16,7 @@ export default function SocialProof() {
       >
         <div>
           <p style={{ fontFamily: "'JetBrains Mono', monospace", color: "#fb923c", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.5rem" }}>
-            Open source & production
+            Open source & project highlights
           </p>
           <p style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#e2e8f0", fontSize: "1.15rem", fontWeight: 600, margin: 0 }}>
             {SOCIAL_PROOF.repos} public repos · shipped to Vercel & Render
