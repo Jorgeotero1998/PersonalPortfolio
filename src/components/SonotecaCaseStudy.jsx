@@ -135,7 +135,7 @@ export default function SonotecaCaseStudy() {
         >
           <p className="case-label">Results</p>
           <p style={{ color: "rgba(226,232,240,0.65)", fontFamily: "'Inter', sans-serif", fontSize: "0.88rem", lineHeight: 1.7, margin: 0 }}>
-            Live at sonoteca-hzbi.vercel.app with OpenAPI docs, CI, JWT auth, playlists, and 30s previews from the Deezer catalog — the flagship example of my full-stack work.
+            Live at sonoteca-hzbi.vercel.app with OpenAPI docs, a GitHub Actions workflow, JWT auth, playlists, and 30s previews from the Deezer catalog.
           </p>
         </motion.div>
       </div>

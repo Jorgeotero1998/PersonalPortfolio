@@ -20,9 +20,9 @@
   --radius-xl: 24px;
   --section-y: clamp(4.5rem, 8vw, 7rem);
   --content-max: 1200px;
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'Segoe UI Mono', monospace;
 
   /* Type scale */
   --text-xs: 0.6875rem;
@@ -942,7 +942,8 @@ body {
 
 .site-footer a {
   color: var(--orange);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
   transition: color 0.2s;
 }
 
@@ -1053,6 +1054,19 @@ body {
 
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
+  .portfolio-root::before { display: none; }
+  .hero-glow { filter: blur(36px); }
+  .hero-photo-ring,
+  .hero-photo { animation: none; }
+  .marquee-track { animation: none; }
+  .marquee-track > :nth-child(n + 9) { display: none; }
+  .glass-card,
+  .glass-panel,
+  .marquee-glass,
+  .project-card,
+  .projects-metric,
+  .proof-bar { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .section { content-visibility: auto; contain-intrinsic-size: 600px; }
   .nav-desktop { display: none !important; }
   .nav-toggle { display: block !important; }
   .contact-globe { width: 220px !important; height: 220px !important; }

@@ -5,8 +5,8 @@ import { FEATURED_PROJECTS, OTHER_PROJECTS, STATUS_COLORS } from "../constants";
 
 const SHOWCASE_METRICS = [
   { value: "5", label: "Live demos" },
-  { value: "67", label: "Automated tests" },
-  { value: "6", label: "Shipped repos" },
+  { value: "44 + 23", label: "Tests in 2 repos" },
+  { value: "5", label: "Featured repos" },
 ];
 
 const showcaseStagger = {

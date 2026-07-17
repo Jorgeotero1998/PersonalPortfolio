@@ -1,5 +1,18 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+
+function staticElement(Tag) {
+  return function StaticElement({ initial, animate, transition, whileHover, exit, ...props }) {
+    return <Tag {...props} />;
+  };
+}
+
+const motion = {
+  nav: staticElement("nav"),
+  div: staticElement("div"),
+  button: staticElement("button"),
+  a: staticElement("a"),
+};
+const AnimatePresence = ({ children }) => children;
 
 const links = [
   { label: "About", id: "about" },
